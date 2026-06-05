@@ -9,7 +9,7 @@
 
 | Konzept | Definition | Beispiele |
 |---------|-----------|----------|
-| **Agent** | Ein System, das ein Modell + Tools nutzt, um Ziele eigenständig zu verfolgen | Claude Code, Cursor IDE, Pi Agent, Aider |
+| **Agent** | Ein System, das ein Model + Tools nutzt, um Ziele eigenständig zu verfolgen | Claude Code, Cursor IDE, Pi Agent, Aider |
 | **Framework** | Code-Bibliothek zum Orchestrieren von Agents (Workflows, State, Tool-Calling) | LangGraph, CrewAI, PydanticAI, Mastra |
 | **Model** | Das LLM selbst | Claude 3.5, GPT-5, Qwen3 Coder |
 
@@ -65,14 +65,14 @@ flowchart TD
 
 ### Option B: DIY Agent + Framework
 
-**Dir gehört:** Alles (Code, Agent, Workflows, Modelle)  
+**Dir gehört:** Alles (Code, Agent, Workflows, Models)  
 **Du brauchst:** Framework + Model-Provider
 
 ```mermaid
 flowchart TD
   A[Du schreibst: LangGraph Workflow] --> B[Agent orchestriert LLM Calls]
   B --> C[Deployment: Lambda / Cloud Run / On-Prem]
-  C --> D[API User: Loese Issue #42]
+  C --> D[API User: Löse Issue #42]
 ```
 
 **Beispiele:** LangGraph, CrewAI, PydanticAI, Mastra
@@ -95,7 +95,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A[Prompt in Agent iterieren] --> B[Prompt in Framework uebernehmen]
+    A[Prompt in Agent iterieren] --> B[Prompt in Framework übernehmen]
     B --> C[Mit LiteLLM deployen]
     C --> D[Production: volle Kontrolle]
 ```
@@ -125,9 +125,9 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A[Developer oeffnet Agent] --> B[Implement issue #42]
+    A[Developer öffnet Agent] --> B[Implement issue #42]
     B --> C[Agent arbeitet in Echtzeit]
-    C --> D[PR wird geoeffnet]
+    C --> D[PR wird geöffnet]
     D --> E[Done]
 ```
 

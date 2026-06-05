@@ -1,10 +1,10 @@
-# Agent-Terminologie ueber verschiedene Coding Agents hinweg
+# Agent-Terminologie über verschiedene Coding Agents hinweg
 
 > Die wichtige Schicht vor Sub-Agents: Prompts, Instructions, Rules, Skills, Memory und Tool Policy.
 
 ## Warum das wichtig ist
 
-Unterschiedliche Coding Agents verwenden unterschiedliche Begriffe fuer dieselben Ideen. Wenn Agenten effizient und konsistent arbeiten sollen, musst du standardisieren, wie du Folgendes ausdrueckst:
+Unterschiedliche Coding Agents verwenden unterschiedliche Begriffe für dieselben Ideen. Wenn Agenten effizient und konsistent arbeiten sollen, musst du standardisieren, wie du Folgendes ausdrückst:
 
 - Verhaltensinstruktionen
 - Tool-Grenzen
@@ -12,7 +12,7 @@ Unterschiedliche Coding Agents verwenden unterschiedliche Begriffe fuer dieselbe
 - optionale tiefergehende Helfer
 - Memory- oder Kontext-Persistenz
 
-Das ist besonders in Cursor wichtig, wo Rules und Skills ein zentrales Produktivitaetsinstrument sind und vor Sub-Agents als Kernthema des Workshops behandelt werden sollten.
+Das ist besonders in Cursor wichtig, wo Rules und Skills ein zentrales Produktivitätsinstrument sind und vor Sub-Agents als Kernthema des Workshops behandelt werden sollten.
 
 ---
 
@@ -20,48 +20,48 @@ Das ist besonders in Cursor wichtig, wo Rules und Skills ein zentrales Produktiv
 
 | Konzept | Bedeutung | Cursor | Claude Code | Windsurf | GitHub Copilot | Aider | Pi / OpenCode |
 |---|---|---|---|---|---|---|---|
-| **System prompt** | Hoch priorisierte Verhaltensinstruktion fuer den Agenten | Basis-Instruktionen des Agenten, meist verborgen | Modell-/Runtime-Instruktionen, meist verborgen | Plattform-Instruktionen, meist verborgen | Service-Level-Instruktionen, meist verborgen | Prompt-Template / Modell-Instruktionen | Plattform- oder Prompt-Level-Instruktionen |
+| **System prompt** | Hoch priorisierte Verhaltensinstruktion für den Agenten | Basis-Instruktionen des Agenten, meist verborgen | Model-/Runtime-Instruktionen, meist verborgen | Plattform-Instruktionen, meist verborgen | Service-Level-Instruktionen, meist verborgen | Prompt-Template / Model-Instruktionen | Plattform- oder Prompt-Level-Instruktionen |
 | **User prompt** | Die Aufgabe, die der Nutzer gerade stellt | Chat-Nachricht, Kommando oder Anfrage | Chat- / Terminal-Anfrage | Chat-Anfrage | Chat-Anfrage | CLI-Instruktion | CLI- / Chat-Anfrage |
-| **Instructions** | Persistente projektweite Anleitung fuer Verhalten und Stil | Meist als Rules und Projektkontext repraesentiert | Oft Projekt-Instruktionen oder Workflow-Guidance | Meist Workspace-Instruktionen | Ja: explizite Instruktionsdateien fuer Projektverhalten | Meist Repo-Notizen und Prompt-Templates | Oft Config- oder Instruktionsdateien |
-| **Rules** | Persistente Einschraenkungen, die das Verhalten steuern | Ja: Projektregeln / User-Regeln | Oft Projekt-Instruktionen oder Workflow-Guidance | Ja, typischerweise projektweite Instruktionen | Ja: ueber Instruktionsdateien und Policy-Guidance umsetzbar | Meist ueber Prompt-Templates oder Repo-Instruktionen | Oft Config oder Prompt-Policy |
+| **Instructions** | Persistente projektweite Anleitung für Verhalten und Stil | Meist als Rules und Projektkontext repräsentiert | Oft Projekt-Instruktionen oder Workflow-Guidance | Meist Workspace-Instruktionen | Ja: explizite Instruktionsdateien für Projektverhalten | Meist Repo-Notizen und Prompt-Templates | Oft Config- oder Instruktionsdateien |
+| **Rules** | Persistente Einschränkungen, die das Verhalten steuern | Ja: Projektregeln / User-Regeln | Oft Projekt-Instruktionen oder Workflow-Guidance | Ja, typischerweise projektweite Instruktionen | Ja: über Instruktionsdateien und Policy-Guidance umsetzbar | Meist über Prompt-Templates oder Repo-Instruktionen | Oft Config oder Prompt-Policy |
 | **Skills** | Wiederverwendbare, aufgabenspezifische Capability-Pakete | Ja: Skills sind ein First-Class-Konzept | Ja: Skills sind ein First-Class-Konzept | Teilweise Workflow-Packs oder Agent-Verhalten | Meist nicht so benannt | Meist nicht so benannt | Teilweise Templates oder Plugins |
-| **Agents** | Benutzerdefinierte spezialisierte Agent-Modi fuer gezielte Workflows | Agent-Modi / Workflow-Rollen | Sub-Agents und spezialisierte Rollen | In manchen Workflows unterstuetzt | Ja: Custom Agents sind ein unterstuetztes Konzept | Meist nicht im Fokus | Teilweise ueber Orchestrierung unterstuetzt |
-| **Hooks** | Ereignisgetriebene Automation zur Policy-Durchsetzung oder zum Ausloesen von Workflows | Teilweise ueber Workspace-Automation | Teilweise ueber Workflow-Tooling | Teilweise ueber Workspace-Automation | Ja: Hooks werden fuer Policy-/Automation-Workflows unterstuetzt | Meist ueber Shell-Skripte und Git-Hooks | Meist ueber Config oder Shell-Hooks |
-| **Sub-agents** | Verschachtelte spezialisierte Agenten, die einen Teil einer Aufgabe uebernehmen | In Agent-Workflows unterstuetzt | Explizit unterstuetzt | In manchen Workflows unterstuetzt | Kann ueber Custom Agents und Delegations-Workflows modelliert werden | Meist nicht im Fokus | Teilweise ueber Orchestrierung unterstuetzt |
-| **Memory** | Persistenter Kontext ueber Aufgaben hinweg | Projekt-Memory / Kontextfunktionen | Memory- / Persistenzfunktionen | Persistenter Workspace-Kontext | Eingeschraenkt / plattformabhaengig | Meist Git-Historie und Repo-Kontext | Persistente Memory-Funktionen in manchen Tools |
-| **Tool policy** | Welche Tools erlaubt, blockiert oder nur mit Freigabe nutzbar sind | Rules und Einstellungen koennen das einschraenken | Integrierte Tool-Berechtigungen und Freigaben | Workspace-Policies und Freigaben | Admin-/Workspace-Policy | CLI-Verhalten plus Repository-Konventionen | Ueber Agent-Einstellungen konfigurierbar |
+| **Agents** | Benutzerdefinierte spezialisierte Agent-Modi für gezielte Workflows | Agent-Modi / Workflow-Rollen | Sub-Agents und spezialisierte Rollen | In manchen Workflows unterstützt | Ja: Custom Agents sind ein unterstütztes Konzept | Meist nicht im Fokus | Teilweise über Orchestrierung unterstützt |
+| **Hooks** | Ereignisgetriebene Automation zur Policy-Durchsetzung oder zum Auslösen von Workflows | Teilweise über Workspace-Automation | Teilweise über Workflow-Tooling | Teilweise über Workspace-Automation | Ja: Hooks werden für Policy-/Automation-Workflows unterstützt | Meist über Shell-Skripte und Git-Hooks | Meist über Config oder Shell-Hooks |
+| **Sub-agents** | Verschachtelte spezialisierte Agenten, die einen Teil einer Aufgabe übernehmen | In Agent-Workflows unterstützt | Explizit unterstützt | In manchen Workflows unterstützt | Kann über Custom Agents und Delegations-Workflows modelliert werden | Meist nicht im Fokus | Teilweise über Orchestrierung unterstützt |
+| **Memory** | Persistenter Kontext über Aufgaben hinweg | Projekt-Memory / Kontextfunktionen | Memory- / Persistenzfunktionen | Persistenter Workspace-Kontext | Eingeschränkt / plattformabhängig | Meist Git-Historie und Repo-Kontext | Persistente Memory-Funktionen in manchen Tools |
+| **Tool policy** | Welche Tools erlaubt, blockiert oder nur mit Freigabe nutzbar sind | Rules und Einstellungen können das einschränken | Integrierte Tool-Berechtigungen und Freigaben | Workspace-Policies und Freigaben | Admin-/Workspace-Policy | CLI-Verhalten plus Repository-Konventionen | Über Agent-Einstellungen konfigurierbar |
 
 ---
 
 ## Praktische Einordnung
 
 ### Cursor
-Cursor macht **Rules** und **Skills** sehr sichtbar und produktiv. Behandle sie als Teil des Repo-Designs und nicht als nachtraeglichen Zusatz.
+Cursor macht **Rules** und **Skills** sehr sichtbar und produktiv. Behandle sie als Teil des Repo-Designs und nicht als nachträglichen Zusatz.
 
 ### Claude Code
-Claude Code betont **Skills**, **Sub-Agents** und **Tooling**. Das mentale Modell ist sehr aehnlich, aber mit anderer Benennung und staerkerem Terminal-First-Fokus.
+Claude Code betont **Skills**, **Sub-Agents** und **Tooling**. Das mentale Model ist sehr ähnlich, aber mit anderer Benennung und stärkerem Terminal-First-Fokus.
 
 ### Windsurf
-Windsurf praesentiert die Idee eher als Workspace-Instruktionen, Agent-Verhalten und Projektkonfiguration statt als stark gebrandete Skill-Objekte.
+Windsurf präsentiert die Idee eher als Workspace-Instruktionen, Agent-Verhalten und Projektkonfiguration statt als stark gebrandete Skill-Objekte.
 
 ### GitHub Copilot
-Copilot unterstuetzt dieselbe konzeptionelle Schicht, aber mit eigener Begriffswelt und eigenen Dateitypen.
+Copilot unterstützt dieselbe konzeptionelle Schicht, aber mit eigener Begriffswelt und eigenen Dateitypen.
 
 Typische Copilot-Begriffe, die explizit vermittelt werden sollten:
 
-- Prompt: wiederverwendbare Prompt-Dateien fuer wiederholbare Aufgaben.
+- Prompt: wiederverwendbare Prompt-Dateien für wiederholbare Aufgaben.
 - Instructions: persistente Projektleitlinien.
-- Skills: wiederverwendbare Capability-Buendel fuer haeufige Workflows.
-- Agents: Custom-Agent-Modi fuer spezialisierte Aufgaben.
-- Hooks: Policy- und Automation-Trigger fuer Guard Rails.
+- Skills: wiederverwendbare Capability-Bündel für häufige Workflows.
+- Agents: Custom-Agent-Modi für spezialisierte Aufgaben.
+- Hooks: Policy- und Automation-Trigger für Guard Rails.
 
-Fuer Workshop-Konsistenz sollten diese als direkte Entsprechungen zu "Rules + Skills + Agents + Policy Automation" in anderen Tools behandelt werden.
+für Workshop-Konsistenz sollten diese als direkte Entsprechungen zu "Rules + Skills + Agents + Policy Automation" in anderen Tools behandelt werden.
 
 ### Aider
-Aider ist naeher an promptgetriebener CLI-Automation. Die Konzepte existieren weiterhin, werden aber meist ueber Repo-Konventionen, Prompt-Templates oder Kommando-Nutzungsmuster umgesetzt.
+Aider ist näher an promptgetriebener CLI-Automation. Die Konzepte existieren weiterhin, werden aber meist über Repo-Konventionen, Prompt-Templates oder Kommando-Nutzungsmuster umgesetzt.
 
 ### Pi / OpenCode
-Diese Tools bilden die Konzepte haeufig eher als Config, Prompts, Policies oder Orchestrierungs-Settings ab als als gebrandetes Skill-System.
+Diese Tools bilden die Konzepte häufig eher als Config, Prompts, Policies oder Orchestrierungs-Settings ab als als gebrandetes Skill-System.
 
 ---
 
@@ -83,25 +83,25 @@ Diese Reihenfolge verankert den Workshop zuerst in konsistenter Agent-Nutzung, b
 Wenn ein Team sie gut einsetzt, entstehen:
 
 - konsistentere Ergebnisse
-- weniger wiederholte Erklaerungen
+- weniger wiederholte Erklärungen
 - bessere Sicherheitsgrenzen
 - weniger Prompt Drift
-- schnelleres Onboarding fuer neue Mitwirkende
-- bessere Wiederverwendung ueber Projekte hinweg
+- schnelleres Onboarding für neue Mitwirkende
+- bessere Wiederverwendung über Projekte hinweg
 
-Deshalb gehoert dieses Thema **vor** Sub-Agents.
+Deshalb gehört dieses Thema **vor** Sub-Agents.
 
 ---
 
-## Vorgeschlagene Workshop-Uebung
+## Vorgeschlagene Workshop-Übung
 
 Die Teilnehmenden sollen drei Repository-Regeln definieren:
 
-- Secrets standardmaessig nie lesen
+- Secrets standardmäßig nie lesen
 - niemals Secrets committen
 - vor destruktiven Aktionen nachfragen
 
-Danach sollen sie eine wiederverwendbare Skill oder Workflow-Instruktion fuer eine haeufige Coding-Aufgabe definieren.
+Danach sollen sie eine wiederverwendbare Skill oder Workflow-Instruktion für eine häufige Coding-Aufgabe definieren.
 
 ---
 

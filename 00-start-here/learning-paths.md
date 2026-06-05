@@ -6,7 +6,7 @@
 |--------|------|-----------|
 | **Ich will den Workshop-Standardpfad** | 2h | [Free-First 2h Path](two-hour-workshop-path.md) |
 | **Ich bin neu bei Agenten** | 2h | [Pfad 1: Anfänger](#pfad-1-anfänger) |
-| **Ich verstehe Modelle, will Tools lernen** | 3h | [Pfad 2: Foundations](#pfad-2-intermediate) |
+| **Ich verstehe Models, will Tools lernen** | 3h | [Pfad 2: Foundations](#pfad-2-intermediate) |
 | **Ich bin Architekt und will skalierbare Systeme** | 1 Tag | [Pfad 3: Full Workshop](../08-workshop-facilitator/half-day-agenda.md) |
 | **Ich habe nur 30 Minuten** | 30min | [Ultra-Schnell](#ultra-schnell) |
 
@@ -115,7 +115,7 @@ ollama pull qwen3.1:coder
   - Echtes Ticket → 3+ Agent Workflow
   - Orchestrierungsdesign
   - Error Handling und Fallbacks
-- Praesentation und Review in der Gruppe
+- Präsentation und Review in der Gruppe
 
 ### Danach
 
@@ -130,12 +130,12 @@ ollama pull qwen3.1:coder
 <details>
 <summary>Ich bin Developer, noch keine Agenten angefasst</summary>
 
-→ **Pfad 1: Anfaenger**. Dann ein eigenes Ticket mit Claude Code.
+→ **Pfad 1: Anfänger**. Dann ein eigenes Ticket mit Claude Code.
 
 </details>
 
 <details>
-<summary>Ich kenne Modelle & LLMs gut, will aber nicht zu viel Zeit investieren</summary>
+<summary>Ich kenne Models & LLMs gut, will aber nicht zu viel Zeit investieren</summary>
 
 → **Pfad 2: Intermediate**. Kernkonzepte + ein MCP-Lab.
 
@@ -169,9 +169,9 @@ ollama pull qwen3.1:coder
 1. **Hands-On zuerst:** Theorie → sofort Lab. Nicht umgekehrt.
 2. **Mit realem Code:** Nutze ein Ticket aus deinem Stack, nicht hypothetisch.
 3. **Fehler sind Feature:** Agents werden manchmal irrational. Das ist normal. [Schau hier](../06-multi-agent-architectures/failure-modes.md).
-4. **Community hilft:** [GitHub Discussions](https://github.com/...) fuer deine Fragen.
+4. **Community hilft:** [GitHub Discussions](https://github.com/...) für deine Fragen.
 5. **Dokumentiere deine Learnings:** Ein kurzes ADR pro Lab ist Gold.
 
 ---
 
-**Naechster Schritt:** Waehle oben deinen Pfad und starte mit dem ersten Link. Los geht's!
+**Nächster Schritt:** Wähle oben deinen Pfad und starte mit dem ersten Link. Los geht's!

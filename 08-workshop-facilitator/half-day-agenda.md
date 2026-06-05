@@ -27,7 +27,7 @@
 
 - Slide 1: Model vs. Agent
   - Nutze [Slides aus 01-agentic-foundations/model-vs-agent.md]
-  - Kernaussage: "Agenten fuehren Aktionen aus"
+  - Kernaussage: "Agenten führen Aktionen aus"
 - Slide 2: Der Stack
   - Models -> Inference -> Agent -> Workflows
   - Zeigezeiger: "Diese Teile sind austauschabar"
@@ -43,7 +43,7 @@
 - Slide 1: IDE-Agents (Cursor, Copilot, Windsurf)
   - Dauer, einfach, interaktiv
 - Slide 2: Terminal-Agents (Claude Code, Pi, Aider)
-  - Fuer Automation, CI/CD
+  - für Automation, CI/CD
 - Slide 3: Selection Matrix
   - [Nutze 03-coding-agents-landscape/selection-matrix.md]
 
@@ -53,13 +53,13 @@
 
 **Trainer Fokus:** "Das ist das Fundament"
 
-- Slide 1: MCP Ueberblick
+- Slide 1: MCP Überblick
   - Agent + Tools = MCP verbindet
 - Slide 2: Praktisches Beispiel
   - Agent liest GH Issue via MCP
   - Agent schreibt zu Jira via MCP
 - Slide 3: LiteLLM
-  - Ein API, viele Modelle (Flexibility)
+  - Ein API, viele Models (Flexibility)
 
 ---
 
@@ -72,7 +72,7 @@ Trainer öffnet **Claude Code** (Web UI) oder **Pi CLI**.
 **Demo-Task:** "Implementiere dunklen Modus für eine React App"
 
 Trainer: Zeigt Step-by-Step
-1. Claude Code oeffnen
+1. Claude Code öffnen
 2. Codebase mit Repo uploaden
 3. Issue/Anfrage eingeben
 4. Agent beobachten wie er:
@@ -132,11 +132,11 @@ Wenn nicht fertig: Kein Problem. Teilnehmer kann nach dem Workshop fortfahren.
 
 Trainer stellt Fragen:
 
-- "Was war eure groesste Ueberraschung?"
-  - Jeder sagt 1-2 Saetze
+- "Was war eure größte Überraschung?"
+  - Jeder sagt 1-2 Sätze
 - "Wo brauchtet ihr am meisten Support?"
   - Sammeln (API Setup, Prompt Clarification, etc.)
-- "Was wollt ihr als naechstes probieren?"
+- "Was wollt ihr als nächstes probieren?"
   - Multi-Agent? MCP? Automation?
 
 ### Next Steps (10 Min)
@@ -145,9 +145,9 @@ Trainer stellt Fragen:
   - Lab 2: MCP Integration
   - Modul 4: MCP Core Concepts
   - Modul 6: Multi-Agent Patterns
-- "Fuer euer Team:"
+- "für euer Team:"
   - Repository clonen
-  - Lernpfad 1 oder 2 waehlen
+  - Lernpfad 1 oder 2 wählen
   - Dojo-Modus: 1h/Woche zusammen
 - "Support:"
   - Discussions im Repo
@@ -163,8 +163,8 @@ Offene Fragen.
 
 ### Wichtige Messaging
 
-- ✅ "Agenten sind nicht Magic, aber sie sind Realitaet jetzt"
-- ✅ "Das ist evolutionaer, nicht revolutionaer"
+- ✅ "Agenten sind nicht Magic, aber sie sind Realität jetzt"
+- ✅ "Das ist evolutionär, nicht revolutionär"
 - ✅ "Ihr werdet diese Skills brauchen, egal ob ihr Agents selbst baut oder nicht"
 - ❌ Nicht: "Alle Agenten sind genau gleich"
 - ❌ Nicht: "Das eliminiert menschliche Entwicklung"
@@ -182,15 +182,15 @@ Lab 1 zu lang:
 
 Keine API Key:
 - Ollama fallback zeigen (lokal)
-- "Das kostet nix und laeuft offline"
+- "Das kostet nix und läuft offline"
 
 ### Timing Management
 
 - "Wir sind behind bei Landschaft?"
   - Skip Modul 1C (MCP) kurz
   - Sag: "Das ist Module 4. Schau es daheim an."
-- "Lab laeuft lange?"
-  - OK. Das Lab ist Prioritaet.
+- "Lab läuft lange?"
+  - OK. Das Lab ist Priorität.
   - Demo cut short.
 - "Zu viel Q&A?"
   - "Gute Fragen. Mailen Sie mir. Jetzt weiter zum Lab."

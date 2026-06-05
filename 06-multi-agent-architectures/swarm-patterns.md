@@ -2,16 +2,16 @@
 
 > Ziel: Verstehen, wann und wie mehrere Agenten zusammenarbeiten sollten.
 
-## Warum Multi-Agent ueberhaupt?
+## Warum Multi-Agent überhaupt?
 
-Ein einzelner Agent ist gut fuer kleine, lineare Tasks.
-Sobald Aufgaben parallelisierbar, risikobehaftet oder domanen-uebergreifend sind, lohnt sich eine Aufteilung.
+Ein einzelner Agent ist gut für kleine, lineare Tasks.
+Sobald Aufgaben parallelisierbar, risikobehaftet oder domanen-übergreifend sind, lohnt sich eine Aufteilung.
 
 ## Kernprinzip
 
 - Zerlege die Arbeit in klare Rollen.
 - Definiere Input/Output pro Rolle.
-- Fuehre mit expliziten Uebergabepunkten.
+- Führe mit expliziten Übergabepunkten.
 - Baue Guardrails und Reviews ein.
 
 ## Pattern 1: Planner -> Worker -> Reviewer
@@ -69,7 +69,7 @@ Wann nutzen:
 flowchart LR
     A[Builder Agent] --> C[Judge]
     B[Challenger Agent] --> C
-    C --> D[Entscheidung + Naechster Schritt]
+    C --> D[Entscheidung + Nächster Schritt]
 ```
 
 Wann nutzen:
@@ -79,16 +79,16 @@ Wann nutzen:
 ## Design-Checkliste
 
 - Haben alle Agenten eine klare Rolle?
-- Gibt es genau einen Owner fuer finale Entscheidung?
+- Gibt es genau einen Owner für finale Entscheidung?
 - Sind Schleifen begrenzt (max. Iterationen)?
 - Sind Secrets und Schreibrechte minimal?
-- Gibt es ein Audit-Log fuer kritische Aktionen?
+- Gibt es ein Audit-Log für kritische Aktionen?
 
 ## Minimales Rollen-Template
 
 ```yaml
 name: reviewer
-purpose: Qualitaet und Risiko vor dem Merge validieren
+purpose: Qualität und Risiko vor dem Merge validieren
 inputs:
   - patch
   - test_results
@@ -102,12 +102,12 @@ limits:
 
 ## Typische Anti-Patterns
 
-- Zu viele Agenten fuer kleine Aufgaben
+- Zu viele Agenten für kleine Aufgaben
 - Undefinierte Verantwortung ("alle machen alles")
 - Kein gemeinsames Artefakt-Format
 - Reviewer ohne echten Stop-Mechanismus
 
-## Naechster Schritt
+## Nächster Schritt
 
 - [Orchestrierungs-Frameworks](orchestration-frameworks.md)
 - [Failure Modes](failure-modes.md)

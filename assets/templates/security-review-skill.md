@@ -1,38 +1,38 @@
 # Security-Review-Skill-Template
 
-> Portables Workshop-Skill-Template fuer agentic Coding Tools.
+> Portables Workshop-Skill-Template für agentic Coding Tools.
 
 ## Zweck
 
-Diese Skill immer dann verwenden, wenn eine Aufgabe Code, Doku, Prompts oder Repository-Instruktionen aendert und vor dem Merge einen Security Check braucht.
+Diese Skill immer dann verwenden, wenn eine Aufgabe Code, Doku, Prompts oder Repository-Instruktionen ändert und vor dem Merge einen Security Check braucht.
 
 ## Instruktionen
 
 - `.env` oder Secret-Dateien nur lesen, wenn es explizit erforderlich ist.
 - Secrets nicht committen und nicht im Output ausgeben.
 - Inputs validieren und unsichere Shell-Interpolation vermeiden.
-- AuthZ, Datenexposition, Dependencies und Logging pruefen.
+- AuthZ, Datenexposition, Dependencies und Logging prüfen.
 - Vor destruktiven oder externen Aktionen stoppen und nachfragen.
 
 ## Ausgabeformat
 
-Wenn die Skill verwendet wird, sollte der Agent zurueckgeben:
+Wenn die Skill verwendet wird, sollte der Agent zurückgeben:
 
-1. eine kurze Zusammenfassung der Aenderungen
-2. eine Checkliste der geprueften Sicherheitsrisiken
+1. eine kurze Zusammenfassung der Änderungen
+2. eine Checkliste der geprüften Sicherheitsrisiken
 3. alle Findings, die noch menschliches Review brauchen
 
 ## Checkliste
 
-- [ ] Secrets wurden nicht standardmaessig gelesen
+- [ ] Secrets wurden nicht standardmäßig gelesen
 - [ ] Secrets wurden nicht committet
 - [ ] Inputs wurden validiert
 - [ ] Sensitiver Output wurde nicht geloggt
-- [ ] Dependencies wurden geprueft
+- [ ] Dependencies wurden geprüft
 - [ ] Shell-Kommandos waren sicher
-- [ ] Fuer destruktive Aktionen wurde Freigabe eingeholt
+- [ ] für destruktive Aktionen wurde Freigabe eingeholt
 
-## Portabilitaets-Mapping
+## Portabilitäts-Mapping
 
 | Agent | Wo diese Skill typischerweise liegt |
 |---|---|

@@ -9,10 +9,10 @@
 - [ ] Hat der Agent vor destruktiven Aktionen nachgefragt?
 - [ ] Validiert der generierte Code Eingaben sicher?
 - [ ] Vermeidet der generierte Code unsichere Shell-Interpolation?
-- [ ] Umfasst das Review auch Abhaengigkeiten und Autorisierungsfragen?
+- [ ] Umfasst das Review auch Abhängigkeiten und Autorisierungsfragen?
 
 ## Reflexion
 
-- Welches war das groesste Tool-Access-Risiko?
-- Welches war das groesste Code-Security-Risiko?
-- Welche Guard Rail haette den groessten Schaden verhindert?
+- Welches war das größte Tool-Access-Risiko?
+- Welches war das größte Code-Security-Risiko?
+- Welche Guardrail hätte den größten Schaden verhindert?

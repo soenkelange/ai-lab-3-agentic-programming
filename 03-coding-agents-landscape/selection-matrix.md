@@ -1,11 +1,11 @@
 # Agent Selection Matrix — Welcher Agent passt zu mir?
 
 > ⏱️ 15 Minuten  
-> 🎯 Ziel: Die richtige Agent-IDE oder CLI fuer deinen Use Case waehlen
+> 🎯 Ziel: Die richtige Agent-IDE oder CLI für deinen Use Case wählen
 
 ## Workshop-Standard
 
-Für den 2-Stunden-Standardpfad nutzen wir **Aider oder OpenCode mit einem lokalen Modell** als kostenlose Baseline.
+Für den 2-Stunden-Standardpfad nutzen wir **Aider oder OpenCode mit einem lokalen Model** als kostenlose Baseline.
 
 Cursor bleibt eine sehr gute Vergleichsreferenz, ist aber nicht die kostenlose Baseline.
 
@@ -20,8 +20,8 @@ Die gleichen Konzepte lassen sich danach auf Cursor, Claude Code, Windsurf, Copi
 | system prompt | versteckte Basis-Instruktionen | versteckte Basis-Instruktionen | versteckte Basis-Instruktionen | versteckte Plattform-Instruktionen | Prompt-Template | versteckte Plattform-Instruktionen |
 | user prompt | Chat oder Kommando | Chat- oder Terminal-Anfrage | Chat-Anfrage | Chat-Anfrage | CLI-Instruktion | CLI- oder Chat-Anfrage |
 | rules | Workspace- oder Projektregeln | Repo-Instruktionen oder Skill-Guidance | Workspace-Instruktionen | Repo-Instruktionen oder Admin-Guidance | Prompt-Konventionen | Config oder Prompt-Policy |
-| skills | wiederverwendbare skill-aehnliche Workflows | Skills | Workflow-Packs | meist nicht so benannt | Prompt-Templates | Templates oder Plugins |
-| sub-agents | delegierte Helfer | Sub-Agents | sekundaere Helfer | eingeschraenkt | ungewoehnlich | Orchestrierungshelfer |
+| skills | wiederverwendbare skill-ähnliche Workflows | Skills | Workflow-Packs | meist nicht so benannt | Prompt-Templates | Templates oder Plugins |
+| sub-agents | delegierte Helfer | Sub-Agents | sekundäre Helfer | eingeschränkt | ungewöhnlich | Orchestrierungshelfer |
 | memory | Workspace-Kontext | Memory / Persistenz | Workspace-Kontext | Plattform-Kontext | Git-Historie + Repo-Kontext | Memory- / Kontext-Funktionen |
 | tool policy | Workspace-Regeln und Einstellungen | Freigaben und Berechtigungen | Workspace-Policies | Admin- oder Workspace-Policy | Prompt- und Kommando-Konventionen | Config und Freigaben |
 
@@ -45,17 +45,17 @@ Die gleichen Konzepte lassen sich danach auf Cursor, Claude Code, Windsurf, Copi
 
 ---
 
-## Vollstaendige Vergleichsmatrix
+## Vollständige Vergleichsmatrix
 
 | Eigenschaft | GitHub Copilot | Cursor | Windsurf | Claude Code | Pi Agent | Aider | OpenCode |
 |-----------|---|---|---|---|---|---|---|
 | **Kosten** | $10/Monat | $20/Monat | $20/Monat | Kostenlos (Web UI) | Kostenlos | Kostenlos | Kostenlos |
 | **Typ** | VSCode Ext | IDE | IDE | Web UI + CLI | CLI | CLI | CLI |
 | **Lokal?** | Nein | Nein | Nein | Web nur | Ja (CLI) | Ja | Ja |
-| **Modell-Wahl** | Nur CoPilot Models | Limited | Limited | Nur Claude | Claude + mehrere | Bring-your-own | Beliebig |
+| **Model-Wahl** | Nur CoPilot Models | Limited | Limited | Nur Claude | Claude + mehrere | Bring-your-own | Beliebig |
 | **MCP Support?** | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | TBD |
-| **Fuer Teams (5+ Devs)** | ✅ Gut | ✅ | ✅ | ✅ (Web) | ⚠️ CLI | ⚠️ | ⚠️ |
-| **Beste fuer Refactoring** | ✅ Gut | ✅✅ Exzellent | ✅✅ Exzellent | ✅✅ Exzellent | ✅ Gut | ✅ Gut | ⚠️ |
+| **für Teams (5+ Devs)** | ✅ Gut | ✅ | ✅ | ✅ (Web) | ⚠️ CLI | ⚠️ | ⚠️ |
+| **Beste für Refactoring** | ✅ Gut | ✅✅ Exzellent | ✅✅ Exzellent | ✅✅ Exzellent | ✅ Gut | ✅ Gut | ⚠️ |
 | **Debugging Support** | ✅ | ✅✅ | ✅✅ | ✅ | ✅ | ✅ | ⚠️ |
 | **Aktualisierung** | Regelmäßig | Wöchentlich | Wöchentlich | Häufig | Häufig | Unregelmäßig | Unregelmäßig |
 | **Vendor Lock-in** | Hoch (GitHub) | Mittel | Mittel | Mittel (Anthropic) | Tief (Pi) | Niedrig | Niedrig |
@@ -74,14 +74,14 @@ flowchart LR
   B --> C[GitHub Copilot Agent Action]
 ```
 
-**Am besten geeignet fuer:**
+**Am besten geeignet für:**
 - ✅ Enterprise Teams (mit GitHub)
 - ✅ Leichte Code-Completion + Chat
 - ✅ GitHub-Integration (Gespräche werden zu PRs)
 - ✅ Admin will zentrale Kontrolle
 
 **Nicht gut für:**
-- ❌ Lokale Modelle
+- ❌ Lokale Models
 - ❌ Model-Flexibilität
 - ❌ Deep Code Refactoring
 
@@ -99,7 +99,7 @@ flowchart LR
 Cursor IDE = VSCode + bessere Agent-Integration + eigene Features
 ```
 
-**Am besten geeignet fuer:**
+**Am besten geeignet für:**
 - ✅ Einzelne Developer → blitzschnell produktiv
 - ✅ Große Refactorings (Multi-File ändern)
 - ✅ Bestes Codebase-Verständnis
@@ -108,7 +108,7 @@ Cursor IDE = VSCode + bessere Agent-Integration + eigene Features
 
 **Nicht gut für:**
 - ❌ Teams mit bestehender VSCode-Config (Migration)
-- ❌ Open-Source / lokale Modelle
+- ❌ Open-Source / lokale Models
 - ❌ Wenn ihr schon Copilot bezahlt
 
 **Kosten:** $20/Monat (+ API-Kosten separat)
@@ -129,7 +129,7 @@ Cursor IDE = VSCode + bessere Agent-Integration + eigene Features
 Windsurf = Cursor aber mit Fokus auf größere Projekte + Team-Workflows
 ```
 
-**Am besten geeignet fuer:**
+**Am besten geeignet für:**
 - ✅ Teams (nicht nur Einzelne)
 - ✅ Größere Codebasen
 - ✅ "Agent-first" Mentalität
@@ -143,7 +143,7 @@ Windsurf = Cursor aber mit Fokus auf größere Projekte + Team-Workflows
 
 **Setup:** 5 min
 
-**Einschaetzung:** Windsurf gewinnt oft bei groesseren Projekten. Cursor hat aber mehr Marktanteil.
+**Einschätzung:** Windsurf gewinnt oft bei größeren Projekten. Cursor hat aber mehr Marktanteil.
 
 ---
 
@@ -157,8 +157,8 @@ flowchart LR
   B --> C[Agent arbeitet direkt im Browser]
 ```
 
-**Am besten geeignet fuer:**
-- ✅ Zero-Setup (Browser oeffnen)
+**Am besten geeignet für:**
+- ✅ Zero-Setup (Browser öffnen)
 - ✅ Zu starke Agenten-Features (MCP, Memory, Skills)
 - ✅ Laptop-unabhängig
 - ✅ "Denkpause" für komplexe Architektur-Probleme
@@ -173,7 +173,7 @@ flowchart LR
 
 **Setup:** 2 min
 
-**Warum gerade jetzt (2026):** Claude Code ist zur "Denkmaschine" fuer Agenten geworden. Viele Architekt:innen oeffnen Claude Code fuer strategische Probleme, nicht fuer taegliches Coding.
+**Warum gerade jetzt (2026):** Claude Code ist zur "Denkmaschine" für Agenten geworden. Viele Architekt:innen öffnen Claude Code für strategische Probleme, nicht für tägliches Coding.
 
 ---
 
@@ -183,14 +183,14 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    A[Terminal: pi solve Implementiere Dark Mode] --> B[Agent laedt, plant, implementiert]
-    B --> C[Output: Aenderungen + PR-Template]
+    A[Terminal: pi solve Implementiere Dark Mode] --> B[Agent lädt, plant, implementiert]
+    B --> C[Output: Änderungen + PR-Template]
 ```
 
-**Am besten geeignet fuer:**
+**Am besten geeignet für:**
 - ✅ Scripting / Automation
 - ✅ Multi-Provider (Claude + GPT + Qwen + Ollama wechselbar)
-- ✅ Lokale Modelle + Memory-Persistence
+- ✅ Lokale Models + Memory-Persistence
 - ✅ CI/CD Integration (z.B. "after commit, lauf Pi")
 - ✅ Wenn du schon im Terminal lebst
 - ✅ Team-Dojo (Agents im Repo, nicht in IDE)
@@ -217,7 +217,7 @@ flowchart TD
     B --> C[Edit Loop direkt auf deinen Dateien]
 ```
 
-**Am besten geeignet fuer:**
+**Am besten geeignet für:**
 - ✅ Git-Workflow-Liebhaber
 - ✅ "Bring your own Model" (Ollama, OpenAI, Anthropic, etc.)
 - ✅ Einfachheit (Ein-Command-Setup)
@@ -232,7 +232,7 @@ flowchart TD
 
 **Setup:** 5 min
 
-**Einschaetzung:** Der "zuverlaessige Veteran". Wenn es funktionieren muss und nicht fancy sein muss, ist Aider stark.
+**Einschätzung:** Der "zuverlässige Veteran". Wenn es funktionieren muss und nicht fancy sein muss, ist Aider stark.
 
 ---
 
@@ -244,9 +244,9 @@ flowchart TD
 OpenCode = Aider-meets-modern-agents
 ```
 
-**Am besten geeignet fuer:**
+**Am besten geeignet für:**
 - ✅ Open Source Liebhaber
-- ✅ Lokale Modelle (Ollama, vLLM)
+- ✅ Lokale Models (Ollama, vLLM)
 - ✅ Maximale Anpassbarkeit
 - ✅ Self-Hosting
 
@@ -315,7 +315,7 @@ flowchart TD
 
 ---
 
-## Meine Top Picks fuer verschiedene Szenarien
+## Meine Top Picks für verschiedene Szenarien
 
 | Use Case | #1 Pick | #2 Alternative | #3 Fallback |
 |----------|---------|----------|----------|
@@ -328,14 +328,14 @@ flowchart TD
 
 ---
 
-## Glossar: Was bedeuten diese Begriffe wirklich?
+## Glossary: Was bedeuten diese Begriffe wirklich?
 
 - **IDE-Extension:** Läuft in VSCode/IDE (Cursor ist IDE selbst)
 - **CLI:** Terminal-Programm (Pi, Aider, OpenCode)
 - **Web UI:** Browser (Claude Code)
 - **Agent-Mode:** Agent plant mehrere Aktionen automatisch (nicht nur Chat)
 - **MCP:** Model Context Protocol = Standard für Tool-Integration
-- **Bring-your-own-Model:** Du waehlst selbst das Modell (kein Vendor Lock-in)
+- **Bring-your-own-Model:** Du wählst selbst das Model (kein Vendor Lock-in)
 
 ---
 

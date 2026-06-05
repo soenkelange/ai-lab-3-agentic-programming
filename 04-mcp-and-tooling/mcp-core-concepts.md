@@ -131,7 +131,7 @@ Du kannst auch eigene APIs wrappen:
 sequenceDiagram
   participant A as Agent
   participant M as MCP Server
-  A->>M: Kundendaten fuer User 42
+  A->>M: Kundendaten für User 42
   M-->>A: Customer data returned
 ```
 
@@ -292,7 +292,7 @@ flowchart LR
     subgraph F[Future 2027+]
         F1[MCP als Standard]
         F2[Jedes Tool hat MCP Server]
-        F3[Agent kann alles via MCP oeffnen]
+        F3[Agent kann alles via MCP öffnen]
         F4[True Plug and Play]
     end
 
@@ -377,8 +377,8 @@ Aber: Sobald du scalierst zu mehreren Agenten oder komplexeren Workflows, brauch
 ```mermaid
 flowchart TD
   M[Model] --> I[Inference Layer + LiteLLM]
-  A[Agent] --> P[MCP fuer Tool Integration]
-  MA[Multi-Agent] --> O[LangGraph fuer Orchestration]
+  A[Agent] --> P[MCP für Tool Integration]
+  MA[Multi-Agent] --> O[LangGraph für Orchestration]
 ```
 
 MCP is the middle layer. Ohne MCP müssen Agents zu hacky mit Tool-Integration umgehen.

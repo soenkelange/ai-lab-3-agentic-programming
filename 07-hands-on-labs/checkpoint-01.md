@@ -13,11 +13,11 @@
 
 Teste dich:
 
-**Frage:** "Was ist der Unterschied zwischen einem Modell (Claude) und einem Agent (Claude Code)?"
+**Frage:** "Was ist der Unterschied zwischen einem Model (Claude) und einem Agent (Claude Code)?"
 
 **Du solltest antworten können:**
-- Ein Modell generiert Text basierend auf Input
-- Ein Agent nutzt ein Modell, um Ziele aktiv zu verfolgen (Dateien lesen, Kommandos ausführen, etc.)
+- Ein Model generiert Text basierend auf Input
+- Ein Agent nutzt ein Model, um Ziele aktiv zu verfolgen (Dateien lesen, Kommandos ausführen, etc.)
 - Agent = Model + Tools + Feedback-Loops
 
 ✅ **Wenn ja, hast du verstanden.**
@@ -30,7 +30,7 @@ Teste dich:
 
 **Frage:** "Wenn ich zwischen Cursor und Claude Code wählen müsste, welche Fragen würde ich stellen?"
 
-**Du solltest antworten koennen:**
+**Du solltest antworten können:**
 - Ist mir GUI oder CLI wichtiger?
 - Will ich ein freies Tool oder $ bezahlen?
 - Will ich Model-Flexibilität (LiteLLM)?
@@ -46,7 +46,7 @@ Teste dich:
 
 **Frage:** "Warum ist LiteLLM wichtig, wenn ich Claude nutze?"
 
-**Du solltest antworten koennen:**
+**Du solltest antworten können:**
 - LiteLLM ermöglicht einfache Provider-Wechsel
 - Heute Claude, morgen Ollama? Eine Env-Variable.
 - Das ist strategisch für Long-Term Projekte
@@ -73,7 +73,7 @@ Wenn du Lab 1 gemacht hast, hast du:
   - [ ] Code geschrieben oder Text generiert
   - [ ] Tests geladen (falls relevant)
 - [ ] PR/Changes submitted
-- [ ] Die Qualitaet reviewed
+- [ ] Die Qualität reviewed
 
 **Wenn Häkchen >= 7:** Du hast die Essenz verstanden ✅
 
@@ -92,7 +92,7 @@ Beispiele:
 - "Die Planning-Phase war länger als erwartet"
 - "Das Output war Quality, aber unvollständig"
 
-Schreib deine Beobachtung auf (mindestens 2-3 Saetze). Das hilft dir spaeter, dich an den Aha-Moment zu erinnern.
+Schreib deine Beobachtung auf (mindestens 2-3 Sätze). Das hilft dir später, dich an den Aha-Moment zu erinnern.
 
 </details>
 
@@ -139,7 +139,7 @@ Du hast jetzt:
 
 ✅ Verstanden, was Agenten sind (Model vs. Agent)  
 ✅ Gesehen, wie ein Agent eine echte Aufgabe bearbeitet  
-✅ Gelernt, dass Agenten nicht perfekt, aber leistungsfaehig sind  
+✅ Gelernt, dass Agenten nicht perfekt, aber leistungsfähig sind  
 ✅ Erkannt, welches Tool zu deinem Team passt  
 
 Das ist nicht wenig. Das ist ein echter Paradigmenwechsel.

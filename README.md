@@ -19,9 +19,9 @@ Dieses Repository transformiert Sie von Theorieverstehen zu aktiver, produktiver
 | **Ablauf** | Manuelles Coding | Ziel → Agent → PR |
 | **Tool** | LLM-Chat | Coding Agent (IDE oder CLI) |
 | **Infra** | API Keys | LiteLLM + MCP |
-| **Skalierung** | 1 Agent | Multi-Agent-Swarms |
+| **Skalierung** | 1 Agent | Multi-Agent-Systeme |
 
-**Die Revolution:** 🔑 **Agenten führen Aktionen aus**, nicht nur Text zu generieren.
+**Die Revolution:** 🔑 **Agenten führen Aktionen aus**, statt nur Text zu generieren.
 
 ---
 
@@ -55,7 +55,7 @@ Die beste Einstiegsroute: Konzepte + Live-Lab.
 
 → [Lernpfad 2: Intermediate](00-start-here/learning-paths.md#pfad-2-intermediate)
 
-Für die, die bereits Modelle verstehen.
+Für die, die bereits Models verstehen.
 
 </details>
 
@@ -88,6 +88,8 @@ flowchart TD
    R --> AS[assets]
    R --> GL[glossary.md]
    R --> FQ[faq.md]
+   R --> FQE[faq-executive.md]
+   R --> FQS[faq-engineering-security.md]
 
    M00 --> M00A[learning-paths.md]
    M00 --> M00B[prerequisites.md]
@@ -173,6 +175,8 @@ flowchart TD
 
    click GL "glossary.md" "glossary.md"
    click FQ "faq.md" "faq.md"
+   click FQE "faq-executive.md" "faq-executive.md"
+   click FQS "faq-engineering-security.md" "faq-engineering-security.md"
 ```
 
 ---
@@ -182,33 +186,33 @@ flowchart TD
 Nach diesem Material kannst du:
 
 ### ✅ Konzeptuell Verstehen
-- [ ] Den Unterschied zwischen Model, Agent, Framework, und Workflow
+- [ ] Den Unterschied zwischen Model, Agent, Framework und Workflow
 - [ ] Warum MCP zentral ist (nicht ChatGPT Plugins 2.0)
 - [ ] Inference Provider vs. Runtime unterscheiden
 - [ ] Multi-Agent Architectures designen
 
-### ✅ Agentische Produktivitaet verstehen
-- [ ] System Prompts, Rules, Skills und Sub-Agents unterscheiden
-- [ ] Die Terminologie verschiedener Coding Agents in eine gemeinsame Tabelle uebertragen
+### ✅ Agentische Produktivität verstehen
+- [ ] System-Prompts, Rules, Skills und Sub-Agents unterscheiden
+- [ ] Die Terminologie verschiedener Coding Agents in eine gemeinsame Tabelle übertragen
 - [ ] Regeln und Skills als zentrale Produktivitäts- und Sicherheits-Schicht einsetzen
 
 ### ✅ Praktisch anwenden
-- [ ] Ein echtes GitHub-Issue mit Claude Code loesen
+- [ ] Ein echtes GitHub-Issue mit Claude Code lösen
 - [ ] Einen MCP Server schreiben
 - [ ] Eine 3+ Agent Pipeline orchestrieren
 - [ ] Ein echtes Codebase-Refactoring mit Agenten
 
 ### ✅ Strategisch entscheiden
-- [ ] Die richtige Agent-IDE fuer dein Team waehlen (Cursor vs. Copilot vs. Claude Code vs. Pi)
+- [ ] Die richtige Agent-IDE für dein Team wählen (Cursor vs. Copilot vs. Claude Code vs. Pi)
 - [ ] Kostenmodelle fair voneinander unterscheiden
 - [ ] Fehlerszenarien in agentic Systems kennen
 - [ ] Sicherheits-Grenzen für Agenten-Tooling festlegen
-- [ ] Sichere Modelle fuer Zugangsdaten in agentischen Workflows definieren
+- [ ] Sichere Models für Zugangsdaten in agentic Workflows definieren
 - [ ] Secure-Coding-Prinzipien in agentische Workflows integrieren
 - [ ] Produktions-ready Deployments planen
 
 ### ✅ Workshop-Standardpfad anwenden
-- [ ] Einen Free-First-2-Stunden-Workshoppfad durchfuehren
+- [ ] Einen Free-First-2-Stunden-Workshoppfad durchführen
 - [ ] Eine wiederverwendbare Skill- oder Rule-Datei anlegen
 - [ ] Dieselbe Instruktion in anderen Coding Agents übersetzen
 
@@ -225,7 +229,7 @@ Nach diesem Material kannst du:
 | **Model** | Claude 3.5 Sonnet (via API) | $0 (free tier) oder $15-60/1M tokens | Beste Tool Use & Agent Reasoning |
 | **Inference** | LiteLLM (Abstraction) | $0 (Tool) | Provider-agnostisch |
 | **Lokal Alternative** | Qwen3.1 Coder via Ollama | $0 (100% offline) | Garantiert kostenlos, keine Abhängigkeiten |
-| **Coding Agent** | Claude Code (Web UI) | $0 | Integriertes MCP, bestes Verstaendnis |
+| **Coding Agent** | Claude Code (Web UI) | $0 | Integriertes MCP, bestes Verständnis |
 | **Alternatives Agent-Tool** | Pi Coding Agent (CLI) | $0 (Open Source) | Multi-Provider, persistentes Memory |
 
 ### Setup in 10 Minuten
@@ -270,7 +274,7 @@ python -c "from litellm import completion; print(completion(model='ollama/qwen3.
 
 ---
 
-### Option 3: Architektonisches Verstaendnis (3 Stunden)
+### Option 3: Architektonisches Verständnis (3 Stunden)
 
 1. [Foundations Deep Dive](01-agentic-foundations/) (30 min)
 2. [Inference Layer + LiteLLM](02-models-and-inference/abstraction-layers-litellm.md) (30 min)
@@ -317,7 +321,7 @@ python -c "from litellm import completion; print(completion(model='ollama/qwen3.
 <details>
 <summary><strong>F: Ich habe kein Budget — geht das trotzdem?</strong></summary>
 
-→ **Ja!** Setup-Option B (Ollama + Qwen3.1 Coder): Voellig kostenlos, laeuft lokal.
+→ **Ja!** Setup-Option B (Ollama + Qwen3.1 Coder): Völlig kostenlos, läuft lokal.
 
 Oder Anthropic Free Tier (15 Requests pro Minute), das reicht für Labs.
 
@@ -328,8 +332,8 @@ Oder Anthropic Free Tier (15 Requests pro Minute), das reicht für Labs.
 
 → **Beide!** 
 
-Fuer **Startups:** Option B (Ollama) + Cursor IDE = $0-20  
-Fuer **Enterprise:** Claude Code + LangGraph + Custom MCP = produktionsreif auf Enterprise-Niveau
+für **Startups:** Option B (Ollama) + Cursor IDE = $0-20  
+für **Enterprise:** Claude Code + LangGraph + Custom MCP = produktionsreif auf Enterprise-Niveau
 
 </details>
 
@@ -343,9 +347,9 @@ Oder host einen [1-Tag Workshop](08-workshop-facilitator/full-day-agenda.md) mit
 </details>
 
 <details>
-<summary><strong>F: Diese Begriffe sind konfus (Agent vs Framework vs MCP?)</strong></summary>
+<summary><strong>F: Diese Begriffe sind konfus (Agent vs. Framework vs. MCP)?</strong></summary>
 
-→ [Glossary.md](glossary.md) hilft. Oder:
+→ [Glossary](glossary.md) hilft. Oder:
 - [Model vs. Agent](01-agentic-foundations/model-vs-agent.md)
 - [Agent vs. Framework](01-agentic-foundations/agent-vs-framework.md)
 
@@ -355,9 +359,11 @@ Oder host einen [1-Tag Workshop](08-workshop-facilitator/full-day-agenda.md) mit
 
 ## 📚 Zusätzliche Ressourcen
 
-- [📖 Glossar & Akronyme](glossary.md) — Begriff nachschlagen
-- [❓ FAQ](faq.md) — "Das funktioniert nicht"
-- [🔗 Weiterfuehrende Ressourcen](REFERENCES.md) — Originalquellen
+- [📖 Glossary & Akronyme](glossary.md) — Begriff nachschlagen
+- [❓ FAQ Hub](faq.md) — Einstieg und Navigation
+- [🧭 FAQ Executive](faq-executive.md) — Nutzen, Risiko, ROI, Einführung
+- [🛡️ FAQ Engineering & Security](faq-engineering-security.md) — Qualität, Guardrails, Architektur, Betrieb
+- [🔗 Weiterführende Ressourcen](REFERENCES.md) — Originalquellen
 - [💬 Diskussionen im Repo](faq.md) — Fragen und Antworten an einem Ort
 
 ---
@@ -367,9 +373,9 @@ Oder host einen [1-Tag Workshop](08-workshop-facilitator/full-day-agenda.md) mit
 ```mermaid
 flowchart TD
    A[START HIER] --> B[Lass mich orientieren]
-   A --> C[Ich will serioes lernen]
+   A --> C[Ich will seriös lernen]
    B --> D[5-min Read]
-   C --> E[Anfaenger?]
+   C --> E[Anfänger?]
    C --> F[Fortgeschrittene?]
    E --> G[Lernpfad 1: 2 Stunden + Lab 1]
    F --> H[Lernpfad 2: 3 Stunden + Lab 2]
@@ -378,7 +384,7 @@ flowchart TD
    I --> J[Lernpfad 3: Full Workshop + Lab 3 Capstone]
 ```
 
-**Naechster Schritt:** Waehle oben einen Pfad. Klicke auf den Link. Los geht's!
+**Nächster Schritt:** Wähle oben einen Pfad. Klicke auf den Link. Los geht's!
 
 ---
 
@@ -400,7 +406,7 @@ Beiträge sind willkommen: Issues, PRs, Diskussionen.
 
 **Material aktualisiert:** Juni 2026  
 **Level:** Advanced / Praktiker  
-**Sprache:** Deutsch (Englisch spaeter moeglich)  
+**Sprache:** Deutsch (Englisch später möglich)  
 **Status:** 🟢 Live — aktuelle Version
 
-**Willkommen im agentic Programming.** Viel Spass beim Lernen!
+**Willkommen im agentic Programming.** Viel Spaß beim Lernen!

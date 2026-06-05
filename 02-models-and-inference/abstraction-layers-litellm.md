@@ -12,7 +12,7 @@ flowchart TD
     A[Alte Welt: Agent kennt nur Claude SDK] --> B[Wechsel zu GPT]
     A --> C[Wechsel zu Ollama]
     A --> D[Wechsel zu Qwen]
-    B --> E[Codeaenderungen noetig]
+    B --> E[Codeänderungen nötig]
     C --> E
     D --> E
 ```
@@ -107,9 +107,9 @@ print(response.choices[0].message.content)
 
 ---
 
-## Wichtige Modelle für Agents
+## Wichtige Models für Agents
 
-| Provider | Modell | Preis | Lokal? | Best For |
+| Provider | Model | Preis | Lokal? | Best For |
 |----------|--------|-------|--------|----------|
 | **Anthropic** | Claude 3.5 Sonnet | $3/$15 per 1M (in/out) | Nein | **Bestes Tool Use** |
 | **OpenAI** | GPT-5 | $15/$60 per 1M | Nein | Reasoning, Multi-Step |
@@ -203,7 +203,7 @@ model: "ollama/qwen3.1-coder"  ← Kosten: $0
 
 Ohne: Überall im Code ändern.
 
-### Szenario 3: "Wir nutzen 5 verschiedene Modelle"
+### Szenario 3: "Wir nutzen 5 verschiedene Models"
 
 Mit LiteLLM: Ein API, ein Config File.  
 Ohne: 5x unterschiedliche SDKs, 5x API-Management.

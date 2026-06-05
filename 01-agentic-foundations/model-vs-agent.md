@@ -7,13 +7,13 @@
 
 ## Die einfache Version
 
-| Aspekt | Modell | Agent |
+| Aspekt | Model | Agent |
 |--------|---------|-------|
-| **Was ist es?** | Ein neuronales Netz, trainiert auf Text-Vorhersage | Ein System, das Modelle nutzt, um Aktionen in der echten Welt auszuführen |
+| **Was ist es?** | Ein neuronales Netz, trainiert auf Text-Vorhersage | Ein System, das Models nutzt, um Aktionen in der echten Welt auszuführen |
 | **Was es tut** | Generiert Text basierend auf Eingabe | Analysiert → Plant → Agiert → Überprüft → Iteriert |
-| **I/O** | Text → Modell → neuer Text | Ziel → Agent → Aktionen (Dateien, Shell, APIs) |
+| **I/O** | Text → Model → neuer Text | Ziel → Agent → Aktionen (Dateien, Shell, APIs) |
 | **Ohne Internet läuft es?** | Ja (lokal) | Nein (braucht Ziele + Tools) |
-| **Training notwendig?** | Ja (pre-training; teuer) | Nein (nutzt ein Modell; Prompt-Engineering) |
+| **Training notwendig?** | Ja (pre-training; teuer) | Nein (nutzt ein Model; Prompt-Engineering) |
 | **Beispiel** | Claude 3.5 Sonnet, GPT-5, Qwen3 | Claude Code, Cursor IDE, Pi Agent |
 
 ---
@@ -24,23 +24,23 @@
 
 ```mermaid
 flowchart TD
-    A[Ingenieur: Schreib einen API-Client fuer Stripe] --> B[Modell: Here's Python code for Stripe integration]
+    A[Ingenieur: Schreib einen API-Client für Stripe] --> B[Model: Here's Python code for Stripe integration]
     B --> C[Ingenieur: kopiert, testet, behebt manuell]
 ```
 
-**Problem:** Das Modell ist passiv. Es generiert; der Mensch exekutiert.
+**Problem:** Das Model ist passiv. Es generiert; der Mensch exekutiert.
 
 ### Jetzt (2026): Agent-Centric
 
 ```mermaid
 flowchart TD
-    A[Ingenieur: Loese diesen Bug mit einem PR] --> B[Agent]
+    A[Ingenieur: Löse diesen Bug mit einem PR] --> B[Agent]
     B --> C[Liest das Issue]
     C --> D[Crawlt die Codebase]
     D --> E[Identifiziert Debug-Pfad]
     E --> F[Schreibt Test]
     F --> G[Implementiert Fix]
-    G --> H[Laedt Tests]
+    G --> H[Lädt Tests]
     H --> I[Erstellt PR]
     I --> J[Ingenieur reviewt die PR]
 ```
@@ -90,10 +90,10 @@ Ein Agent hat mindestens:
 
 ### Szenario: "Implementiere Dark Mode für die App"
 
-**Modell-Ansatz (2023):**
+**Model-Ansatz (2023):**
 ```mermaid
 flowchart TD
-    A[Prompt: Schreib CSS fuer Dark Mode] --> B[Output: Boilerplate]
+    A[Prompt: Schreib CSS für Dark Mode] --> B[Output: Boilerplate]
     B --> C[Developer testet]
     C --> D[10 Komponenten vergessen]
     D --> E[Developer debuggt manuell]
@@ -102,11 +102,11 @@ flowchart TD
 **Agent-Ansatz (2026):**
 ```mermaid
 flowchart TD
-        A[Goal: Dark Mode, alle Tests muessen bestehen] --> B[Perception: scannt Codebase]
+        A[Goal: Dark Mode, alle Tests müssen bestehen] --> B[Perception: scannt Codebase]
         B --> C[Decision: Strategie festlegen]
         C --> D[Action: Komponenten automatisch modifizieren]
         D --> E[Action: Accessibility-Tests schreiben]
-        E --> F[Action: Tests ausfuehren]
+        E --> F[Action: Tests ausführen]
         F --> G[Action: PR mit Beschreibung erstellen]
         G --> H[Reflection: Ergebnis bewerten]
 ```
@@ -120,21 +120,21 @@ Der Agent war **kollaborativ**, **persistent**, **verständig** — nicht nur ge
 ```mermaid
 flowchart TD
         A[Goal/Task: Fix Bug] --> B[Agent Loop: Plan, Decide, Execute, Reflect]
-        B --> C[Modell: Claude 3.5]
+        B --> C[Model: Claude 3.5]
         B --> D[Files]
         B --> E[Shell Commands]
         B --> F[Git]
         B --> G[APIs]
 ```
 
-Ein Agent nutzt ein Modell, aber das Modell ist nur eine Komponente—nicht das Ganze.
+Ein Agent nutzt ein Model, aber das Model ist nur eine Komponente—nicht das Ganze.
 
 ---
 
 ## Warum das jetzt möglich ist
 
 1. **Tool Use / Function Calling**  
-   Modelle können jetzt sagen: "Ich brauche X und Y zu Analysieren, bitte ruf diese APIs auf."
+   Models können jetzt sagen: "Ich brauche X und Y zu Analysieren, bitte ruf diese APIs auf."
    
 2. **Bessere Reasoning**  
    Claude/GPT-5 können über mehrstufige Probleme nachdenken: Plan → Execute → Debug.
@@ -176,9 +176,9 @@ Dort wirst du sehen:
 
 ## Quick Reference Table: Model vs Agent vs Framework
 
-| Frage | Modell | Agent | Framework |
+| Frage | Model | Agent | Framework |
 |-------|--------|--------|-----------|
-| **Wer führt aus?** | LLM | Agent (nutzt Modell) | Orchestrator (nutzt Agents) |
+| **Wer führt aus?** | LLM | Agent (nutzt Model) | Orchestrator (nutzt Agents) |
 | **Beispiele** | Claude, GPT-5, Qwen | Claude Code, Pi, Aider | LangGraph, CrewAI |
 | **Kann selbstständig Fehler fixen?** | Nein (braucht dich) | Ja (Retry-Loops) | Ja (explizite Strategien) |
 | **Kostet Geld?** | Per Token | Die Inference + deine Infra | Deine Agents höchstens |

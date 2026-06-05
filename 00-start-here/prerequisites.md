@@ -37,7 +37,7 @@ Du solltest bereits wissen... (⚡ oder schnell selbst lernen)
 - ✅ **Git Basics:** Commits, Branches, PRs verstehen
 - ✅ **Programmierung:** Mindestens eine Programmiersprache können
 - ✅ **APIs:** Grundkonzept von API Keys & HTTP Requests
-- ✅ **Modelle mal gehört haben:** "LLM sind Textvorhersage-Maschinen"
+- ✅ **Models mal gehört haben:** "LLM sind Textvorhersage-Maschinen"
 
 ### Nice-to-Have
 
@@ -79,7 +79,7 @@ export ANTHROPIC_API_KEY="sk-ant-..."
 brew install ollama  # macOS
 # oder: https://ollama.ai (Windows)
 
-# 2. Download Modell
+# 2. Download Model
 ollama pull qwen3.1-coder:7b
 # Alternative: ollama pull llama2:7b
 
@@ -137,7 +137,7 @@ curl https://api.anthropic.com/v1/messages \
 <summary>Ollama lädt, aber lädt und lädt</summary>
 
 ```bash
-# Das ist normal. Ein 7B Modell ist ~4GB
+# Das ist normal. Ein 7B Model ist ~4GB
 # Warte einfach. Oder:
 
 netlim qwen3.1-coder:7b  # skip download

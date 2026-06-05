@@ -120,7 +120,7 @@ Nach dem Anforderungsschreiben ("High Impact" zuerst):
 | **Checkpoints** | 1 (fertig) |
 | **Code Snippets** | 20+ |
 | **Entscheidungsbäume/Flowcharts** | 5 |
-| **Glossar Einträge** | 50+ |
+| **Glossary Einträge** | 50+ |
 | **FAQ Entries** | 15+ |
 
 ---

@@ -1,6 +1,6 @@
 # Orchestrierungs-Frameworks
 
-> Ziel: Das passende Orchestrierungsmodell je nach Teamgroesse, Risiko und Task-Typ waehlen.
+> Ziel: Das passende Orchestrierungsmodell je nach Teamgröße, Risiko und Task-Typ wählen.
 
 ## Entscheidungslogik
 
@@ -8,7 +8,7 @@
 flowchart TD
     A[Start] --> B{Nur 1-2 Agenten?}
     B -- Ja --> C[Leichtgewichtiges Coordinator-Pattern]
-    B -- Nein --> D{Strenge State Kontrolle noetig?}
+    B -- Nein --> D{Strenge State Kontrolle nötig?}
     D -- Ja --> E[Graph-basierte Orchestrierung]
     D -- Nein --> F[Event/Queue basierte Orchestrierung]
 ```
@@ -17,13 +17,13 @@ flowchart TD
 
 Beschreibung:
 - Ein zentraler Agent delegiert Teilaufgaben.
-- Schnell aufzusetzen, gut fuer Workshops und Pilotprojekte.
+- Schnell aufzusetzen, gut für Workshops und Pilotprojekte.
 
-Staerken:
+Stärken:
 - Wenig Overhead
 - Schnell iterierbar
 
-Schwaechen:
+Schwächen:
 - Skaliert schlecht bei vielen parallelen Streams
 - Coordinator kann Bottleneck werden
 
@@ -31,15 +31,15 @@ Schwaechen:
 
 Beschreibung:
 - Workflows als Knoten und Kanten mit explizitem Zustand.
-- Deterministische Uebergaenge, gute Debuggability.
+- Deterministische Übergänge, gute Debuggability.
 
-Staerken:
+Stärken:
 - Klarer Kontrollfluss
 - Reproduzierbare Runs
 - Saubere Retry/Fallback-Strategien
 
-Schwaechen:
-- Hoeherer Modellierungsaufwand
+Schwächen:
+- Höherer Modellierungsaufwand
 - Mehr initialer Setup-Aufwand
 
 ## Option C: Event/Queue-basiert
@@ -48,11 +48,11 @@ Beschreibung:
 - Agenten reagieren auf Events aus Queue/Bus.
 - Entkoppelt, horizontal skalierbar.
 
-Staerken:
-- Hohe Parallelitaet
+Stärken:
+- Hohe Parallelität
 - Gute Teamentkopplung
 
-Schwaechen:
+Schwächen:
 - Komplexeres Observability-Setup
 - Idempotenz zwingend
 
@@ -73,9 +73,9 @@ flowchart LR
 - Policy Gate vor Merge/Deploy
 - Approval bei sensiblen Dateien
 - Secret Scanning in jedem Lauf
-- Rollback-Strategie fuer fehlerhafte Agent-Aktionen
+- Rollback-Strategie für fehlerhafte Agent-Aktionen
 
-## Metriken fuer Vergleich
+## Metriken für Vergleich
 
 | Metrik | Coordinator | Graph-basiert | Event/Queue |
 |---|---|---|---|
@@ -88,10 +88,10 @@ flowchart LR
 ## Praktische Empfehlung
 
 - Workshop/POC: Coordinator-Pattern
-- Team 5-20 mit Qualitaetsanspruch: Graph-basiert
+- Team 5-20 mit Qualitätsanspruch: Graph-basiert
 - Plattform/Enterprise: Event + Policy Gates + Observability
 
-## Naechster Schritt
+## Nächster Schritt
 
 - [Swarm-Patterns](swarm-patterns.md)
 - [Failure Modes](failure-modes.md)

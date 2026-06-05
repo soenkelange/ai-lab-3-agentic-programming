@@ -12,5 +12,5 @@ Dieses Modul behandelt wiederverwendbare Muster, um Agenten in realen Projekten 
 ## Empfohlene Reihenfolge
 
 1. Zuerst das Feature-Factory-Pattern lesen.
-2. Danach die Agent-Guard-Rails reviewen, bevor ein toolfaehiger Agent genutzt wird.
+2. Danach die Agent-Guard-Rails reviewen, bevor ein toolfähiger Agent genutzt wird.
 3. Beim Review von generiertem Code die Secure-Software-Checkliste verwenden.

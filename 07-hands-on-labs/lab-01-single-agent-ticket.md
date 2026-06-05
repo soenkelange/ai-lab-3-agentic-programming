@@ -2,7 +2,7 @@
 
 > **Dauer:** 45 Minuten (20 min Setup + 25 min Lab)  
 > **Level:** Anfänger  
-> **Ziel:** Ein echtes GitHub-Issue mit Claude Code oder Pi loesen  
+> **Ziel:** Ein echtes GitHub-Issue mit Claude Code oder Pi lösen  
 > **Ergebnis:** PR mit funktionierendem Code oder Dokumentation
 
 ---
@@ -27,7 +27,7 @@ Du wirst:
 
 ## Setup (20 Min)
 
-### Option A: Claude Code Web UI (empfohlen fuer Anfaenger)
+### Option A: Claude Code Web UI (empfohlen für Anfänger)
 
 **Kostet:** Nichts (mit Anthropic API Free Tier)
 
@@ -69,7 +69,7 @@ Nutze eines dieser Real-Examples oder nimm ein eigenes:
 
 Geh zu einem deiner Repos (z.B. auf GitHub):
 - Filtere nach Issues mit Label `good-first-issue` oder `documentation`
-- Waehle etwas im 30-Minuten-Umfang (kein Architektur-Desaster)
+- Wähle etwas im 30-Minuten-Umfang (kein Architektur-Desaster)
 - **Beispiele:**
   - "Add dark mode toggle"
   - "Document the build process"
@@ -89,7 +89,7 @@ Ziel: Eine neue Datei schreiben mit:
 - 2-3 Mermaid Diagramme (flowchart, layer diagram)
 - Verlinkt zu model-vs-agent.md
 
-Das ist perfekt fuer Agenten, weil:
+Das ist perfekt für Agenten, weil:
 - Mermaid ist code-generierbar
 - Quellen sind schon geschrieben
 - Agent muss verbinden + strukturieren
@@ -103,20 +103,20 @@ Ziel: Glossary.md schreiben mit:
 - Kurze Definition
 - Link zu relevanton Modul
 
-Perfekt fuer Agenten, weil:
+Perfekt für Agenten, weil:
 - Viel Text aus Repos schon existiert
 - Agent muss extrahieren + zusammenfassen
 ```
 
-### Schritt 2: Issue in Claude Code oeffnen (5 Min)
+### Schritt 2: Issue in Claude Code öffnen (5 Min)
 
 #### Mit Claude Code Web:
 
 ```
 1. https://claude.ai → Code Mode
-2. Fuege das Repo ein:
+2. Füge das Repo ein:
    - "I have a GitHub issue I want you to solve"
-   - Fuge den Issue-Text ein:
+   - Füge den Issue-Text ein:
    
    "
    Issue: Add architecture-stack.md
@@ -172,8 +172,8 @@ flowchart TD
     E2 --> E3[Links werden gesetzt]
     E3 --> V[Verification: Passt das zum Issue?]
     V --> V1[Syntax-Checks]
-    V1 --> V2[Agent iteriert falls noetig]
-    V2 --> O[Output: Fertig, PR oder Aenderungsvorschlag]
+    V1 --> V2[Agent iteriert falls nötig]
+    V2 --> O[Output: Fertig, PR oder Änderungsvorschlag]
 ```
 
 **Wichtig:** Du schaust zu. Das ist nicht passiv. Du kannst **intervenieren**:
@@ -196,7 +196,7 @@ Agent: [behebt es sofort]
 Du: "Vergessen Sie den Link zu model-vs-agent.md 
      am Ende des Files"
 
-Agent: [ergaenzt den Link-Abschnitt]
+Agent: [ergänzt den Link-Abschnitt]
 ```
 
 **Szenario 3:** "Agent schreibt zu kurz oder zu lang"
@@ -212,7 +212,7 @@ Agent: [erweitert mit mehr Details]
 
 ### Schritt 4: PR reviewen (5 Min)
 
-Sobald der Agent eine PR erstellt hat (oder Vorschlaege macht):
+Sobald der Agent eine PR erstellt hat (oder Vorschläge macht):
 
 ```
 Checkliste:
@@ -278,7 +278,7 @@ Nach dem Lab, beantworte diese Fragen (5-10 Min):
 
 8. **Wo brauchtest du noch Input?**
 
-9. **Wuerdest du diesen Agenten fuer echte Produktions-Tasks nutzen?**
+9. **Würdest du diesen Agenten für echte Produktions-Tasks nutzen?**
    - [ ] Ja, sofort
    - [ ] Mit Supervision
    - [ ] Eher nicht
@@ -294,22 +294,22 @@ Nach dem Lab, beantworte diese Fragen (5-10 Min):
 - ✅ Verständnis: Agent analysierte Kontext richtig
 - ✅ Qualität: Output war nützlich
 
-**Naechster Gedanke:** Wie skaliert das? → [Lab 2: MCP](lab-02-mcp-integration.md)
+**Nächster Gedanke:** Wie skaliert das? → [Lab 2: MCP](lab-02-mcp-integration.md)
 
 ### Wenn der Agent falsch war:
 
-**Das ist normal!** Agenten sind keine Magie. Typische Gruende sind:
+**Das ist normal!** Agenten sind keine Magie. Typische Gründe sind:
 
 1. **Issue war zu vage** → Bessere Specs brauchen
 2. **Agent brauchte mehr Context** → MCP Server (Lab 2)
-3. **Modell war nicht gut genug** → Staerkeres Modell oder bessere Prompts
+3. **Model war nicht gut genug** → Stärkeres Model oder bessere Prompts
 4. **Problem kommt aus Fehler im Repo** → Edge Case
 
-**Naechster Gedanke:** Strukturiere die Anforderung besser → Lab 2
+**Nächster Gedanke:** Strukturiere die Anforderung besser → Lab 2
 
 ---
 
-## 🔗 Naechster Schritt
+## 🔗 Nächster Schritt
 
 Du hast Lab 1 gemacht. Die Wege:
 
@@ -349,8 +349,8 @@ Dann: [Lab 2: MCP Integration](lab-02-mcp-integration.md)
 - Oder: [FAQ.md](../faq.md)
 - Oder: Schreib ein Issue
 
-**Reflektiere:** Was war neu fuer dich? Was hat dich ueberrascht?
+**Reflektiere:** Was war neu für dich? Was hat dich überrascht?
 
 ---
 
-**Du hast gerade agentic Programming in Aktion gesehen. Glueckwunsch!**
+**Du hast gerade agentic Programming in Aktion gesehen. Glückwunsch!**

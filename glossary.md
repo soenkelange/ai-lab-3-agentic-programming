@@ -1,152 +1,232 @@
-# Glossar & Akronyme
+# Glossary & Akronyme
 
 ## A
 
-**Agent**  
-Ein System, das ein Modell nutzt, um Ziele durch autonome Aktionen zu verfolgen. Agenten können Dateien lesen, Shell-Kommandos ausführen, APIs aufrufen und sich selbst korrigieren.
+**Agent**
+Ein System, das ein Model nutzt, um Ziele durch Aktionen zu verfolgen. Ein Agent kann planen, Tools aufrufen, Ergebnisse bewerten und bei Bedarf den eigenen Ansatz anpassen.
 
-**Agentic Programming**  
-Die Praktik, Software-Systeme zu bauen, in denen Agenten (nicht Menschen) den Code schreiben, testen und deployten.
+**Agentic Programming**
+Die Praxis, Software-Systeme so zu bauen, dass Agenten einen wesentlichen Teil der Arbeit übernehmen, zum Beispiel Analyse, Implementierung, Tests und Dokumentation.
 
-**API Key**  
-Authentifizierungscode für einen LLM-Provider (z.B. `sk-ant-...` für Anthropic, `sk-...` für OpenAI).
+**API Key**
+Technischer Schlüssel zur Authentifizierung gegen einen Dienst. API Keys müssen vertraulich behandelt, regelmäßig rotiert und möglichst eng berechtigt werden.
+
+**Artefakt**
+Ein erzeugtes Ergebnis eines Agenten- oder Entwicklungsprozesses, zum Beispiel ein Diff, ein Testreport, ein Architekturdiagramm oder eine Release-Notiz.
 
 ## C
 
-**Claude (Series)**  
-Anthropics LLM-Familie. Aktuelle Version: Claude 3.5 Sonnet (2026). Beste Foundation für Agentic Programming.
+**Claude (Series)**
+Model-Family von Anthropic. Wird häufig für anspruchsvolle Aufgaben in Coding- und Workflow-Szenarien eingesetzt.
 
-**Cursor IDE**  
-Eigenständige IDE (VSCode-Fork) mit integriertem Agent. $20/Monat. Sehr populär bei Startups.
+**Context Window**
+Die maximale Menge an Eingabetext, die ein Model in einem Schritt gleichzeitig berücksichtigen kann. Wird dieses Limit überschritten, gehen Informationen verloren oder müssen zusammengefasst werden.
+
+**Cursor IDE**
+Eigenständige IDE auf Basis von VS Code mit stark integrierten Agent-Funktionen, etwa Rules, Agent-Modi und Tool-Interaktion.
+
+## D
+
+**Deterministische Schritte**
+Prozessschritte mit vorhersehbarem Ergebnis, zum Beispiel Build, Linting oder Snapshot-Vergleiche. Sie sind ein wichtiges Gegengewicht zu probabilistischen Antworten von Models.
 
 ## E
 
-**Emerging**  
-Tech, die noch nicht 5 Jahre alt ist und möglich noch nicht produktiv.
+**Eval (Evaluation)**
+Systematische Bewertung von Agenten- oder Model-Qualität anhand reproduzierbarer Aufgaben und klarer Kriterien, etwa Korrektheit, Sicherheit oder Stabilität.
 
 ## F
 
-**Framework (Agent)**  
-Software-Bibliothek zum Orchestrieren von mehreren Agents. Beispiele: LangGraph, CrewAI, PydanticAI.
+**Feature Factory**
+Wiederholbares Workflow-Muster für die Bearbeitung eines Tickets: verstehen, planen, umsetzen, prüfen, reviewen und übergeben.
 
-**Frontier Models**  
-Die besten verfügbaren LLMs (aktuell: Claude 3.5 Sonnet, GPT-5, Gemini 2.0).
+**Frontier Models**
+Sehr leistungsfähige, aktuelle Spitzenmodelle, die in vielen Benchmarks führen, aber meist als API-Dienste betrieben werden.
 
 ## G
 
-**GitHub Copilot**  
-IDEs/GitHub's Agent-Angebot. $10/Monat. Enterprise-Standard für große Organisationen.
+**GitHub Copilot**
+KI-Angebot von GitHub für Vervollständigung, Chat und Agent-Funktionen in IDE und Plattform-Workflows.
 
-**GPT-5**  
-OpenAIs aktuelles Flaggschiff-Modell (2026). Stark bei Reasoning und Multi-Step Tasks.
+**Guardrail**
+Leitplanke, die riskantes Verhalten begrenzt. Beispiele: kein Zugriff auf Secrets, keine destruktiven Befehle ohne Freigabe, nur definierte Dateibereiche ändern.
+
+**GPT-5**
+Model-Generation von OpenAI mit Stärken in Reasoning, Tool Use und längeren Arbeitsabläufen.
+
+## H
+
+**Human in the Loop**
+Arbeitsweise, bei der Menschen kritische Stellen explizit freigeben oder korrigieren, statt den Agenten vollautonom laufen zu lassen.
 
 ## I
 
-**Inference Layer**  
-Die Abstraction zwischen Agent-Code und LLM-APIs. LiteLLM ist der Standard.
+**Idempotenz**
+Eigenschaft eines Schritts, bei wiederholter Ausführung denselben Zustand zu erzeugen. Wichtig für robuste Automatisierung und sichere Wiederholbarkeit.
 
-**Inference Provider**  
-Ein Service, der LLM Inference anbietet. Beispiele: Anthropic, OpenAI, Together AI, Groq (Aggregatoren), oder Ollama (lokal).
+**Inference Layer**
+Abstraktionsschicht zwischen Agent-Code und Model-APIs. Ermöglicht Model-Wechsel, Logging und zentrale Konfigurationssteuerung.
+
+**Inference Provider**
+Dienst, der Inference für Models bereitstellt, lokal oder als Cloud-API.
+
+## J
+
+**Jailbreak (Prompt-Jailbreak)**
+Versuch, ein Model durch spezielle Eingaben aus seinen Sicherheits- oder Rollenregeln herauszubrechen.
 
 ## L
 
-**LangGraph**  
-LangChains Graph-basiertes Framework für Multi-Agent Orchestration. Sehr mächtig, steile Lernkurve.
+**LangGraph**
+Framework für zustandsbehaftete, graphbasierte Agent-Workflows mit expliziten Knoten, Kanten und Übergangslogik.
 
-**LiteLLM**  
-Abstraktions-API für LLM-Calls. Ermöglicht Provider-Wechsel ohne Codeänderung. De-facto-Standard.
+**Least Privilege**
+Sicherheitsprinzip: Ein Agent bekommt nur genau die Rechte, die für die aktuelle Aufgabe nötig sind, und nichts darüber hinaus.
 
-**LLM (Large Language Model)**  
-Ein großes neuronales Netz trainiert auf Textvorhersage. Beispiele: Claude, GPT-5, Qwen3.
+**LiteLLM**
+Bibliothek für einheitliche Modellaufrufe über verschiedene Provider hinweg.
+
+**LLM (Large Language Model)**
+Language Model, das aus Trainingsdaten Muster lernt und daraus Text, Code oder strukturierte Antworten erzeugt.
 
 ## M
 
-**MCP (Model Context Protocol)**  
-Standardisierte Schnittstelle für Agents Zugang zu External Tools (GitHub, Jira, Dateien, Datenbanken). By Anthropic.
+**MCP (Model Context Protocol)**
+Offenes Protokoll, über das Agenten standardisiert auf externe Tools und Datenquellen zugreifen können.
 
-**Model**  
-Das LLM-Netz selbst, trainiert auf Textvorhersage. The foundation, aber nicht die ganze Story.
+**Memory (Agent-Kontext)**
+Persistenter oder temporärer Kontext, den ein Agent zwischen Schritten oder Sitzungen nutzen kann, zum Beispiel Regeln, Notizen und Entscheidungen.
 
-**Multi-Agent (Swarm)**  
-Ein System mit 2+ koordinierten Agents (z.B. Planner + Coder + Reviewer).
+**Model**
+Das trainierte Netz selbst. Erst in Kombination mit Prompts, Tools, Policies und Workflow entsteht ein leistungsfähiger Agent.
+
+**Multi-Agent-System**
+Aufbau, bei dem mehrere spezialisierte Agenten zusammenarbeiten, etwa Planner, Implementierer, Tester und Reviewer.
 
 ## O
 
-**Ollama**  
-Tool zum Runterladen / Ausprobieren von Open-Source Modellen lokal. Kostenlos, 100% offline.
+**Observability**
+Nachvollziehbarkeit von Agent-Läufen über Traces, Logs, Metriken und Zwischenergebnisse.
 
-**Open-Weights Models**  
-LLMs mit veröffentlichten Gewichten (nicht nur API). Beispiele: Qwen3, Llama, Mistral. Frei zu deployen.
+**Ollama**
+Lokale Runtime für Open-Weights Models auf Entwicklerrechnern oder im internen Netz.
+
+**Open-Weights Models**
+Models mit veröffentlichten Gewichten, die lokal oder in eigener Infrastruktur betrieben werden können.
+
+**Orchestrierung**
+Koordination von Rollen, Reihenfolge, Übergaben und Abbruchbedingungen in einem Agent-Workflow.
 
 ## P
 
-**Pi Coding Agent**  
-Neue Terminal-native Agent-CLI (2026). Kostenlos, Open Source, Multi-Provider.
+**Pi Coding Agent**
+Terminal-nativer Coding Agent mit Fokus auf Dateien, Shell-Interaktion und mehrstufige Aufgabenbearbeitung.
 
-**Provider (Inference)**  
-Ein Unternehmen, das LLM Inference API anbietet. Beispiele: Anthropic, OpenAI, Together AI.
+**Policy (Tool- und Sicherheitsregeln)**
+Verbindliche Regeln, welche Tools, Datenquellen oder Aktionen erlaubt, eingeschränkt oder verboten sind.
 
-**Prompt Engineering**  
-Die Praxis, Prompts zu schreiben, um LLMs zu dirigieren. Traditioneller 2023er Skill.
+**Prompt Engineering**
+Gestaltung von Eingaben, Kontext und Struktur, um die Ausgabequalität eines Models zu verbessern.
+
+**Prompt Injection**
+Angriffsmuster, bei dem in Inhalte versteckte Anweisungen den Agenten zu ungewollten Aktionen verleiten sollen.
 
 ## Q
 
-**Qwen3 Coder**  
-Alibabas bestes Open-Weights Coding-Modell. Kostenlos, lokal via Ollama, 90% of Claude Quality.
+**Qwen3 Coder**
+Coding-fokussiertes Open-Weights-Model, das häufig lokal oder über kompatible Inference-Layer genutzt wird.
 
 ## R
 
-**Runtime (Inference)**  
-Software zum Ausführen von Modellen. Beispiele: Ollama, vLLM, NVIDIA TensorRT.
+**RAG (Retrieval-Augmented Generation)**
+Verfahren, bei dem vor der Antwort relevante Dokumente abgerufen und als Kontext eingebunden werden.
+
+**Rate Limit**
+Begrenzung von API-Aufrufen pro Zeitintervall, zum Beispiel pro Minute.
+
+**Reasoning**
+Fähigkeit eines Models, mehrschrittige Schlussfolgerungen strukturiert zu entwickeln.
+
+**Runtime**
+Ausführungsumgebung für Inference und zugehörige Infrastrukturkomponenten.
 
 ## S
 
-**Swarm (Multi-Agent)**  
-Ein Netzwerk von Agents, die koordiniert eine größere Aufgabe lösen.
+**Sandboxing**
+Technik zur Isolierung von Ausführungen, damit ein Prozess nur in klar begrenzten Umgebungen und mit kontrollierten Rechten läuft.
+
+**Skill**
+Wiederverwendbare Anleitung für eine klar abgegrenzte Aufgabe, zum Beispiel Security-Review oder Architektur-Check.
+
+**Sub-Agent**
+Spezialisierter Agent, an den ein Hauptagent Teilaufgaben delegiert.
+
+**Swarm**
+Koordiniertes Multi-Agent-Muster, bei dem mehrere Agenten parallel oder in Rollenketten an einem gemeinsamen Ziel arbeiten.
 
 ## T
 
-**Tool Use / Function Calling**  
-Die Fähigkeit von LLMs, zu sagen "ich brauche dieses Tool", anstatt nur Text zu generieren.
+**Token**
+Kleinste Verarbeitungseinheit eines Models bei Eingabe und Ausgabe. Tokenkosten beeinflussen Laufzeit und Preis.
+
+**Tool Use / Function Calling**
+Fähigkeit eines Models, strukturierte Tool-Aufrufe zu erzeugen, statt nur freien Text auszugeben.
+
+**Trace**
+Nachvollziehbare Spur eines Laufs mit Schritten, Entscheidungen, Tool-Aufrufen und Ergebnissen.
 
 ## V
 
-**Vendor Lock-In**  
-Die Abhängigkeit von einem einzelnen Anbieter (z.B. nur Anthropic-API). Schlecht für Resilienz.
+**Vendor Lock-in**
+Abhängigkeit von einem einzelnen Anbieter, die Wechselkosten, Risiken und strategische Flexibilität verschlechtert.
 
 ## W
 
-**Windsurf IDE**  
-Eine weitere VSCode-Fork IDE mit Agents, stärker auf Teams fokussiert als Cursor. $20/Monat.
+**Windsurf IDE**
+Agentenorientierte Entwicklungsumgebung auf VS-Code-Basis mit Fokus auf kollaborative Workflows.
+
+**Workflow**
+Definierte Abfolge von Schritten, Rollen und Prüfungen zur reproduzierbaren Bearbeitung einer Aufgabe.
 
 ## Z
 
-**Zielgerichtete Autonomie**  
-Die Fähigkeit eines Agents, ein Ziel eigenständig zu verfolgen, ohne menschliche Intervention bei jedem Schritt.
+**Zero Trust (im Agent-Kontext)**
+Sicherheitsprinzip, bei dem weder Eingaben noch Tools noch Zwischenergebnisse automatisch als vertrauenswürdig gelten.
+
+**Zielgerichtete Autonomie**
+Fähigkeit eines Agenten, ein Ziel eigenständig zu verfolgen und nur bei klar definierten Punkten menschliche Freigaben einzuholen.
 
 ---
 
 ## Akronyme
 
 | Akronym | Auflösung | Kontext |
-|---------|-----------|---------|
-| **API** | Application Programming Interface | Wie Software miteinander spricht |
-| **CLI** | Command Line Interface | Terminal / kommandozeile |
-| **GUI** | Graphical User Interface | Fenster / IDE / Browser |
-| **IDE** | Integrated Development Environment | VSCode, Cursor, Windsurf, etc. |
-| **LLM** | Large Language Model | Claude, GPT-5, Qwen, Llama |
-| **MCP** | Model Context Protocol | Standard für LLM-Tool-Integration |
-| **PR** | Pull Request | Ein Code-Änderungsvorschlag in Git |
-| **RPM** | Requests Per Minute | Ratelimit bei APIs |
-| **JSON** | JavaScript Object Notation | Standard-Datenformat |
-| **YAML** | YAML Ain't Markup Language | Config-File Format |
+|---------|------------|---------|
+| API | Application Programming Interface | Schnittstelle zwischen Systemen |
+| AuthN | Authentication | Identitätsprüfung |
+| AuthZ | Authorization | Berechtigungsprüfung |
+| CI/CD | Continuous Integration / Continuous Delivery | Build-, Test- und Release-Automatisierung |
+| CLI | Command Line Interface | Terminalbasierte Bedienung |
+| GUI | Graphical User Interface | Grafische Oberfläche |
+| IDE | Integrated Development Environment | Entwicklungsumgebung |
+| JSON | JavaScript Object Notation | Datenformat für strukturierte Übergaben |
+| LLM | Large Language Model | Language Model für Text- und Codegenerierung |
+| MCP | Model Context Protocol | Standard für Tool-Anbindung von Agenten |
+| PR | Pull Request | Vorschlag für Codeänderungen in Git-Workflows |
+| RAG | Retrieval-Augmented Generation | Antworterzeugung mit Dokumentenabruf |
+| RBAC | Role-Based Access Control | Rollenbasiertes Berechtigungsmodell |
+| RPM | Requests Per Minute | API-Ratenlimit pro Minute |
+| SLA | Service Level Agreement | Vereinbarte Service-Qualität |
+| SLO | Service Level Objective | Messbares Qualitätsziel |
+| TDD | Test-Driven Development | Entwicklung über Tests als Führungsmechanik |
+| YAML | YAML Ain't Markup Language | Lesbares Konfigurationsformat |
 
 ---
 
 ## Weiterführende Ressourcen
 
-- [Anthropic Docs](https://docs.anthropic.com)
-- [LangChain / LangGraph Docs](https://python.langchain.com/docs/langgraph)
-- [MCP Specification](https://spec.modelcontextprotocol.io)
-- [GitHub Discussions](https://github.com/ai-lab-3-agentic-programming/discussions)
+- [Anthropic Dokumentation](https://docs.anthropic.com)
+- [LangGraph Dokumentation](https://python.langchain.com/docs/langgraph)
+- [MCP Spezifikation](https://spec.modelcontextprotocol.io)
+- [GitHub Discussions im Repository](https://github.com/ai-lab-3-agentic-programming/discussions)
 
