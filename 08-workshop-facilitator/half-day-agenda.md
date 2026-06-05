@@ -25,17 +25,13 @@
 
 **Trainer-Fokus:** "Warum das anders ist"
 
-```
-Slide 1: Model vs. Agent
-  → Nutze [Slides aus 01-agentic-foundations/model-vs-agent.md]
-  → Kernaussage: "Agenten führen Aktionen aus"
-
-Slide 2: Der Stack
-  → Models → Inference → Agent → Workflows
-  → Zeigezeiger: "Diese Teile sind austauschabar"
-
-Slide 3: Beispiel (Ticket → PR Workflow)
-```
+- Slide 1: Model vs. Agent
+  - Nutze [Slides aus 01-agentic-foundations/model-vs-agent.md]
+  - Kernaussage: "Agenten fuehren Aktionen aus"
+- Slide 2: Der Stack
+  - Models -> Inference -> Agent -> Workflows
+  - Zeigezeiger: "Diese Teile sind austauschabar"
+- Slide 3: Beispiel (Ticket -> PR Workflow)
 
 **Diskussion Prompt:** "Welche Aufgabe in eurem Projekt würde ein Agent automatisieren können?"  
 (2 Min offene Discussionspause)
@@ -44,16 +40,12 @@ Slide 3: Beispiel (Ticket → PR Workflow)
 
 **Trainer-Fokus:** "Es gibt verschiedene Wege"
 
-```
-Slide 1: IDE-Agents (Cursor, Copilot, Windsurf)
-  → Dauer, einfach, interaktiv
-  
-Slide 2: Terminal-Agents (Claude Code, Pi, Aider)
-  → Für Automation, CI/CD
-  
-Slide 3: Selection Matrix
-  → [Nutze 03-coding-agents-landscape/selection-matrix.md]
-```
+- Slide 1: IDE-Agents (Cursor, Copilot, Windsurf)
+  - Dauer, einfach, interaktiv
+- Slide 2: Terminal-Agents (Claude Code, Pi, Aider)
+  - Fuer Automation, CI/CD
+- Slide 3: Selection Matrix
+  - [Nutze 03-coding-agents-landscape/selection-matrix.md]
 
 **Live Poll:** "Wer nutzt schon Cursor? CLI? GitHub Copilot?"
 
@@ -61,17 +53,13 @@ Slide 3: Selection Matrix
 
 **Trainer Fokus:** "Das ist das Fundament"
 
-```
-Slide 1: MCP Überblick
-  → Agent + Tools = MCP verbindet
-  
-Slide 2: Praktisches Beispiel
-  → Agent liest GH Issue via MCP
-  → Agent schreibt zu Jira via MCP
-  
-Slide 3: LiteLLM
-  → Ein API, viele Modelle (Flexibility)
-```
+- Slide 1: MCP Ueberblick
+  - Agent + Tools = MCP verbindet
+- Slide 2: Praktisches Beispiel
+  - Agent liest GH Issue via MCP
+  - Agent schreibt zu Jira via MCP
+- Slide 3: LiteLLM
+  - Ein API, viele Modelle (Flexibility)
 
 ---
 
@@ -83,25 +71,21 @@ Trainer öffnet **Claude Code** (Web UI) oder **Pi CLI**.
 
 **Demo-Task:** "Implementiere dunklen Modus für eine React App"
 
-```
 Trainer: Zeigt Step-by-Step
-  1. Claude Code öffnen
-  2. Codebase mit Repo uploaden
-  3. Issue/Anfrage eingeben
-  4. Agent beobachten wie er:
-     - Codebase liest
-     - Plan macht
-     - Code schreibt
-     - Tests runned
-```
+1. Claude Code oeffnen
+2. Codebase mit Repo uploaden
+3. Issue/Anfrage eingeben
+4. Agent beobachten wie er:
+  - Codebase liest
+  - Plan macht
+  - Code schreibt
+  - Tests runned
 
 **Wichtig:** Nicht nur "schauen". **Intervenieren.**
 
-```
 Trainer stoppt und fragt:
-  "Sieht ihr, wie der Agent hier dachte?"
-  "Das ist iteration. Nicht einfach nur Copy/Paste."
-```
+- "Sieht ihr, wie der Agent hier dachte?"
+- "Das ist iteration. Nicht einfach nur Copy/Paste."
 
 **Ergebnis:** Teilnehmer sehen dass es möglich ist.
 
@@ -120,16 +104,14 @@ Alle Teilnehmer:
 
 **Trainer-Rolle:** Support & Debugging
 
-```
 Teilnehmer arbeiten parallel. Trainer:
-  → Beantwortet Fragen
-  → Hilft bei Fehlern (API Key, Repo Setup)
-  → Gibt Hinweise wenn Agent steckenbleibt
-  
-"Agent macht nichts" → Prompt spezifischer
-"API Error" → API Key check
-"Repo zu groß" → Smaller subset, oder 'read these files first'
-```
+- Beantwortet Fragen
+- Hilft bei Fehlern (API Key, Repo Setup)
+- Gibt Hinweise wenn Agent steckenbleibt
+
+"Agent macht nichts" -> Prompt spezifischer
+"API Error" -> API Key check
+"Repo zu gross" -> Smaller subset, oder 'read these files first'
 
 **Paararbeit-Option:** Wenn Teilnehmer mag, 2er Teams.
 
@@ -150,34 +132,26 @@ Wenn nicht fertig: Kein Problem. Teilnehmer kann nach dem Workshop fortfahren.
 
 Trainer stellt Fragen:
 
-```
-"Was war eure größte Überraschung?"
-→ Jeder sagt 1-2 Sätze
-
-"Wo brauchtet ihr am meisten Support?"
-→ Sammeln (API Setup, Prompt Clarification, etc.)
-
-"Was wollt ihr als nächstes probieren?"
-→ Multi-Agent? MCP? Automation?
-```
+- "Was war eure groesste Ueberraschung?"
+  - Jeder sagt 1-2 Saetze
+- "Wo brauchtet ihr am meisten Support?"
+  - Sammeln (API Setup, Prompt Clarification, etc.)
+- "Was wollt ihr als naechstes probieren?"
+  - Multi-Agent? MCP? Automation?
 
 ### Next Steps (10 Min)
 
-```
-"Wenn ihr tiefer gehen wollt:"
-  → Lab 2: MCP Integration
-  → Modul 4: MCP Core Concepts
-  → Modul 6: Multi-Agent Patterns
-  
-"Für euer Team:"
-  → Repository clonen
-  → Lernpfad 1 oder 2 wählen
-  → Dojo-Modus: 1h/woche zusammen
-  
-"Support:"
-  → Discussions im Repo
-  → FAQ: faq.md
-```
+- "Wenn ihr tiefer gehen wollt:"
+  - Lab 2: MCP Integration
+  - Modul 4: MCP Core Concepts
+  - Modul 6: Multi-Agent Patterns
+- "Fuer euer Team:"
+  - Repository clonen
+  - Lernpfad 1 oder 2 waehlen
+  - Dojo-Modus: 1h/Woche zusammen
+- "Support:"
+  - Discussions im Repo
+  - FAQ: faq.md
 
 ### Q&A (5 Min)
 
@@ -189,45 +163,37 @@ Offene Fragen.
 
 ### Wichtige Messaging
 
-```
-✅ "Agenten sind nicht Magic, aber sie sind Realität jetzt"
-✅ "Das ist evolutionär, nicht revolutionär"
-✅ "Ihr werdet diese Skills brauchen, egal ob ihr Agents selbst baut oder nicht"
-❌ Nicht: "Alle Agenten sind genau gleich"
-❌ Nicht: "Das eliminiert menschliche Entwicklung"
-```
+- ✅ "Agenten sind nicht Magic, aber sie sind Realitaet jetzt"
+- ✅ "Das ist evolutionaer, nicht revolutionaer"
+- ✅ "Ihr werdet diese Skills brauchen, egal ob ihr Agents selbst baut oder nicht"
+- ❌ Nicht: "Alle Agenten sind genau gleich"
+- ❌ Nicht: "Das eliminiert menschliche Entwicklung"
 
 ### Falls etwas schief geht
 
-```
 Agent antwortet nicht:
-  → Timeout? Warte nochmal 30s
-  → Prompt zu vage? Spezifischere Anfrage
-  → Token limit? Neuer Chat
-  
+- Timeout? Warte nochmal 30s
+- Prompt zu vage? Spezifischere Anfrage
+- Token limit? Neuer Chat
+
 Lab 1 zu lang:
-  → OK. Teilnehmer macht es nach Workshop.
-  → Nicht erzwingen.
-  
+- OK. Teilnehmer macht es nach Workshop.
+- Nicht erzwingen.
+
 Keine API Key:
-  → Ollama fallback zeigen (lokal)
-  → "Das kostet nix und läuft offline"
-```
+- Ollama fallback zeigen (lokal)
+- "Das kostet nix und laeuft offline"
 
 ### Timing Management
 
-```
-"Wir sind behind bei Landschaft?"
-  → Skip Modul 1C (MCP) kurz
-  → Sag: "Das ist Module 4. Schau es daheim an."
-  
-"Lab läuft lange?"
-  → OK. Das Lab ist priorität.
-  → Demo cut short.
-  
-"Zu viel Q&A?"
-  → "Gute Fragen. Mailen Sie mir. Jetzt weiter zum Lab."
-```
+- "Wir sind behind bei Landschaft?"
+  - Skip Modul 1C (MCP) kurz
+  - Sag: "Das ist Module 4. Schau es daheim an."
+- "Lab laeuft lange?"
+  - OK. Das Lab ist Prioritaet.
+  - Demo cut short.
+- "Zu viel Q&A?"
+  - "Gute Fragen. Mailen Sie mir. Jetzt weiter zum Lab."
 
 ---
 

@@ -1,18 +1,18 @@
 # Checkpoint 2: Security Review
 
-> After the security workflow module
+> Nach dem Security-Workflow-Modul
 
-## Checkpoint questions
+## Checkpoint-Fragen
 
-- [ ] Did the agent avoid reading `.env` or secret files?
-- [ ] Did the agent avoid printing credentials into the chat or logs?
-- [ ] Did the agent ask before any destructive action?
-- [ ] Did the generated code validate input safely?
-- [ ] Did the generated code avoid unsafe shell interpolation?
-- [ ] Did the review include dependency and authorization concerns?
+- [ ] Hat der Agent vermieden, `.env` oder Secret-Dateien zu lesen?
+- [ ] Hat der Agent vermieden, Zugangsdaten in Chat oder Logs auszugeben?
+- [ ] Hat der Agent vor destruktiven Aktionen nachgefragt?
+- [ ] Validiert der generierte Code Eingaben sicher?
+- [ ] Vermeidet der generierte Code unsichere Shell-Interpolation?
+- [ ] Umfasst das Review auch Abhaengigkeiten und Autorisierungsfragen?
 
-## Reflection
+## Reflexion
 
-- What was the biggest tool-access risk?
-- What was the biggest code-security risk?
-- Which guard rail would have prevented the most damage?
+- Welches war das groesste Tool-Access-Risiko?
+- Welches war das groesste Code-Security-Risiko?
+- Welche Guard Rail haette den groessten Schaden verhindert?

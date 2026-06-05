@@ -1,44 +1,44 @@
-# Two-Hour Workshop Path — Free-First, Cross-Agent Compatible
+# Zwei-Stunden-Workshoppfad — Free-First, agentenuebergreifend nutzbar
 
-> Goal: one rigid setup + exercise path that fits in 2 hours and teaches skills, rules, and secure usage before sub-agents.
+> Ziel: Ein klarer Setup- und Uebungspfad fuer 2 Stunden, der Skills, Rules und sichere Nutzung vor Sub-Agents vermittelt.
 
-## Primary workshop agent
+## Primaerer Workshop-Agent
 
 **Default workshop agent: Aider or OpenCode with a local model**
 
-Why free-first:
-- every participant can follow the same setup without a paid license
-- the workflow stays practical in a 2-hour session
-- the same instruction content can be mapped to Cursor, Claude Code, Windsurf, Copilot, Aider, and Pi
+Warum Free-First:
+- Jede teilnehmende Person kann dasselbe Setup ohne bezahlte Lizenz nutzen.
+- Der Workflow bleibt in einer 2-Stunden-Session praktisch.
+- Dieselben Instruktionsinhalte lassen sich auf Cursor, Claude Code, Windsurf, Copilot, Aider und Pi abbilden.
 
-If a participant already has Cursor, they can follow the Cursor mapping in the tables below.
-Otherwise, use the free path and translate the same ideas into the other tools.
+Wenn Teilnehmende bereits Cursor haben, koennen sie das Cursor-Mapping in den Tabellen unten nutzen.
+Ansonsten gilt der freie Pfad, und dieselben Ideen werden in andere Tools uebersetzt.
 
 ---
 
 ## 0:00–0:10 Setup
 
-- Open the repo in Aider or OpenCode
-- Read [Agent Terminology](../05-agentic-workflows/agent-terminology.md)
-- Open [Security Review Skill Template](../assets/templates/security-review-skill.md)
-- Decide where the reusable instruction will live in your agent
+- Repo in Aider oder OpenCode oeffnen
+- [Agent Terminology](../05-agentic-workflows/agent-terminology.md) lesen
+- [Security Review Skill Template](../assets/templates/security-review-skill.md) oeffnen
+- Entscheiden, wo die wiederverwendbare Instruktion im Agenten lebt
 
-Deliverable:
-- you know which concept maps to rules, skills, sub-agents, and memory
+Ergebnis:
+- Es ist klar, welches Konzept zu Rules, Skills, Sub-Agents und Memory gehoert.
 
 ---
 
-## 0:10–0:30 Create the skill
+## 0:10–0:30 Skill erstellen
 
-Create one reusable skill or rule pack named `security-review`.
+Eine wiederverwendbare Skill- oder Rule-Sammlung namens `security-review` anlegen.
 
-Minimum content:
-- never read `.env` by default
-- never commit secrets
-- check inputs, authz, logging, and dependencies
-- ask before destructive actions
+Mindestinhalt:
+- `.env` standardmaessig nie lesen
+- niemals Secrets committen
+- Inputs, AuthZ, Logging und Dependencies pruefen
+- vor destruktiven Aktionen nachfragen
 
-Use this mapping:
+Dieses Mapping verwenden:
 
 | Agent | What to create |
 |---|---|
@@ -49,32 +49,32 @@ Use this mapping:
 | Aider | a prompt template or repo note |
 | Pi / OpenCode | config or prompt file |
 
-Deliverable:
-- a reusable instruction file or rule that can be reused later
+Ergebnis:
+- Eine wiederverwendbare Instruktionsdatei oder Rule, die spaeter erneut genutzt werden kann.
 
 ---
 
-## 0:30–1:00 Use the skill on a real task
+## 0:30–1:00 Skill auf eine echte Aufgabe anwenden
 
-Task:
-- ask the agent to review [Security Guard Rails](../05-agentic-workflows/security-guardrails.md)
-- ask it to improve one section of [Secure Software Practices](../05-agentic-workflows/secure-software.md)
-- require the agent to explain which security checks it applied
+Aufgabe:
+- Den Agenten bitten, [Security Guard Rails](../05-agentic-workflows/security-guardrails.md) zu reviewen
+- Ihn bitten, einen Abschnitt von [Secure Software Practices](../05-agentic-workflows/secure-software.md) zu verbessern
+- Verlangen, dass der Agent erklaert, welche Security Checks er angewendet hat
 
-Constraints:
-- do not allow the agent to read `.env`
-- do not allow secret material in prompts
-- do not allow unrelated refactoring
+Rahmenbedingungen:
+- Der Agent darf `.env` nicht lesen.
+- Secret-Material darf nicht in Prompts vorkommen.
+- Unverwandtes Refactoring ist nicht erlaubt.
 
-Deliverable:
-- one concrete repo improvement
-- one short security review summary
+Ergebnis:
+- Eine konkrete Verbesserung im Repository
+- Eine kurze Security-Review-Zusammenfassung
 
 ---
 
-## 1:00–1:20 Show the cross-agent mapping
+## 1:00–1:20 Agentenuebergreifendes Mapping zeigen
 
-Compare the same skill in other tools.
+Dieselbe Skill in anderen Tools vergleichen.
 
 | Concept | Cursor | Claude Code | Windsurf | Copilot | Aider | Pi / OpenCode |
 |---|---|---|---|---|---|---|
@@ -82,36 +82,36 @@ Compare the same skill in other tools.
 | reusable capability | skill-like workflow | skill | workflow pack | instruction block | script/prompt | template |
 | delegated helper | sub-agent | sub-agent | secondary helper | limited | uncommon | orchestration helper |
 
-Cursor mapping note: only use this column if participants already have a Cursor license or trial; it is not the free baseline.
+Hinweis zum Cursor-Mapping: Diese Spalte nur verwenden, wenn Teilnehmende bereits eine Cursor-Lizenz oder Trial haben; sie ist nicht die freie Baseline.
 
-Deliverable:
-- participants can explain the same idea in more than one tool vocabulary
+Ergebnis:
+- Die Teilnehmenden koennen dieselbe Idee in mehr als einem Tool-Vokabular erklaeren.
 
 ---
 
-## 1:20–1:45 Secure the workflow
+## 1:20–1:45 Workflow absichern
 
-Add one extra guard rail:
-- never read `.env` unless explicitly required
-- never commit secrets
-- stop on destructive actions until approved
+Eine weitere Guard Rail ergaenzen:
+- `.env` nur lesen, wenn es explizit erforderlich ist
+- niemals Secrets committen
+- bei destruktiven Aktionen bis zur Freigabe stoppen
 
-Then ask the agent to re-run the same task with the guard rail active.
+Danach den Agenten dieselbe Aufgabe mit aktiver Guard Rail erneut ausfuehren lassen.
 
-Deliverable:
-- a safer workflow with the same functional result
+Ergebnis:
+- Ein sichererer Workflow mit demselben funktionalen Ergebnis
 
 ---
 
 ## 1:45–2:00 Checkpoint
 
-Answer these questions:
-- what is the difference between a rule and a skill?
-- which part belongs to the agent, and which part belongs to the repo?
-- what would change if you used Claude Code or Aider instead of Cursor?
-- what security risk would this workflow create if left unchecked?
+Diese Fragen beantworten:
+- Was ist der Unterschied zwischen einer Rule und einer Skill?
+- Welcher Teil gehoert zum Agenten, und welcher Teil gehoert ins Repo?
+- Was wuerde sich aendern, wenn statt Cursor Claude Code oder Aider genutzt wuerde?
+- Welches Sicherheitsrisiko wuerde dieser Workflow erzeugen, wenn er unkontrolliert bliebe?
 
-Final outcome:
-- one reusable instruction artifact
-- one completed task
-- one cross-agent vocabulary map
+Endergebnis:
+- Ein wiederverwendbares Instruktionsartefakt
+- Eine abgeschlossene Aufgabe
+- Eine agentenuebergreifende Vokabelkarte

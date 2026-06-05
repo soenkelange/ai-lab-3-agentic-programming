@@ -7,33 +7,24 @@
 
 ## Das Problem, das LiteLLM löst
 
-```
-Alte Welt: Dein Agent kennt nur Claude
-
-Code:
-  from anthropic import Anthropic
-  client = Anthropic(api_key="sk-ant-...")
-  message = client.messages.create(...)
-    → Wenn du GPT willst: Codeänderungen
-    → Wenn du Ollama willst: Codeänderungen
-    → Wenn du Qwen3 willst: Codeänderungen
+```mermaid
+flowchart TD
+    A[Alte Welt: Agent kennt nur Claude SDK] --> B[Wechsel zu GPT]
+    A --> C[Wechsel zu Ollama]
+    A --> D[Wechsel zu Qwen]
+    B --> E[Codeaenderungen noetig]
+    C --> E
+    D --> E
 ```
 
-```
-Mit LiteLLM: Dein Agent funktioniert mit allen
-
-Code:
-  from litellm import completion
-  response = completion(
-      model="claude-3-5-sonnet",  ← einfach wechseln!
-      messages=[...],
-      api_key=os.getenv("LITELLM_API_KEY")
-  )
-  
-  # Later: einfach ENV wechseln
-  # model="gpt-5"
-  # model="ollama/qwen3.1:coder"
-  # → Kein Code-Change!
+```mermaid
+flowchart TD
+    A[Mit LiteLLM: ein API Call] --> B[Model: claude-3-5-sonnet]
+    A --> C[Model: gpt-5]
+    A --> D[Model: ollama/qwen3.1-coder]
+    B --> E[Kein Code-Change]
+    C --> E
+    D --> E
 ```
 
 ---
@@ -52,27 +43,13 @@ Code:
 
 ## Die Architektur
 
-```
-┌──────────────────┐
-│   Dein Agent     │
-│   (Python/JS)    │
-└────────┬─────────┘
-         │
-         ├─→ LiteLLM OpenAI SDK
-         │      └─→ v1_compatible()
-         │
-    ┌────v────────────────────────────────┐
-    │    LiteLLM Router / Proxy            │
-    │  - Routing Rules                     │
-    │  - Load Balancing                    │
-    │  - Fallbacks                         │
-    │  - Cost Tracking                     │
-    └────┬─────────────────────────────────┘
-         │
-    ┌────┴──────┬───────────┬──────────┐
-    v           v           v          v
-Anthropic    OpenAI      Ollama      Together
-(API)        (API)       (local)     (API)
+```mermaid
+flowchart TD
+  A[Dein Agent (Python/JS)] --> B[LiteLLM Router / Proxy]
+  B --> C[Anthropic API]
+  B --> D[OpenAI API]
+  B --> E[Ollama local]
+  B --> F[Together API]
 ```
 
 ---

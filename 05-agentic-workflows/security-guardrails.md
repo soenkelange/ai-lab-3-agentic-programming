@@ -1,69 +1,69 @@
-# Security Guard Rails for Agent Tooling
+# Security Guard Rails fuer Agent-Tooling
 
-> Goal: keep agentic tools useful without letting them cross trust boundaries.
+> Ziel: agentic Tools nuetzlich halten, ohne dass sie Vertrauensgrenzen ueberschreiten.
 
-## Principle
+## Prinzip
 
-Agents should have enough access to be effective, but no more than they need for the current task.
+Agenten sollen genug Zugriff haben, um wirksam zu sein, aber nicht mehr als fuer die aktuelle Aufgabe noetig ist.
 
-## Guard rails to enforce
+## Guard Rails, die durchgesetzt werden muessen
 
-### Never read secrets by default
-- Do not read `.env`, `.env.local`, `.env.*`, secret stores, or credential files unless the task explicitly requires it.
-- Do not print secrets into chat, logs, PRs, or generated documentation.
-- Prefer sample files such as `.env.example` or documentation snippets.
+### Secrets standardmaessig nicht lesen
+- `.env`, `.env.local`, `.env.*`, Secret Stores oder Credential-Dateien nur lesen, wenn die Aufgabe das explizit verlangt.
+- Secrets niemals in Chat, Logs, PRs oder generierter Dokumentation ausgeben.
+- Bevorzugt Beispieldateien wie `.env.example` oder Dokumentations-Snippets verwenden.
 
-### Never commit secrets
-- Treat any secret material as out of bounds for commits.
-- If an agent detects secrets in a diff, stop and redact before proceeding.
-- Use pre-commit or repository checks to block accidental secret commits.
+### Secrets niemals committen
+- Jegliches Secret-Material ist fuer Commits tabu.
+- Wenn ein Agent Secrets in einem Diff erkennt, stoppen und vor dem Fortfahren redigieren.
+- Pre-Commit- oder Repository-Checks nutzen, um versehentliche Secret-Commits zu blockieren.
 
-### Limit tool scope
-- Prefer file and directory scopes over whole-repo scanning.
-- Read only the files needed for the task.
-- Avoid shell commands that dump broad environment state.
+### Tool-Scope begrenzen
+- Datei- und Verzeichnis-Scope einem Whole-Repo-Scan vorziehen.
+- Nur die Dateien lesen, die fuer die Aufgabe wirklich noetig sind.
+- Shell-Kommandos vermeiden, die breit Umgebungszustand ausgeben.
 
-### Confirm before destructive or external actions
-- Ask before deleting files, pushing branches, opening PRs, or calling external APIs that affect production systems.
-- Require explicit approval before modifying infrastructure or credentials.
+### Vor destruktiven oder externen Aktionen bestaetigen
+- Vor dem Loeschen von Dateien, dem Pushen von Branches, dem Oeffnen von PRs oder dem Aufruf externer APIs mit Produktionsauswirkung nachfragen.
+- Vor Aenderungen an Infrastruktur oder Zugangsdaten ausdrueckliche Freigabe verlangen.
 
-### Protect the prompt and context
-- Do not include secrets in prompts.
-- Do not ask an agent to paste credential values into generated code.
-- Use redacted examples in workshop exercises.
+### Prompt und Kontext schuetzen
+- Keine Secrets in Prompts aufnehmen.
+- Einen Agenten nicht auffordern, Zugangsdaten in generierten Code einzufuegen.
+- In Workshop-Uebungen redigierte Beispiele verwenden.
 
-## Recommended policy examples
+## Empfohlene Policy-Beispiele
 
-| Situation | Safe policy |
-|-----------|-------------|
-| Agent needs config | Read `.env.example`, not `.env` |
-| Agent needs API access | Use temporary dev credentials |
-| Agent needs repo context | Read only target files |
-| Agent prepares a commit | Review diff for secrets first |
-| Agent needs to act externally | Ask for confirmation |
+| Situation | Sichere Policy |
+|-----------|----------------|
+| Agent braucht Konfiguration | `.env.example` lesen, nicht `.env` |
+| Agent braucht API-Zugriff | Temporaere Dev-Credentials nutzen |
+| Agent braucht Repo-Kontext | Nur Zieldateien lesen |
+| Agent bereitet einen Commit vor | Diff zuerst auf Secrets pruefen |
+| Agent muss extern handeln | Bestaetigung einholen |
 
-## Workshop rule of thumb
+## Workshop-Faustregel
 
-If a command would make you nervous to run unattended, it is not a safe default for an autonomous agent.
+Wenn dich ein Kommando nervoes machen wuerde, falls es unbeaufsichtigt laeuft, ist es kein sicheres Default fuer einen autonomen Agenten.
 
-## Hands-on exercise
+## Hands-on-Uebung
 
-Use this checklist during a lab or review:
+Diese Checkliste waehrend eines Labs oder Reviews verwenden:
 
-- [ ] Did the agent stay away from secrets files?
-- [ ] Did the agent ask before any destructive action?
-- [ ] Did the agent avoid printing environment variables?
-- [ ] Did the diff stay within the intended files?
-- [ ] Would I be comfortable re-running this task in a shared repository?
+- [ ] Ist der Agent von Secret-Dateien ferngeblieben?
+- [ ] Hat der Agent vor destruktiven Aktionen gefragt?
+- [ ] Hat der Agent vermieden, Umgebungsvariablen auszugeben?
+- [ ] Ist der Diff innerhalb der vorgesehenen Dateien geblieben?
+- [ ] Wuerde ich diese Aufgabe in einem geteilten Repository guten Gewissens erneut ausfuehren?
 
-## What to do instead of unsafe access
+## Was statt unsicherem Zugriff zu tun ist
 
-- Use `.env.example` for structure.
-- Use mock credentials for demos.
-- Use fixture data instead of production exports.
-- Use a restricted test token with least privilege.
+- `.env.example` fuer die Struktur verwenden.
+- Mock-Credentials fuer Demos verwenden.
+- Fixture-Daten statt Produktions-Exporten verwenden.
+- Ein eingeschraenktes Test-Token mit Least Privilege nutzen.
 
-## Related
+## Siehe auch
 
 - [Secure Software Practices](secure-software.md)
 - [Feature Factory](feature-factory.md)

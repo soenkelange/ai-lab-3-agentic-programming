@@ -16,10 +16,10 @@ Dieses Repository transformiert Sie von Theorieverstehen zu aktiver, produktiver
 | Punkt | Gestern (Pre-2024) | Heute (2026+) |
 |-------|----------|-----------|
 | **Fokus** | Mensch schreibt Code | Agent schreibt Code |
-| **Flow** | Manual Coding | Goal → Agent → PR |
+| **Ablauf** | Manuelles Coding | Ziel → Agent → PR |
 | **Tool** | LLM-Chat | Coding Agent (IDE oder CLI) |
 | **Infra** | API Keys | LiteLLM + MCP |
-| **Skalierung** | 1 Agent | Multi-Agent Swarms |
+| **Skalierung** | 1 Agent | Multi-Agent-Swarms |
 
 **Die Revolution:** 🔑 **Agenten führen Aktionen aus**, nicht nur Text zu generieren.
 
@@ -103,6 +103,7 @@ Mit Capstone und Multi-Agent Orchestration.
 ├── feature-factory.md
 ├── security-guardrails.md
 ├── secure-software.md
+├── zugangsdaten-und-agenten.md
 ├── agent-terminology.md
 ├── workflows-terminology-matrix.md
 ├── review-agents.md
@@ -136,7 +137,7 @@ faq.md                     ← Häufige Fragen
 
 ---
 
-## 🎓 Was du lernst (Konkrete Outcomes)
+## 🎓 Was du lernst (konkrete Ergebnisse)
 
 Nach diesem Material kannst du:
 
@@ -146,27 +147,28 @@ Nach diesem Material kannst du:
 - [ ] Inference Provider vs. Runtime unterscheiden
 - [ ] Multi-Agent Architectures designen
 
-### ✅ Agentische Produktivität Verstehen
+### ✅ Agentische Produktivitaet verstehen
 - [ ] System Prompts, Rules, Skills und Sub-Agents unterscheiden
-- [ ] Die Terminologie verschiedener Coding Agents in eine gemeinsame Tabelle übertragen
+- [ ] Die Terminologie verschiedener Coding Agents in eine gemeinsame Tabelle uebertragen
 - [ ] Regeln und Skills als zentrale Produktivitäts- und Sicherheits-Schicht einsetzen
 
-### ✅ Praktisch Anwenden
-- [ ] Ein echtes GitHub-Issue mit Claude Code lösen
+### ✅ Praktisch anwenden
+- [ ] Ein echtes GitHub-Issue mit Claude Code loesen
 - [ ] Einen MCP Server schreiben
 - [ ] Eine 3+ Agent Pipeline orchestrieren
 - [ ] Ein echtes Codebase-Refactoring mit Agenten
 
-### ✅ Strategisch Entscheiden
-- [ ] Die richtige Agent-IDE für dein Team (Cursor vs. Copilot vs. Claude Code vs. Pi)
-- [ ] Kostenmodelle fair von einander unterscheiden
+### ✅ Strategisch entscheiden
+- [ ] Die richtige Agent-IDE fuer dein Team waehlen (Cursor vs. Copilot vs. Claude Code vs. Pi)
+- [ ] Kostenmodelle fair voneinander unterscheiden
 - [ ] Fehlerszenarien in agentic Systems kennen
 - [ ] Sicherheits-Grenzen für Agenten-Tooling festlegen
+- [ ] Sichere Modelle fuer Zugangsdaten in agentischen Workflows definieren
 - [ ] Secure-Coding-Prinzipien in agentische Workflows integrieren
 - [ ] Produktions-ready Deployments planen
 
-### ✅ Workshop-Standardpfad Anwenden
-- [ ] Einen Cursor-first 2-Stunden-Workshoppfad durchführen
+### ✅ Workshop-Standardpfad anwenden
+- [ ] Einen Free-First-2-Stunden-Workshoppfad durchfuehren
 - [ ] Eine wiederverwendbare Skill- oder Rule-Datei anlegen
 - [ ] Dieselbe Instruktion in anderen Coding Agents übersetzen
 
@@ -183,8 +185,8 @@ Nach diesem Material kannst du:
 | **Model** | Claude 3.5 Sonnet (via API) | $0 (free tier) oder $15-60/1M tokens | Beste Tool Use & Agent Reasoning |
 | **Inference** | LiteLLM (Abstraction) | $0 (Tool) | Provider-agnostisch |
 | **Lokal Alternative** | Qwen3.1 Coder via Ollama | $0 (100% offline) | Garantiert kostenlos, keine Abhängigkeiten |
-| **Coding Agent** | Claude Code (Web UI) | $0 | Built-in MCP, bestes Verständnis |
-| **Alt Agent Tool** | Pi Coding Agent (CLI) | $0 (Open Source) | Multi-Provider, persisten Memory |
+| **Coding Agent** | Claude Code (Web UI) | $0 | Integriertes MCP, bestes Verstaendnis |
+| **Alternatives Agent-Tool** | Pi Coding Agent (CLI) | $0 (Open Source) | Multi-Provider, persistentes Memory |
 
 ### Setup in 10 Minuten
 
@@ -209,11 +211,9 @@ python -c "from litellm import completion; print(completion(model='ollama/qwen3.
 
 ### Option 1: Schnelle Orientierung (5 min)
 
-```
-→ Lies obiges "30-Sekunden-Essenz" (✓ gerade gemacht!)
-→ [Model vs. Agent verstehen](01-agentic-foundations/model-vs-agent.md) (10 min)
-→ Entscheidung treffen: "Will ich tiefer gehen?"
-```
+- Lies obiges "30-Sekunden-Essenz" (✓ gerade gemacht!)
+- [Model vs. Agent verstehen](01-agentic-foundations/model-vs-agent.md) (10 min)
+- Entscheidung treffen: "Will ich tiefer gehen?"
 
 **Resultat:** Du weißt, warum Agenten anders sind.
 
@@ -221,26 +221,22 @@ python -c "from litellm import completion; print(completion(model='ollama/qwen3.
 
 ### Option 2: Anfänger-Track (2 Stunden + Hands-On)
 
-```
 1. [Lernpfad 1 Anfänger](00-start-here/learning-paths.md#pfad-1-anfänger) (30 min Theorie)
 2. [Lab 1: Single Agent Ticket](07-hands-on-labs/lab-01-single-agent-ticket.md) (45 min Praxis)
 3. [Checkpoint 1](07-hands-on-labs/checkpoint-01.md) (10 min Validierung)
-⚠️ Optional: [Lab 1 nochmal mit anderem Issue](07-hands-on-labs/lab-01-single-agent-ticket.md) (45 min Vertiefung)
-```
+4. Optional: [Lab 1 nochmal mit anderem Issue](07-hands-on-labs/lab-01-single-agent-ticket.md) (45 min Vertiefung)
 
 **Resultat:** Du hast einen Agent in Action gesehen. Deine erste PR.
 
 ---
 
-### Option 3: Architectürisches Verständnis (3 Stunden)
+### Option 3: Architektonisches Verstaendnis (3 Stunden)
 
-```
 1. [Foundations Deep Dive](01-agentic-foundations/) (30 min)
 2. [Inference Layer + LiteLLM](02-models-and-inference/abstraction-layers-litellm.md) (30 min)
 3. [MCP Fundamentals](04-mcp-and-tooling/mcp-core-concepts.md) (25 min)
 4. [Lab 2: MCP Integration](07-hands-on-labs/lab-02-mcp-integration.md) (1 h)
 5. [Multi-Agent Intro](06-multi-agent-architectures/swarm-patterns.md) (20 min)
-```
 
 **Resultat:** Du kannst Agenten-Systeme in der Tiefe designen.
 
@@ -248,21 +244,21 @@ python -c "from litellm import completion; print(completion(model='ollama/qwen3.
 
 ## 💼 Workshop-Modi (Wie du das Repo nutzt)
 
-### 🎓 Selbststudium (Async)
+### 🎓 Selbststudium (asynchron)
 - Repo klonen
 - Einen [Lernpfad](00-start-here/learning-paths.md) wählen
 - Labs lokal durcharbeiten
 - Optional: Issues im Repo posten für Austausch
 
-### 👨‍🏫 Instructor-Led (Synchron)
+### 👨‍🏫 Instructor-Led (synchron)
 - Halbtag (4h): [Agenda hier](08-workshop-facilitator/half-day-agenda.md)
 - Ganztag (8h): [Agenda hier](08-workshop-facilitator/full-day-agenda.md)
 - Trainer nutzt `08-workshop-facilitator/` Material + Moderations-Tipps
-- Teilnehmer in Breakout Groups
+- Teilnehmende in Breakout-Gruppen
 
-### 🤝 Team Dojo (Wiederholendes Lernen)
+### 🤝 Team Dojo (wiederholendes Lernen)
 - Wöchentlich 1h: Ein Modul + ein Mini-Lab
-- Preparation async → Sync Discussion
+- Vorbereitung asynchron → gemeinsame Diskussion
 - Anwendung auf echtes Ticket der Woche
 
 ---
@@ -281,7 +277,7 @@ python -c "from litellm import completion; print(completion(model='ollama/qwen3.
 <details>
 <summary><strong>F: Ich habe kein Budget — geht das trotzdem?</strong></summary>
 
-→ **Ja!** Setup Option B (Ollama + Qwen3.1 Coder): Völlig kostenlos, läuft lokal.
+→ **Ja!** Setup-Option B (Ollama + Qwen3.1 Coder): Voellig kostenlos, laeuft lokal.
 
 Oder Anthropic Free Tier (15 Requests pro Minute), das reicht für Labs.
 
@@ -292,15 +288,15 @@ Oder Anthropic Free Tier (15 Requests pro Minute), das reicht für Labs.
 
 → **Beide!** 
 
-Für **Startups:** Option B (Ollama) + Cursor IDE = $0-20  
-Für **Enterprise:** Claude Code + LangGraph + Custom MCP = Enterprise-Ready
+Fuer **Startups:** Option B (Ollama) + Cursor IDE = $0-20  
+Fuer **Enterprise:** Claude Code + LangGraph + Custom MCP = produktionsreif auf Enterprise-Niveau
 
 </details>
 
 <details>
 <summary><strong>F: Kann ich das mit meinem Team durcharbeiten?</strong></summary>
 
-→ **Ja!** Schau dir [Team Dojo Modus](00-start-here/workshop-modes.md) an.
+→ **Ja!** Schau dir den [Team-Dojo-Modus](00-start-here/workshop-modes.md) an.
 
 Oder host einen [1-Tag Workshop](08-workshop-facilitator/full-day-agenda.md) mit diesem Material.
 
@@ -321,49 +317,34 @@ Oder host einen [1-Tag Workshop](08-workshop-facilitator/full-day-agenda.md) mit
 
 - [📖 Glossar & Akronyme](glossary.md) — Begriff nachschlagen
 - [❓ FAQ](faq.md) — "Das funktioniert nicht"
-- [🔗 Weiterführende Ressourcen](REFERENCES.md) — Originalquellen
+- [🔗 Weiterfuehrende Ressourcen](REFERENCES.md) — Originalquellen
 - [💬 Diskussionen im Repo](faq.md) — Fragen und Antworten an einem Ort
 
 ---
 
 ## 🎯 Learning Path Entscheidungsbaum
 
-```
-                     START HIER
-                        |
-              ┌─────────┴─────────┐
-              |                   |
-         "Lass mich       "Ich will
-          orientieren"     seriös
-                          lernen"
-           |                 |
-    5-min Read      ┌────────┴────────┐
-           |        |                 |
-           v    Anfänger?         Fortgeschrittene?
-      Gemacht!      |                 |
-                    v                 v
-                 Lernpfad 1      Lernpfad 2
-                 (2 Stunden)    (3 Stunden)
-                 + Lab 1          + Lab 2
-                    |                 |
-                    └─────────┬────────┘
-                              |
-                              v
-                        Willst du mehr?
-                              |
-                              v
-                          Lernpfad 3:
-                         Full Workshop
-                         + Lab 3 Capstone
+```mermaid
+flowchart TD
+   A[START HIER] --> B[Lass mich orientieren]
+   A --> C[Ich will serioes lernen]
+   B --> D[5-min Read]
+   C --> E[Anfaenger?]
+   C --> F[Fortgeschrittene?]
+   E --> G[Lernpfad 1: 2 Stunden + Lab 1]
+   F --> H[Lernpfad 2: 3 Stunden + Lab 2]
+   G --> I[Willst du mehr?]
+   H --> I
+   I --> J[Lernpfad 3: Full Workshop + Lab 3 Capstone]
 ```
 
-**Nächster Schritt:** Wähle einen Pfad oben. Klick auf den Link. Los geht's! 🚀
+**Naechster Schritt:** Waehle oben einen Pfad. Klicke auf den Link. Los geht's!
 
 ---
 
 ## 📝 Lizenz
 
-Dieses Material wird unter einer offenen Lizenz bereitgestellt (Details TBA).  
+Dieses Material wird unter einer offenen Lizenz bereitgestellt (Details folgen).  
 Beiträge sind willkommen: Issues, PRs, Diskussionen.
 
 ---
@@ -379,7 +360,7 @@ Beiträge sind willkommen: Issues, PRs, Diskussionen.
 
 **Material aktualisiert:** Juni 2026  
 **Level:** Advanced / Praktiker  
-**Sprache:** Deutsch (English in Vorbereitung)  
-**Status:** 🟢 Live — Aktuelle Version
+**Sprache:** Deutsch (Englisch spaeter moeglich)  
+**Status:** 🟢 Live — aktuelle Version
 
-🎉 **Willkommen im agentic Programming.** Viel Spaß beim Lernen!
+**Willkommen im agentic Programming.** Viel Spass beim Lernen!

@@ -1,44 +1,44 @@
-# Security Review Skill Template
+# Security-Review-Skill-Template
 
-> Portable workshop skill template for agentic coding tools.
+> Portables Workshop-Skill-Template fuer agentic Coding Tools.
 
-## Purpose
+## Zweck
 
-Use this skill whenever a task changes code, docs, prompts, or repository instructions and needs a security check before merge.
+Diese Skill immer dann verwenden, wenn eine Aufgabe Code, Doku, Prompts oder Repository-Instruktionen aendert und vor dem Merge einen Security Check braucht.
 
-## Instructions
+## Instruktionen
 
-- Do not read `.env` or secret files unless explicitly required.
-- Do not commit secrets or print them in output.
-- Validate inputs and avoid unsafe shell interpolation.
-- Check authz, data exposure, dependencies, and logging.
-- Stop and ask before destructive or external actions.
+- `.env` oder Secret-Dateien nur lesen, wenn es explizit erforderlich ist.
+- Secrets nicht committen und nicht im Output ausgeben.
+- Inputs validieren und unsichere Shell-Interpolation vermeiden.
+- AuthZ, Datenexposition, Dependencies und Logging pruefen.
+- Vor destruktiven oder externen Aktionen stoppen und nachfragen.
 
-## Output format
+## Ausgabeformat
 
-When used, the agent should return:
+Wenn die Skill verwendet wird, sollte der Agent zurueckgeben:
 
-1. a short summary of what changed
-2. a checklist of security risks reviewed
-3. any findings that still need human review
+1. eine kurze Zusammenfassung der Aenderungen
+2. eine Checkliste der geprueften Sicherheitsrisiken
+3. alle Findings, die noch menschliches Review brauchen
 
-## Checklist
+## Checkliste
 
-- [ ] Secrets were not read by default
-- [ ] Secrets were not committed
-- [ ] Inputs were validated
-- [ ] Sensitive output was not logged
-- [ ] Dependencies were reviewed
-- [ ] Shell commands were safe
-- [ ] Approval was requested for destructive actions
+- [ ] Secrets wurden nicht standardmaessig gelesen
+- [ ] Secrets wurden nicht committet
+- [ ] Inputs wurden validiert
+- [ ] Sensitiver Output wurde nicht geloggt
+- [ ] Dependencies wurden geprueft
+- [ ] Shell-Kommandos waren sicher
+- [ ] Fuer destruktive Aktionen wurde Freigabe eingeholt
 
-## Portability map
+## Portabilitaets-Mapping
 
-| Agent | Where this skill usually lives |
+| Agent | Wo diese Skill typischerweise liegt |
 |---|---|
-| Cursor | project rules or workspace instructions |
-| Claude Code | skill or instruction file in the repo |
-| Windsurf | workspace instructions or agent settings |
-| GitHub Copilot | repo instructions such as AGENTS.md or copilot instructions |
-| Aider | prompt template or repo instruction file |
-| Pi / OpenCode | config or prompt file |
+| Cursor | Projektregeln oder Workspace-Instruktionen |
+| Claude Code | Skill- oder Instruktionsdatei im Repo |
+| Windsurf | Workspace-Instruktionen oder Agent-Settings |
+| GitHub Copilot | Repo-Instruktionen wie AGENTS.md oder Copilot-Instruktionen |
+| Aider | Prompt-Template oder Repo-Instruktionsdatei |
+| Pi / OpenCode | Config- oder Prompt-Datei |

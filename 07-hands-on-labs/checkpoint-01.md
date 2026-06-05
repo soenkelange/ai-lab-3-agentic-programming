@@ -30,11 +30,11 @@ Teste dich:
 
 **Frage:** "Wenn ich zwischen Cursor und Claude Code wählen müsste, welche Fragen würde ich stellen?"
 
-**Du solltest antwortenkonnen:**
+**Du solltest antworten koennen:**
 - Ist mir GUI oder CLI wichtiger?
 - Will ich ein freies Tool oder $ bezahlen?
 - Will ich Model-Flexibilität (LiteLLM)?
-- Ist  Team-Nutzung geplant?
+- Ist Team-Nutzung geplant?
 
 ✅ **Wenn ja, zurück zu** [Lab 1](../07-hands-on-labs/lab-01-single-agent-ticket.md) und probiere ein anderes Tool.
 ❌ **Wenn nein, siehe** [Module 3: Agent Selection](../03-coding-agents-landscape/selection-matrix.md)
@@ -46,9 +46,9 @@ Teste dich:
 
 **Frage:** "Warum ist LiteLLM wichtig, wenn ich Claude nutze?"
 
-**Du solltest antwortwen können:**
+**Du solltest antworten koennen:**
 - LiteLLM ermöglicht einfache Provider-Wechsel
-- Heute Claude, morgen Ollama? Ein Env-Var.
+- Heute Claude, morgen Ollama? Eine Env-Variable.
 - Das ist strategisch für Long-Term Projekte
 
 ✅ **Wenn ja, super.**
@@ -58,22 +58,22 @@ Teste dich:
 
 ---
 
-## Hands-On Check: Hast du's gemacht?
+## Hands-On-Check: Hast du's gemacht?
 
 ### Lab 1 Deliverables
 
 Wenn du Lab 1 gemacht hast, hast du:
 
-- [ ] Einen echten Issue identifiziert
+- [ ] Ein echtes Issue identifiziert
 - [ ] Claude Code (oder Pi) gestartet
-- [ ] Agent beobachtet wie er:
+- [ ] Den Agenten dabei beobachtet, wie er:
   - [ ] Das Issue analysiert
   - [ ] Codebase verstanden
   - [ ] Plan gemacht
   - [ ] Code geschrieben oder Text generiert
   - [ ] Tests geladen (falls relevant)
 - [ ] PR/Changes submitted
-- [ ] Du reviewt die Qualität
+- [ ] Die Qualitaet reviewed
 
 **Wenn Häkchen >= 7:** Du hast die Essenz verstanden ✅
 
@@ -92,7 +92,7 @@ Beispiele:
 - "Die Planning-Phase war länger als erwartet"
 - "Das Output war Quality, aber unvollständig"
 
-Schreib deine auf (min. 2-3 Sätze). Das hilft dir later, dich an das Aha-Moment zu erinnern.
+Schreib deine Beobachtung auf (mindestens 2-3 Saetze). Das hilft dir spaeter, dich an den Aha-Moment zu erinnern.
 
 </details>
 
@@ -103,7 +103,7 @@ Schreib deine auf (min. 2-3 Sätze). Das hilft dir later, dich an das Aha-Moment
 Basierend auf deinem Lab 1 Ergebnis, wähle:
 
 <details>
-<summary>✅ Es funktionierte excellent</summary>
+<summary>✅ Es funktionierte exzellent</summary>
 
 → Gehen zu [Lab 3: Multi-Agent Pipeline](../07-hands-on-labs/lab-03-multi-agent-pipeline.md)
 
@@ -138,11 +138,11 @@ Vielleicht war das erste Issue zu komplex. Find etwas Kleineres und probiere noc
 Du hast jetzt:
 
 ✅ Verstanden, was Agenten sind (Model vs. Agent)  
-✅ Gesehen, wie ein Agent eine echte Task praktiziert  
-✅ Gelernt, dass Agenten nicht perfect, aber powerful sind  
+✅ Gesehen, wie ein Agent eine echte Aufgabe bearbeitet  
+✅ Gelernt, dass Agenten nicht perfekt, aber leistungsfaehig sind  
 ✅ Erkannt, welches Tool zu deinem Team passt  
 
-Das ist nicht wenig. Das ist ein echtes Paradigmen-Shift.
+Das ist nicht wenig. Das ist ein echter Paradigmenwechsel.
 
 **Willkommen im agentic Programming 🎉**
 

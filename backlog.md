@@ -1,34 +1,50 @@
 # Backlog
 
-## Open Items
+## Offene Punkte
 
-### 1. Best practices for allowing agents to use credentials
+### 1. Best Practices fuer den Umgang von Agenten mit Zugangsdaten [x]
 
-- Define a secure credential model for agent workflows (API tokens, service accounts, scoped keys).
-- Add practical guidance on least privilege, short-lived tokens, rotation, revocation, and audit logging.
-- Document safe handling patterns for local dev, CI/CD, and shared team environments.
-- Add explicit guard rails for prompt/tool usage (for example: never expose raw secrets in prompts, logs, or commits).
+- Ein sicheres Modell fuer Zugangsdaten in agentischen Workflows definieren (API-Tokens, Service Accounts, Scoped Keys).
+- Praktische Leitlinien zu Least Privilege, kurzlebigen Tokens, Rotation, Revocation und Audit-Logging ergaenzen.
+- Sichere Muster fuer lokale Entwicklung, CI/CD und geteilte Team-Umgebungen dokumentieren.
+- Explizite Guard Rails fuer Prompt- und Tool-Nutzung ergaenzen (zum Beispiel: rohe Secrets niemals in Prompts, Logs oder Commits ausgeben).
 
-**Deliverable:** A dedicated section or module with concrete do/don't examples and a workshop exercise.
+**Ergebnis:** Ein eigener Abschnitt oder ein eigenes Modul mit konkreten Do/Don't-Beispielen und einer Workshop-Uebung.
 
----
-
-### 2. Let the author feed FAQ more easily
-
-- Add a lightweight process for continuously extending [faq.md](faq.md).
-- Propose a simple intake format (question, context, short answer, links).
-- Add a contribution template/snippet so new FAQ entries stay consistent.
-- Define where workshop feedback should be captured before FAQ curation.
-
-**Deliverable:** A repeatable FAQ update workflow and a small template.
+Umgesetzt in [05-agentic-workflows/zugangsdaten-und-agenten.md](05-agentic-workflows/zugangsdaten-und-agenten.md).
 
 ---
 
-### 3. Consolidate repository language (English or German)
+### 2. FAQ leichter pflegbar machen
 
-- Decide on one primary language for the whole repository.
-- Audit mixed-language files and headings.
-- Define migration strategy (single-language conversion or bilingual strategy with clear structure).
-- Update naming/content guidelines so new files follow the language decision.
+- Einen schlanken Prozess ergaenzen, um [faq.md](faq.md) fortlaufend zu erweitern.
+- Ein einfaches Intake-Format vorschlagen (Frage, Kontext, Kurzantwort, Links).
+- Ein Beitrags-Template oder Snippet hinzufuegen, damit neue FAQ-Eintraege konsistent bleiben.
+- Festlegen, wo Workshop-Feedback vor der FAQ-Pflege gesammelt wird.
 
-**Deliverable:** A clear language policy and consistent content across the repo.
+**Ergebnis:** Ein wiederholbarer FAQ-Aktualisierungsprozess und ein kleines Template.
+
+---
+
+### 3. Repository-Sprache vereinheitlichen (Englisch oder Deutsch) [x]
+
+- Eine primaere Sprache fuer das gesamte Repository festlegen.
+- Dateien und Ueberschriften mit gemischter Sprache pruefen.
+- Eine Migrationsstrategie definieren (einsprachige Umstellung oder zweisprachige Struktur mit klaren Regeln).
+- Naming- und Inhaltsrichtlinien aktualisieren, damit neue Dateien der Sprachentscheidung folgen.
+
+**Ergebnis:** Eine klare Sprachrichtlinie und konsistentere Inhalte im gesamten Repository.
+
+---
+
+### 4. UX/UI-Design ergaenzen (UI Specification) [x]
+
+- Eine schlanke UI Specification fuer workshopbezogene Interfaces definieren (Layout, Navigation, Zustaende und Interaktionen).
+- Wiederverwendbare UI-Patterns und Komponenten festlegen (zum Beispiel Karten, Checklisten, Statusindikatoren, Callouts) inklusive Einsatzregeln.
+- Grundlagen der Barrierefreiheit in die Spezifikation aufnehmen (Kontrast, Tastaturfluss, lesbare Typografie, semantische Struktur).
+- Richtlinien fuer responsives Verhalten auf Desktop und Mobilgeraeten ergaenzen.
+- Ein Uebergabeformat von Design zu Implementierung dokumentieren (Screen-Anforderungen, Akzeptanzkriterien und Edge States).
+
+**Ergebnis:** Ein praktisches UI-Specification-Dokument, das in Workshop-Seiten und Labs wiederverwendet werden kann.
+
+Umgesetzt in [assets/templates/ui-specification.md](assets/templates/ui-specification.md).

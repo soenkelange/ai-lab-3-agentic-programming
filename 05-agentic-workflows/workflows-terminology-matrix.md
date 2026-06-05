@@ -1,28 +1,28 @@
-# Coding Agent Terminology Matrix
+# Terminologie-Matrix fuer Coding Agents
 
-This table maps common concepts used by coding agents to the wording participants will encounter in different tools.
+Diese Tabelle ordnet haeufige Konzepte aus Coding Agents den Begriffen zu, die Teilnehmende in verschiedenen Tools sehen.
 
-| Concept | Cursor | Claude Code | Windsurf | GitHub Copilot | Aider | Pi / OpenCode |
+| Konzept | Cursor | Claude Code | Windsurf | GitHub Copilot | Aider | Pi / OpenCode |
 |---|---|---|---|---|---|---|
-| Persistent behavior instructions | Rules | Instructions / skills / agent behavior | Workspace instructions | Workspace or platform guidance | Repo prompt conventions | Config / prompt policy |
-| Reusable task packs | Skills | Skills | Workflow packs | Not a common branded term | Prompt templates or scripts | Templates / plugins |
-| Delegated specialist agents | Sub-agents | Sub-agents | Secondary agents / workflow helpers | Usually not first-class | Usually not first-class | Sometimes orchestration helpers |
-| Memory across tasks | Memory / context | Memory / persistence | Workspace context | Platform/context memory | Git history / repo context | Memory / context features |
-| Tool access policy | Rules / settings | Tool permissions / approvals | Workspace policies | Admin/workspace policy | CLI conventions | Config / approvals |
-| Single task input | Chat / command | Chat / terminal request | Chat request | Chat request | CLI instruction | CLI / chat request |
-| System-level guidance | Hidden system prompt | Hidden system prompt | Hidden platform prompt | Hidden platform prompt | Prompt template | Hidden platform prompt |
+| Persistente Verhaltensinstruktionen | Rules | Instructions / Skills / Agent-Verhalten | Workspace-Instruktionen | Workspace- oder Plattform-Guidance | Repo-Prompt-Konventionen | Config / Prompt-Policy |
+| Wiederverwendbare Aufgabenpakete | Skills | Skills | Workflow-Packs | Kein haeufig gebrandeter Begriff | Prompt-Templates oder Skripte | Templates / Plugins |
+| Delegierte Spezialisten-Agenten | Sub-Agents | Sub-Agents | Sekundaere Agenten / Workflow-Helfer | Meist kein First-Class-Konzept | Meist kein First-Class-Konzept | Teilweise Orchestrierungshelfer |
+| Memory ueber Aufgaben hinweg | Memory / Kontext | Memory / Persistenz | Workspace-Kontext | Plattform-/Kontext-Memory | Git-Historie / Repo-Kontext | Memory- / Kontext-Funktionen |
+| Tool-Zugriffs-Policy | Rules / Settings | Tool-Berechtigungen / Freigaben | Workspace-Policies | Admin-/Workspace-Policy | CLI-Konventionen | Config / Freigaben |
+| Input fuer eine einzelne Aufgabe | Chat / Kommando | Chat- / Terminal-Anfrage | Chat-Anfrage | Chat-Anfrage | CLI-Instruktion | CLI- / Chat-Anfrage |
+| Systemweite Guidance | Versteckter System Prompt | Versteckter System Prompt | Versteckter Plattform Prompt | Versteckter Plattform Prompt | Prompt-Template | Versteckter Plattform Prompt |
 
-## How to use this matrix
+## So verwendest du diese Matrix
 
-- Use **rules** for safety and consistency.
-- Use **skills** for reusable capability.
-- Use **sub-agents** only after the base layer is solid.
-- Use **memory** carefully and intentionally.
+- **Rules** fuer Sicherheit und Konsistenz verwenden.
+- **Skills** fuer wiederverwendbare Capability verwenden.
+- **Sub-Agents** erst einsetzen, wenn die Basisschicht stabil ist.
+- **Memory** bewusst und gezielt einsetzen.
 
-## Recommended teaching sequence
+## Empfohlene Lehrreihenfolge
 
-1. Terminology and shared mental model
-2. Rules and skills
-3. Safety and tool policy
-4. Sub-agents and delegation
-5. Multi-agent workflows
+1. Terminologie und gemeinsames mentales Modell
+2. Rules und Skills
+3. Sicherheit und Tool Policy
+4. Sub-Agents und Delegation
+5. Multi-Agent-Workflows

@@ -11,13 +11,17 @@ GUI IDEs (Cursor, Windsurf) sind *großartig* für interaktive Entwicklung.
 
 Aber **Terminal Agents** sind revolutionär für Automation:
 
-```
-Altes Denken:
-  GitHub Issue created → Developer manuell arbeitet √
+```mermaid
+flowchart TD
+    A[GitHub Issue created]
+    A --> B[Webhook]
+    B --> C[Cloud Function]
+    C --> D[Terminal Agent]
+    D --> E[Work done automatisch]
+    E --> F[PR created]
+    F --> G[Done]
 
-Neues Denken:
-  GitHub Issue created → Webhook → Cloud Function → Terminal Agent
-    → Work done automatisch → PR created → Done ✅ (Humans can sleep)
+    A -. altes Denken .-> H[Developer manuell arbeitet]
 ```
 
 ---

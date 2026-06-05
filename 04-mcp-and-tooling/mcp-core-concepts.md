@@ -52,30 +52,13 @@ MCP = eine Schnittstelle, wo Agents sagen "ich braich dieses Tool". MCP überset
 
 ## Die Architektur
 
-```
-┌──────────────┐
-│   Agent      │
-│ (Claude Code)│
-└──────┬───────┘
-       │ "I need to read GitHub issues"
-       │
-┌──────v────────────────────────────┐
-│  MCP (Model Context Protocol)      │
-│  - Understands agent requests      │
-│  - Routes to right server          │
-│  - Manages responses               │
-└──────┬─────────────────┬───────────┘
-       │                 │
-  ┌────v────┐     ┌──────v─────┐
-  │ GitHub   │     │  Jira      │
-  │ MCP      │     │  MCP       │
-  │ Server   │     │  Server    │
-  └────┬─────┘     └──────┬──────┘
-       │                  │
-  ┌────v────┐     ┌──────v──────┐
-  │ GitHub  │     │ Jira        │
-  │  APIs   │     │  APIs       │
-  └─────────┘     └─────────────┘
+```mermaid
+flowchart TD
+    A[Agent: Claude Code] --> B[MCP Protocol Layer]
+    B --> C[GitHub MCP Server]
+    B --> D[Jira MCP Server]
+    C --> E[GitHub API]
+    D --> F[Jira API]
 ```
 
 ---
@@ -98,46 +81,58 @@ MCP = eine Schnittstelle, wo Agents sagen "ich braich dieses Tool". MCP überset
 Die Majoritat der MCP Server sind "Tool Integrations":
 
 ### 1. File System Server
-```
-Agent: "Lies datei.txt"
-MCP: [calls filesystem API]
-→ File content returned
+```mermaid
+sequenceDiagram
+  participant A as Agent
+  participant M as MCP Server
+  A->>M: Lies datei.txt
+  M-->>A: File content returned
 ```
 
 ### 2. Git Server
-```
-Agent: "Welche commits in der letzten Stunde?"
-MCP: [calls git log]
-→ Commits returned
+```mermaid
+sequenceDiagram
+  participant A as Agent
+  participant M as MCP Server
+  A->>M: Welche commits in der letzten Stunde?
+  M-->>A: Commits returned
 ```
 
 ### 3. GitHub Server
-```
-Agent: "Listet offene Issues von label 'bug'"
-MCP: [calls GitHub API]
-→ Issues returned
+```mermaid
+sequenceDiagram
+  participant A as Agent
+  participant M as MCP Server
+  A->>M: Listet offene Issues von label bug
+  M-->>A: Issues returned
 ```
 
 ### 4. Jira Server
-```
-Agent: "Project Status?"
-MCP: [calls Jira API]
-→ Sprint info returned
+```mermaid
+sequenceDiagram
+  participant A as Agent
+  participant M as MCP Server
+  A->>M: Project Status?
+  M-->>A: Sprint info returned
 ```
 
 ### 5. Slack Server
-```
-Agent: "Post eine Nachricht in #dev-channel"
-MCP: [calls Slack API]
-→ Message posted
+```mermaid
+sequenceDiagram
+  participant A as Agent
+  participant M as MCP Server
+  A->>M: Post eine Nachricht in dev-channel
+  M-->>A: Message posted
 ```
 
 ### 6. Custom API Server
 Du kannst auch eigene APIs wrappen:
-```
-Agent: "Kundendaten für User 42"
-MCP: [calls your internal API]
-→ Customer data returned
+```mermaid
+sequenceDiagram
+  participant A as Agent
+  participant M as MCP Server
+  A->>M: Kundendaten fuer User 42
+  M-->>A: Customer data returned
 ```
 
 ---
@@ -246,14 +241,12 @@ Das ist part of warum Claude Code so mächtig ist.
 
 ### Option A: Claude Code + GitHub MCP (Sofort)
 
-```
-1. Gehe zu claude.ai → Code Mode
+1. Gehe zu claude.ai -> Code Mode
 2. GitHub Repository upload
 3. "Let's connect to real GitHub API"
 4. Claude Code asks: "GitHub Token?"
 5. You provide: GITHUB_TOKEN env var
-6. ✅ Done. Agent kann jetzt issues lesen
-```
+6. Done. Agent kann jetzt Issues lesen
 
 ### Option B: Custom MCP Server schreiben (Advanced, 1h)
 
@@ -288,15 +281,24 @@ EOF
 
 **Beobachtung 2026:** MCP wird das, was Docker für Container ist — der Standard.
 
-```
-Today:              Future (2027+):
-- Agenten nutzen    - MCP = Standard
-  verschiedene      - Jedes Tool hat
-  APIs              einen MCP Server
-- Viel Integration  - Agent kann
-  Code              alles via MCP
-- Fragmentation       üffnen
-                    - True Plug & Play
+```mermaid
+flowchart LR
+    subgraph T[Today]
+        T1[Agenten nutzen verschiedene APIs]
+        T2[Viel Integrationscode]
+        T3[Fragmentation]
+    end
+
+    subgraph F[Future 2027+]
+        F1[MCP als Standard]
+        F2[Jedes Tool hat MCP Server]
+        F3[Agent kann alles via MCP oeffnen]
+        F4[True Plug and Play]
+    end
+
+    T1 --> F1
+    T2 --> F2
+    T3 --> F4
 ```
 
 ---
@@ -372,10 +374,11 @@ Aber: Sobald du scalierst zu mehreren Agenten oder komplexeren Workflows, brauch
 
 **Merksatz:** MCP ist nicht ein Feature. Es ist die Ebene, auf der moderne Agenten gebaut werden.
 
-```
-Model → (Inference Layer + LiteLLM)
-Agent → (MCP für Tool Integration)
-Multi-Agent → (LangGraph für Orchestration)
+```mermaid
+flowchart TD
+  M[Model] --> I[Inference Layer + LiteLLM]
+  A[Agent] --> P[MCP fuer Tool Integration]
+  MA[Multi-Agent] --> O[LangGraph fuer Orchestration]
 ```
 
 MCP is the middle layer. Ohne MCP müssen Agents zu hacky mit Tool-Integration umgehen.

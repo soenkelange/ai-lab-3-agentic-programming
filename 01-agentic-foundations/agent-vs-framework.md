@@ -17,31 +17,19 @@
 
 ## Visualisiert
 
-```
-┌─────────────────────────────────────────┐
-│        Agent Frameworks                 │
-│     (LangGraph, CrewAI, ...)           │
-│   ┌────────────────────────────┐        │
-│   │  agent 1    agent 2        │        │
-│   │  ┌────┐      ┌────┐        │        │
-│   │  │    │      │    │        │        │
-│   │  └────┘      └────┘        │        │
-│   │    ↓           ↓            │        │
-│   │  ┌────────────────┐         │        │
-│   │  │  Orchestrate   │         │        │
-│   │  │  (Routing)     │         │        │
-│   │  └────────────────┘         │        │
-│   │         ↓                    │        │
-│   │  ┌────────────────┐          │        │
-│   │  │ Model Layer    │          │        │
-│   │  │ (LiteLLM)      │          │        │
-│   └──┼────────────────┼──────────┘        │
-│      │                │                   │
-│   ┌──v────┐     ┌────v───┐               │
-│   │Claude │     │Ollama  │               │
-│   │ API   │     │Local   │               │
-│   └───────┘     └────────┘               │
-└─────────────────────────────────────────┘
+```mermaid
+flowchart TD
+  subgraph F[Agent Frameworks - LangGraph, CrewAI, ...]
+    A1[Agent 1]
+    A2[Agent 2]
+    O[Orchestrate / Routing]
+    M[Model Layer / LiteLLM]
+    A1 --> O
+    A2 --> O
+    O --> M
+  end
+  M --> C[Claude API]
+  M --> L[Ollama Local]
 ```
 
 ---
@@ -55,12 +43,10 @@ Für dein Projekt: **Welcher Teil gehört dir, welcher nicht?**
 **Dir gehört:** Dein Code + deine Prompts  
 **Dir gehört NICHT:** Der Agent selbst, die Inference
 
-```
-Du schreibst:  "Fix this bug"
-    ↓
-Claude Code:   Agent lädt, agiert, retuert PR
-    ↓
-Du reviewst:   Fertig.
+```mermaid
+flowchart TD
+  A[Du schreibst: Fix this bug] --> B[Managed Agent arbeitet]
+  B --> C[Du reviewst]
 ```
 
 **Beispiele:** GitHub Copilot, Cursor IDE, Windsurf
@@ -82,14 +68,11 @@ Du reviewst:   Fertig.
 **Dir gehört:** Alles (Code, Agent, Workflows, Modelle)  
 **Du brauchst:** Framework + Model-Provider
 
-```
-Du schreibst:  LangGraph Workflow (Python)
-    ↓
-Dein Agent:    Orchestriert mehrere LLM-Calls
-    ↓
-Du deployest:  AWS Lambda / Cloud Run / On-Prem
-    ↓
-API-User:      "Löse Issue #42"
+```mermaid
+flowchart TD
+  A[Du schreibst: LangGraph Workflow] --> B[Agent orchestriert LLM Calls]
+  B --> C[Deployment: Lambda / Cloud Run / On-Prem]
+  C --> D[API User: Loese Issue #42]
 ```
 
 **Beispiele:** LangGraph, CrewAI, PydanticAI, Mastra
@@ -110,14 +93,11 @@ API-User:      "Löse Issue #42"
 
 **Kombination:** Nutze IDE-Agent für schnelle Iteration + Framework für Production
 
-```
-Development Cycle:
-  1. Prompt im Claude Code → schnell iterieren
-  2. Finalisierten Prompt in LangGraph übernehmen
-  3. Mit LiteLLM deployen → alle Modelle nutzbar
-
-Production:
-  LangGraph + LiteLLM + dein Modell = volle Kontrolle
+```mermaid
+flowchart TD
+    A[Prompt in Agent iterieren] --> B[Prompt in Framework uebernehmen]
+    B --> C[Mit LiteLLM deployen]
+    C --> D[Production: volle Kontrolle]
 ```
 
 **Das ist der pragmatische Weg für fast alle Teams.**
@@ -143,30 +123,23 @@ Production:
 
 ### Mit Option A (Managed IDE)
 
-```
-Developer:
-  1. Öffnet Claude Code
-  2. "Implement issue #42"
-  3. Agent arbeitet ← du siehst es in Echtzeit
-  4. PR wird geöffnet
-  5. Done ✅ (aber nicht skalierbar für 100 PRs/Woche)
+```mermaid
+flowchart TD
+    A[Developer oeffnet Agent] --> B[Implement issue #42]
+    B --> C[Agent arbeitet in Echtzeit]
+    C --> D[PR wird geoeffnet]
+    D --> E[Done]
 ```
 
 ### Mit Option B (Framework + DIY)
 
-```
-DevOps schreibt einmalig:
-  - LangGraph Workflow
-  - 3 Agents: Planner, Developer, Reviewer
-  - Deployment auf Lambda
-
-Afterward (täglich wiederkehrend):
-  Webhook: GitHub Issue created
-    → AWS Lambda
-    → LangGraph
-    → 3 Agents handeln
-    → PR in GitHub
-    ← vollautomatisiert ✅
+```mermaid
+flowchart TD
+    A[Einmalig: Workflow + 3 Agents + Deployment] --> B[Webhook: GitHub Issue created]
+    B --> C[AWS Lambda]
+    C --> D[LangGraph]
+    D --> E[Planner/Developer/Reviewer handeln]
+    E --> F[PR in GitHub]
 ```
 
 **Kosten-Nutzen:**
@@ -179,34 +152,24 @@ Afterward (täglich wiederkehrend):
 
 Hier ist das Framework, das für dich richtig ist:
 
-```
-Control-Dimension (Du <──────→ Vendor)
-
-Low:  Cursor IDE → intuitive UX, wenig Code, aber: eingeloggt
-                    
-Mid:  Claude Code → Web UI, Code-Kontrolle, aber: API-basiert
-                    
-High: LangGraph  → Maximale Kontrolle, Python, aber: mehr Dev-Arbeit
-      CrewAI     → Maximal Kontrolle, abstrakt, aber: Lernkurve
+```mermaid
+flowchart LR
+  L[Low Control: Managed IDE]
+  M[Mid Control: Agent + API]
+  H[High Control: Framework]
+  L --> M --> H
 ```
 
 ---
 
 ## Entscheidungsbaum für dein Team
 
-```
-                Brauchst du Multi-Agent?
-                      /       \
-                    Ja        Nein
-                   /             \
-                  /               \
-          Framework:        IDE-Agent genug?
-        LangGraph,            /        \
-        CrewAI,             Ja       Nein
-        PydanticAI        /             \
-                      Cursor/       Claude Code
-                      Copilot       (Web) +
-                                    Framework
+```mermaid
+flowchart TD
+    A[Brauchst du Multi-Agent?] -->|Ja| B[Framework: LangGraph / CrewAI / PydanticAI]
+    A -->|Nein| C[IDE-Agent genug?]
+    C -->|Ja| D[Cursor / Copilot]
+    C -->|Nein| E[Claude Code + Framework]
 ```
 
 ---

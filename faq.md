@@ -62,11 +62,10 @@ curl http://localhost:11434/api/generate -d '{"model":"qwen3.1-coder","prompt":"
 - MCP Server nicht konfiguriert → einfacheres Issue ohne MCP
 
 **Workaround:**
-```
+
 Starte einen neuen Chat, und:
-→ "Let's do this step-by-step"
-→ Gib kleinere Schritte vor
-```
+- "Let's do this step-by-step"
+- Gib kleinere Schritte vor
 
 </details>
 
@@ -101,14 +100,12 @@ Oder komplett neuer Chat / neues Issue.
 
 **Lösung:**
 
-```
 Gib dem Agent eine README oder ADR am Anfang:
-→ "Hier ist die Architektur: [paste ADR]"
-→ "Wir nutzen [Framework] als Basis"
-→ "Hier ist ein Beispiel von guter Practice: [code snippet]"
+- "Hier ist die Architektur: [paste ADR]"
+- "Wir nutzen [Framework] als Basis"
+- "Hier ist ein Beispiel von guter Practice: [code snippet]"
 
 Agent wird dann viel besser.
-```
 
 </details>
 
@@ -144,11 +141,10 @@ Agent wird dann viel besser.
 | **100% Lokal (Ollama)** | $0 (nur Strom ~$10/mo) |
 
 **Sparen:**
-```
-→ Nutze Ollama lokal für Test/Dev
-→ Nur komplexe Tasks mit Claude/GPT-5
-→ LiteLLM Routing zum Fallback nutzen
-```
+
+- Nutze Ollama lokal für Test/Dev
+- Nur komplexe Tasks mit Claude/GPT-5
+- LiteLLM Routing zum Fallback nutzen
 
 </details>
 
@@ -253,13 +249,11 @@ Jedes Lab sollte ~2x versucht werden mit verschiedenen Issues.
 
 **Nein.** Hybrid ist OK.
 
-```
-Dev A: Nutzt Cursor
-Dev B: Nutzt Claude Code
-Dev C: Nutzt Pi Agent
-→ Alle editieren das gleiche Repo
-→ Kein Problem
-```
+- Dev A: Nutzt Cursor
+- Dev B: Nutzt Claude Code
+- Dev C: Nutzt Pi Agent
+- Alle editieren das gleiche Repo
+- Kein Problem
 
 Das ist eines der besten Features von agentic Programming—Tool-Flexibility.
 

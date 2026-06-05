@@ -1,98 +1,98 @@
-# Writing Secure Software with Agents
+# Sichere Software mit Agenten entwickeln
 
-> Goal: make sure generated code is secure, not just functional.
+> Ziel: Sicherstellen, dass generierter Code nicht nur funktioniert, sondern auch sicher ist.
 
-## Security is part of the definition of done
+## Security ist Teil der Definition of Done
 
-An agent-generated feature is not complete unless it is also reviewed for security risks.
+Ein von einem Agenten erzeugtes Feature ist erst fertig, wenn es auch auf Sicherheitsrisiken geprueft wurde.
 
-## Core secure-coding areas
+## Zentrale Secure-Coding-Bereiche
 
-### Input handling
-- Validate and sanitize all untrusted input.
-- Treat prompt-derived text as untrusted unless explicitly validated.
-- Use allow-lists where possible.
+### Input Handling
+- Alle untrusted Inputs validieren und sanitizen.
+- Aus Prompts abgeleiteten Text als untrusted behandeln, solange er nicht explizit validiert wurde.
+- Wo moeglich Allow-Lists einsetzen.
 
-### Authentication and authorization
-- Enforce least privilege.
-- Never assume access control is already handled elsewhere.
-- Protect admin and internal endpoints.
+### Authentication und Authorization
+- Least Privilege durchsetzen.
+- Niemals annehmen, dass Zugriffskontrolle bereits an anderer Stelle umgesetzt ist.
+- Admin- und interne Endpunkte schuetzen.
 
-### Secrets handling
-- Keep secrets out of source code.
-- Load them from secure runtime configuration.
-- Never log full secrets.
+### Secrets Handling
+- Secrets nicht im Source Code speichern.
+- Secrets aus sicherer Runtime-Konfiguration laden.
+- Niemals vollstaendige Secrets loggen.
 
-### Data exposure
-- Avoid returning sensitive fields by default.
-- Redact logs and error messages.
-- Be careful with debug output from agents.
+### Datenexposition
+- Sensitive Felder nicht standardmaessig zurueckgeben.
+- Logs und Fehlermeldungen redigieren.
+- Vorsicht mit Debug-Output von Agenten.
 
-### Dependency and supply-chain risk
-- Review new packages before adding them.
-- Prefer pinned versions for critical systems.
-- Be cautious when agents suggest unfamiliar libraries.
+### Dependency- und Supply-Chain-Risiko
+- Neue Pakete vor dem Hinzufuegen pruefen.
+- Bei kritischen Systemen bevorzugt gepinnte Versionen verwenden.
+- Vorsichtig sein, wenn Agenten unbekannte Libraries vorschlagen.
 
-### Injection and command safety
-- Avoid shell concatenation with untrusted input.
-- Escape or pass arguments safely.
-- Watch for prompt injection when agents consume external content.
+### Injection und Command-Sicherheit
+- Shell-Konkatenation mit untrusted Input vermeiden.
+- Argumente sicher escapen oder strukturiert uebergeben.
+- Auf Prompt Injection achten, wenn Agenten externe Inhalte konsumieren.
 
-## Secure coding checklist for agent output
+## Secure-Coding-Checkliste fuer Agent-Output
 
-| Check | Question |
+| Check | Frage |
 |-------|----------|
-| Input validation | Are all external inputs validated? |
-| AuthZ | Is access restricted to the correct users or services? |
-| Secrets | Are credentials kept out of code and logs? |
-| Errors | Do errors leak sensitive information? |
-| Dependencies | Did the agent add risky or unnecessary packages? |
-| Shell usage | Does any command interpolate untrusted text? |
-| Data exposure | Are sensitive fields redacted or omitted? |
+| Input Validation | Sind alle externen Inputs validiert? |
+| AuthZ | Ist der Zugriff auf die richtigen Nutzer oder Services beschraenkt? |
+| Secrets | Sind Zugangsdaten aus Code und Logs herausgehalten? |
+| Errors | Leaken Fehler sensitive Informationen? |
+| Dependencies | Hat der Agent riskante oder unnoetige Pakete hinzugefuegt? |
+| Shell Usage | Interpoliert irgendein Kommando untrusted Text? |
+| Data Exposure | Sind sensitive Felder redigiert oder ausgelassen? |
 
-## Agent-specific risks
+## Agentenspezifische Risiken
 
-### Prompt injection
-If an agent reads web pages, issues, tickets, emails, or docs, it may encounter malicious instructions hidden in the content.
+### Prompt Injection
+Wenn ein Agent Webseiten, Issues, Tickets, E-Mails oder Doku liest, kann er auf boesartige Anweisungen treffen, die in diesen Inhalten versteckt sind.
 
-Mitigations:
-- Separate trusted task instructions from untrusted content.
-- Do not let external content override system instructions.
-- Sanitize or summarize content before passing it to a higher-privilege agent.
+Gegenmassnahmen:
+- Trusted Task Instructions von untrusted Inhalten trennen.
+- Externe Inhalte duerfen System Instructions nicht ueberschreiben.
+- Inhalte vor der Weitergabe an einen hoeher privilegierten Agenten sanitizen oder zusammenfassen.
 
-### Over-permissioned tool access
-An agent with broad shell or repository access can do more damage than necessary.
+### Ueberprivilegierter Tool-Zugriff
+Ein Agent mit breitem Shell- oder Repository-Zugriff kann mehr Schaden anrichten als noetig.
 
-Mitigations:
-- Scope file access tightly.
-- Use least-privilege tokens.
-- Separate read-only and write-capable workflows.
+Gegenmassnahmen:
+- Dateizugriff eng eingrenzen.
+- Least-Privilege-Tokens verwenden.
+- Read-only- und schreibfaehige Workflows trennen.
 
-### Unsafe code synthesis
-An agent can generate code that works but is insecure.
+### Unsichere Code-Synthese
+Ein Agent kann Code erzeugen, der funktioniert, aber unsicher ist.
 
-Mitigations:
-- Require security review for every PR.
-- Use static analysis, dependency scanning, and secret scanning.
-- Keep secure-coding patterns in templates and examples.
+Gegenmassnahmen:
+- Fuer jede PR ein Security Review verlangen.
+- Static Analysis, Dependency Scanning und Secret Scanning verwenden.
+- Secure-Coding-Patterns in Templates und Beispielen verankern.
 
-## Workshop prompt
+## Workshop-Fragen
 
-Ask participants:
+Frage die Teilnehmenden:
 
-1. What is the most likely security failure in this workflow?
-2. Which part is tool access risk and which part is code risk?
-3. What guard rail would reduce the risk most effectively?
+1. Was ist der wahrscheinlichste Sicherheitsfehler in diesem Workflow?
+2. Welcher Teil ist Tool-Zugriffsrisiko und welcher Teil ist Code-Risiko?
+3. Welche Guard Rail wuerde das Risiko am wirksamsten reduzieren?
 
-## Recommended definition of done
+## Empfohlene Definition of Done
 
-A feature is done only when:
-- it works,
-- it has tests,
-- it has been reviewed for security,
-- and it does not increase the agent's privilege unnecessarily.
+Ein Feature ist erst dann fertig, wenn:
+- es funktioniert,
+- es Tests hat,
+- es auf Sicherheit geprueft wurde,
+- und es die Privilegien des Agenten nicht unnoetig erweitert.
 
-## Related
+## Siehe auch
 
 - [Security Guard Rails](security-guardrails.md)
 - [Lab 1](../07-hands-on-labs/lab-01-single-agent-ticket.md)

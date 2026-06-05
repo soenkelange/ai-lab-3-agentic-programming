@@ -1,9 +1,9 @@
-# ✋ Lab 1: Single Agent Ticket — Dein erster echtes Case
+# ✋ Lab 1: Single-Agent-Ticket — Dein erster echter Fall
 
 > **Dauer:** 45 Minuten (20 min Setup + 25 min Lab)  
 > **Level:** Anfänger  
-> **Ziel:** Ein echtes GitHub-Issue mit Claude Code oder Pi lösen  
-> **Outcome:** PR mit funktionierendem Code oder Dokumentation
+> **Ziel:** Ein echtes GitHub-Issue mit Claude Code oder Pi loesen  
+> **Ergebnis:** PR mit funktionierendem Code oder Dokumentation
 
 ---
 
@@ -13,7 +13,7 @@ Du wirst:
 
 1. ✅ Ein echtes Issue aus dem Repo wählen
 2. ✅ Claude Code (oder Pi) starten
-3. ✅ Agent beobachten wie er:
+3. ✅ Den Agenten dabei beobachten, wie er:
    - Das Issue analysiert
    - Den Code liest  
    - Einen Lösungsplan macht
@@ -27,7 +27,7 @@ Du wirst:
 
 ## Setup (20 Min)
 
-### Option A: Claude Code Web UI (Empfohlens für Anfänger)
+### Option A: Claude Code Web UI (empfohlen fuer Anfaenger)
 
 **Kostet:** Nichts (mit Anthropic API Free Tier)
 
@@ -63,13 +63,13 @@ cd mein-projekt
 
 ### Schritt 1: Ein Issue wählen (5 Min)
 
-Nutze eines dieser Real-Examples, oder nimm ein eigenest:
+Nutze eines dieser Real-Examples oder nimm ein eigenes:
 
 #### Option 1: Aus einem echten Repository
 
 Geh zu einem deiner Repos (z.B. auf GitHub):
 - Filtere nach Issues mit Label `good-first-issue` oder `documentation`
-- Wähle etwas 30-Minuten-Umfang (nicht Architektur-Desaster)
+- Waehle etwas im 30-Minuten-Umfang (kein Architektur-Desaster)
 - **Beispiele:**
   - "Add dark mode toggle"
   - "Document the build process"
@@ -84,12 +84,12 @@ Hier ein echtes Issue, das dir hilft zu lernen:
 **Issue 1: "Create a 01-agentic-foundations/architecture-stack.md with Mermaid diagrams"**
 
 ```
-Ziel: Ein neues File schreiben mit:
+Ziel: Eine neue Datei schreiben mit:
 - Architecture Stack erklärt (Text)
 - 2-3 Mermaid Diagramme (flowchart, layer diagram)
 - Verlinkt zu model-vs-agent.md
 
-Das ist perfekt für Agenten weil:
+Das ist perfekt fuer Agenten, weil:
 - Mermaid ist code-generierbar
 - Quellen sind schon geschrieben
 - Agent muss verbinden + strukturieren
@@ -103,20 +103,20 @@ Ziel: Glossary.md schreiben mit:
 - Kurze Definition
 - Link zu relevanton Modul
 
-Perfect for Agents weil:
+Perfekt fuer Agenten, weil:
 - Viel Text aus Repos schon existiert
 - Agent muss extrahieren + zusammenfassen
 ```
 
-### Schritt 2: Issue in Claude Code öffnen (5 Min)
+### Schritt 2: Issue in Claude Code oeffnen (5 Min)
 
 #### Mit Claude Code Web:
 
 ```
 1. https://claude.ai → Code Mode
-2. Füge das Repo ein:
+2. Fuege das Repo ein:
    - "I have a GitHub issue I want you to solve"
-   - Paste den Issue Text:
+   - Fuge den Issue-Text ein:
    
    "
    Issue: Add architecture-stack.md
@@ -162,75 +162,69 @@ Zusätzliche Context:
 
 Claude Code wird jetzt:
 
-```
-1. [Planning] "Ich brauche diese Files zu lesen"
-   → agent liest architecture.md, model-vs-agent.md, README
-
-2. [Analysis] "Das Issue braucht diese Struktur"
-   → Agent denkt über Content nach
-
-3. [Execution] "Ich schreib jetzt die Datei"
-   → Mermaid wird generiert
-   → Text wird geschrieben
-   → Links werden gesetzt
-
-4. [Verification] "Passt das zum Issue?"
-   → Tests (Syntax-Checking der Meramid)
-   → Agent iteriert falls nötig
-
-5. [Output] "Fertig. Hier ist deine PR"
-   → PR wird erstelltoder als Änderungen vorgeschlagen
+```mermaid
+flowchart TD
+    P[Planning: Ich brauche diese Files zu lesen] --> P2[Agent liest architecture.md, model-vs-agent.md, README]
+    P2 --> A[Analysis: Das Issue braucht diese Struktur]
+    A --> E[Execution: Ich schreibe jetzt die Datei]
+    E --> E1[Mermaid wird generiert]
+    E1 --> E2[Text wird geschrieben]
+    E2 --> E3[Links werden gesetzt]
+    E3 --> V[Verification: Passt das zum Issue?]
+    V --> V1[Syntax-Checks]
+    V1 --> V2[Agent iteriert falls noetig]
+    V2 --> O[Output: Fertig, PR oder Aenderungsvorschlag]
 ```
 
-**Wichtig:** Du schaust zu. Das ist nicht passive. Du kannst **interventieren**:
+**Wichtig:** Du schaust zu. Das ist nicht passiv. Du kannst **intervenieren**:
 
 <details>
 <summary>Claude Code sagt etwas Falsches? — Beispiele & Fixes</summary>
 
-**Scenario 1:** "Agent generiert Mermaid, der nicht valid ist"
+**Szenario 1:** "Agent generiert Mermaid, das nicht valide ist"
 
 ```
 Du: "Die Syntax ist falsch. Mermaid akzeptiert nur:
      flowchart TD (nicht flowchart D)"
 
-Agent: [behebt sofort]
+Agent: [behebt es sofort]
 ```
 
-**Scenario 2:** "Agent vergisst das Modul zu verlinken"
+**Szenario 2:** "Agent vergisst, das Modul zu verlinken"
 
 ```
 Du: "Vergessen Sie den Link zu model-vs-agent.md 
      am Ende des Files"
 
-Agent: [adds link section]
+Agent: [ergaenzt den Link-Abschnitt]
 ```
 
-**Scenario 3:** "Agent schreibt zu kurz oder zu lang"
+**Szenario 3:** "Agent schreibt zu kurz oder zu lang"
 
 ```
 Du: "Das ist ~150 Worte, brauchen ~500. 
      Erweitern Sie die Erklärung der Agent-Loops."
 
-Agent: [expands with more detail]
+Agent: [erweitert mit mehr Details]
 ```
 
 </details>
 
-### Schritt 4: Review die PR (5 Min)
+### Schritt 4: PR reviewen (5 Min)
 
-Sobald Agent eine PR erstellt hat (oder Suggestions macht):
+Sobald der Agent eine PR erstellt hat (oder Vorschlaege macht):
 
 ```
-Checklist:
+Checkliste:
 ☐ Content ist korrekt (inhaltlich)?
 ☐ Mermaid-Diagramme sind vorhanden & valid?
 ☐ Links funktionieren?
-☐ Deutsch ist korrekt (oder English je nach Einstellung)?
+☐ Deutsch ist korrekt (oder Englisch, je nach Einstellung)?
 ☐ Format ist konsistent mit anderen Files?
 ☐ Tests/Syntax-Check ist grün?
 ```
 
-**Falls nicht alles OK:** Agent iterieren lassen. Feedback geben:
+**Falls nicht alles OK ist:** Den Agenten iterieren lassen. Feedback geben:
 
 ```
 "Die Diagramme sind großartig, aber
@@ -241,7 +235,7 @@ Erweitern Sie um ein praktisches Beispiel."
 ### Schritt 5: PR mergen oder Feedback geben
 
 - ✅ **Alles gut?** → Akzeptiere die Changes / merge PR
-- ☝️ **Noch reparaturbedarf?** → Agent weiteriterieren
+- ☝️ **Noch Reparaturbedarf?** → Agent weiter iterieren
 - 🔄 **Nicht zufrieden?** → Das ist OK. Das ist Learning.
 
 ---
@@ -259,7 +253,7 @@ Nach dem Lab, beantworte diese Fragen (5-10 Min):
    - [ ] Schwach (viel Arbeit nötig)
 
 2. **Welche Fehler hat der Agent gemacht?**
-   - (Beispiele: Syntax-Fehler, falsche Logik, fehlende Edge Cases)
+   - (Beispiele: Syntaxfehler, falsche Logik, fehlende Edge Cases)
 
 3. **Wie viel Feedback brauchte es bis zum Ziel?**
    - Iterations: 1 / 2 / 3+ / zu viele
@@ -274,7 +268,7 @@ Nach dem Lab, beantworte diese Fragen (5-10 Min):
    - Wenn Tests fehlschlugen, iterierte der Agent selbst?
    - Oder war Dein Input notwendig?
 
-6. **Reflection:**
+6. **Reflexion:**
    - Hat der Agent seine Fehler erkannt?
    - Hat er sich selbst korrigiert?
 
@@ -284,7 +278,7 @@ Nach dem Lab, beantworte diese Fragen (5-10 Min):
 
 8. **Wo brauchtest du noch Input?**
 
-9. **Würdest du diesen Agent für echte Produktions-Tasks nutzen?**
+9. **Wuerdest du diesen Agenten fuer echte Produktions-Tasks nutzen?**
    - [ ] Ja, sofort
    - [ ] Mit Supervision
    - [ ] Eher nicht
@@ -300,22 +294,22 @@ Nach dem Lab, beantworte diese Fragen (5-10 Min):
 - ✅ Verständnis: Agent analysierte Kontext richtig
 - ✅ Qualität: Output war nützlich
 
-**Nächster Gedanke:** Wie skaliert das? → [Lab 2: Multi-Agent](lab-02-mcp-integration.md)
+**Naechster Gedanke:** Wie skaliert das? → [Lab 2: MCP](lab-02-mcp-integration.md)
 
 ### Wenn der Agent falsch war:
 
-**Das ist normal!** Agenten sind kein Magic. Folgende sind Gründe:
+**Das ist normal!** Agenten sind keine Magie. Typische Gruende sind:
 
 1. **Issue war zu vage** → Bessere Specs brauchen
 2. **Agent brauchte mehr Context** → MCP Server (Lab 2)
-3. **Modell war nicht gut genug** → Stronger Model oder besser prompts
+3. **Modell war nicht gut genug** → Staerkeres Modell oder bessere Prompts
 4. **Problem kommt aus Fehler im Repo** → Edge Case
 
-**Nächster Gedanke:** Struktur die Anforderung besser → Lab 2
+**Naechster Gedanke:** Strukturiere die Anforderung besser → Lab 2
 
 ---
 
-## 🔗 Nächster Schritt
+## 🔗 Naechster Schritt
 
 Du hast Lab 1 gemacht. Die Wege:
 
@@ -334,7 +328,7 @@ Dann: [Lab 2: MCP Integration](lab-02-mcp-integration.md)
 <details>
 <summary>Route B: Du willst Multi-Agent verstehen</summary>
 
-→ [Module 6: Multi-Agent Architekturen](../06-multi-agent-architectures/swarm-patterns.md)  
+→ [Module 6: Multi-Agent-Architekturen](../06-multi-agent-architectures/swarm-patterns.md)  
 → [Lab 3: Multi-Agent Pipeline](lab-03-multi-agent-pipeline.md)
 
 </details>
@@ -355,8 +349,8 @@ Dann: [Lab 2: MCP Integration](lab-02-mcp-integration.md)
 - Oder: [FAQ.md](../faq.md)
 - Oder: Schreib ein Issue
 
-**Reflektiere:** Was war neu für dich? Was überraschte dich?
+**Reflektiere:** Was war neu fuer dich? Was hat dich ueberrascht?
 
 ---
 
-**Du hast gerade agentic Programming in action gesehen. Glückwunsch!** 🎉
+**Du hast gerade agentic Programming in Aktion gesehen. Glueckwunsch!**

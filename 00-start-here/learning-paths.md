@@ -1,13 +1,13 @@
-# Learning Paths — Wähle deinen Einstieg
+# Lernpfade — Wähle deinen Einstieg
 
-## Quick Navigation
+## Schnelle Navigation
 
 | Profil | Zeit | Startpunkt |
 |--------|------|-----------|
-| **Ich will den Workshop-Standardpfad** | 2h | [Cursor-first 2h Path](two-hour-workshop-path.md) |
+| **Ich will den Workshop-Standardpfad** | 2h | [Free-First 2h Path](two-hour-workshop-path.md) |
 | **Ich bin neu bei Agenten** | 2h | [Pfad 1: Anfänger](#pfad-1-anfänger) |
 | **Ich verstehe Modelle, will Tools lernen** | 3h | [Pfad 2: Foundations](#pfad-2-intermediate) |
-| **Ich bin Architekt und will scalable Systems** | 1 Tag | [Pfad 3: Full Workshop](../08-workshop-facilitator/half-day-agenda.md) |
+| **Ich bin Architekt und will skalierbare Systeme** | 1 Tag | [Pfad 3: Full Workshop](../08-workshop-facilitator/half-day-agenda.md) |
 | **Ich habe nur 30 Minuten** | 30min | [Ultra-Schnell](#ultra-schnell) |
 
 ---
@@ -29,11 +29,11 @@
 
 ### Blöcke
 
-| # | Modul | Dauer | Deliverable |
+| # | Modul | Dauer | Ergebnis |
 |---|-------|-------|------------|
 | 1 | [Agentic Foundations](../01-agentic-foundations/) | 15 min | "Agenten machen X, nicht nur Y" verstanden |
 | 2 | [Models 101](../02-models-and-inference/primer.md) | 20 min | "Provider vs. Runtime" Unterschied klar |
-| 3 | [Agent Tools Landscape](../03-coding-agents-landscape/selection-matrix.md) | 25 min | Weiß, dass Claude Code ≠ Cursor ≠ Aider |
+| 3 | [Agent Tools Landscape](../03-coding-agents-landscape/selection-matrix.md) | 25 min | Versteht, dass Claude Code ≠ Cursor ≠ Aider |
 | 4 | [💻 Lab 1 Live](../07-hands-on-labs/lab-01-single-agent-ticket.md) | 45 min | *Ich habe einen echten Bug mit Claude Code gelöst* |
 | 5 | [Checkpoint & Reflexion](../07-hands-on-labs/checkpoint-01.md) | 15 min | Validierung: Hab ich wirklich verstanden? |
 
@@ -57,7 +57,7 @@ ollama pull qwen3.1:coder
 
 ### Wenn du einen festen Workshop-Start brauchst
 
-- Nutze stattdessen den [Cursor-first 2h Path](two-hour-workshop-path.md)
+- Nutze stattdessen den [Free-First 2h Path](two-hour-workshop-path.md)
 - Dieser Pfad ist die empfohlene Standardroute für den Workshop
 - Er behandelt Regeln, Skills und Sicherheitsgrenzen vor Sub-Agents
 
@@ -86,7 +86,7 @@ ollama pull qwen3.1:coder
 
 ### Anschließend
 
-- Designiere einen agentic Workflow in deinem Projekt
+- Entwirf einen agentic Workflow in deinem Projekt
 - Oder: Ganz durcharbeiten mit **Pfad 3**
 
 ---
@@ -112,10 +112,10 @@ ollama pull qwen3.1:coder
 ### Nachmittags: Capstone (2-3h)
 
 - [Lab 3 Final: Multi-Agent Pipeline](../07-hands-on-labs/lab-03-multi-agent-pipeline.md)
-  - Real Ticket → 3+ Agent Workflow
-  - Orchestration Design
-  - Error Handling & Fallbacks
-- Präsentation & Review im Gruppe
+  - Echtes Ticket → 3+ Agent Workflow
+  - Orchestrierungsdesign
+  - Error Handling und Fallbacks
+- Praesentation und Review in der Gruppe
 
 ### Danach
 
@@ -130,14 +130,14 @@ ollama pull qwen3.1:coder
 <details>
 <summary>Ich bin Developer, noch keine Agenten angefasst</summary>
 
-→ **Pfad 1: Anfänger**. Dann ein eigenes Tickets mit Claude Code.
+→ **Pfad 1: Anfaenger**. Dann ein eigenes Ticket mit Claude Code.
 
 </details>
 
 <details>
 <summary>Ich kenne Modelle & LLMs gut, will aber nicht zu viel Zeit investieren</summary>
 
-→ **Pfad 2: Intermediate**. Core Konzepte + ein MCP Lab.
+→ **Pfad 2: Intermediate**. Kernkonzepte + ein MCP-Lab.
 
 </details>
 
@@ -158,7 +158,7 @@ ollama pull qwen3.1:coder
 <details>
 <summary>Ich will schnell eine Entscheidung treffen: Claude Code vs. Cursor vs. Pi?</summary>
 
-→ [Selection Matrix](../03-coding-agents-landscape/selection-matrix.md) (5 min) + ein kurzes [Tool-Vergleich](../03-coding-agents-landscape/ide-agents.md) (10 min).
+→ [Selection Matrix](../03-coding-agents-landscape/selection-matrix.md) (5 min) + ein kurzer [Tool-Vergleich](../03-coding-agents-landscape/ide-agents.md) (10 min).
 
 </details>
 
@@ -169,9 +169,9 @@ ollama pull qwen3.1:coder
 1. **Hands-On zuerst:** Theorie → sofort Lab. Nicht umgekehrt.
 2. **Mit realem Code:** Nutze ein Ticket aus deinem Stack, nicht hypothetisch.
 3. **Fehler sind Feature:** Agents werden manchmal irrational. Das ist normal. [Schau hier](../06-multi-agent-architectures/failure-modes.md).
-4. **Communities helfen:** [GitHub Discussions](https://github.com/...) für deine Fragen.
+4. **Community hilft:** [GitHub Discussions](https://github.com/...) fuer deine Fragen.
 5. **Dokumentiere deine Learnings:** Ein kurzes ADR pro Lab ist Gold.
 
 ---
 
-**Nächster Schritt:** Wähle deinen Pfad oben + starte mit dem ersten Link. Los geht's! 🚀
+**Naechster Schritt:** Waehle oben deinen Pfad und starte mit dem ersten Link. Los geht's!

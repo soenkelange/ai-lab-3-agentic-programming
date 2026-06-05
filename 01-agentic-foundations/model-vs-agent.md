@@ -22,30 +22,27 @@
 
 ### Vorher (2023): Model-Centric
 
-```
-Ingenieur → "Schreib einen API-Client für Stripe"
-    ↓
-Claude → "Here's Python code for Stripe integration"
-    ↓
-Ingenieur → kopiert, testet, deprecated Features beheben, ...
+```mermaid
+flowchart TD
+    A[Ingenieur: Schreib einen API-Client fuer Stripe] --> B[Modell: Here's Python code for Stripe integration]
+    B --> C[Ingenieur: kopiert, testet, behebt manuell]
 ```
 
 **Problem:** Das Modell ist passiv. Es generiert; der Mensch exekutiert.
 
 ### Jetzt (2026): Agent-Centric
 
-```
-Ingenieur → "Löse diesen Bug mit einem PR"
-    ↓
-Claude Code Agent:
-    1. Liest das Issue
-    2. Crawlt die Codebase
-    3. Identifiziert Debug-Pfad
-    4. Schreibt Test
-    5. Implementiert Fix
-    6. Lädt Tests
-    7. Erstellt PR
-    8. → Ingenieur reviewt diese konkrete PR statt Code zu
+```mermaid
+flowchart TD
+    A[Ingenieur: Loese diesen Bug mit einem PR] --> B[Agent]
+    B --> C[Liest das Issue]
+    C --> D[Crawlt die Codebase]
+    D --> E[Identifiziert Debug-Pfad]
+    E --> F[Schreibt Test]
+    F --> G[Implementiert Fix]
+    G --> H[Laedt Tests]
+    H --> I[Erstellt PR]
+    I --> J[Ingenieur reviewt die PR]
 ```
 
 **Der Unterschied:** Der Agent war *handlungsfähig*.
@@ -94,26 +91,24 @@ Ein Agent hat mindestens:
 ### Szenario: "Implementiere Dark Mode für die App"
 
 **Modell-Ansatz (2023):**
-```
-Prompt: "Schreib CSS für Dark Mode"
-Output: "Here's how to add dark mode to your React app..."
-    → 200 Zeilen Boilerplate
-    → Developer testet, merkt dass 10 Komponenten vergessen sind
-    → Developer debuggt manuell
+```mermaid
+flowchart TD
+    A[Prompt: Schreib CSS fuer Dark Mode] --> B[Output: Boilerplate]
+    B --> C[Developer testet]
+    C --> D[10 Komponenten vergessen]
+    D --> E[Developer debuggt manuell]
 ```
 
 **Agent-Ansatz (2026):**
-```
-Goal: "Implementiere Dark Mode. Alle Tests müssen bestehen."
-
-Agent:
-  1. [Perception] Scannt Codebase: 127 CSS-Komponenten gefunden
-  2. [Decision] Strategie: Tailwind @media + zustandsstore
-  3. [Action]   Modifiziert alle Komponenten automatisch
-  4. [Action]   Schreibt Accessibility Tests
-  5. [Action]   Lädt Tests: 🎉 All passing
-  6. [Action]   Erstellt PR mit Beschreibung
-  7. [Reflection] "Alles ist grün. Habe mit @media(prefers-color-scheme) gearbeitet
+```mermaid
+flowchart TD
+        A[Goal: Dark Mode, alle Tests muessen bestehen] --> B[Perception: scannt Codebase]
+        B --> C[Decision: Strategie festlegen]
+        C --> D[Action: Komponenten automatisch modifizieren]
+        D --> E[Action: Accessibility-Tests schreiben]
+        E --> F[Action: Tests ausfuehren]
+        F --> G[Action: PR mit Beschreibung erstellen]
+        G --> H[Reflection: Ergebnis bewerten]
 ```
 
 Der Agent war **kollaborativ**, **persistent**, **verständig** — nicht nur generativ.
@@ -122,24 +117,14 @@ Der Agent war **kollaborativ**, **persistent**, **verständig** — nicht nur ge
 
 ## Die technische Architektur
 
-```
-┌──────────────┐
-│  Goal/Task   │
-│ ("Fix Bug")  │
-└──────┬───────┘
-       │
-       v
-┌──────────────────┐      ┌──────────────┐
-│   Agent Loop     │─────→│  Modell      │
-│  - Plan          │      │ (Claude 3.5) │
-│  - Decide        │      └──────────────┘
-│  - Execute       │
-│  - Reflect       │
-└────────┬─────────┘
-         │
-    ┌────┴──────┬──────────┬────────┐
-    v           v          v        v
-  Files    Shell-Commands  Git    APIs
+```mermaid
+flowchart TD
+        A[Goal/Task: Fix Bug] --> B[Agent Loop: Plan, Decide, Execute, Reflect]
+        B --> C[Modell: Claude 3.5]
+        B --> D[Files]
+        B --> E[Shell Commands]
+        B --> F[Git]
+        B --> G[APIs]
 ```
 
 Ein Agent nutzt ein Modell, aber das Modell ist nur eine Komponente—nicht das Ganze.

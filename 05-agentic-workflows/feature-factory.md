@@ -1,31 +1,26 @@
 # Feature Factory
 
-```text
-Ticket
-↓
-Analysis
-↓
-Implementation
-↓
-Tests
-↓
-Security Review
-↓
-PR
+```mermaid
+flowchart TD
+	A[Ticket] --> B[Analysis]
+	B --> C[Implementation]
+	C --> D[Tests]
+	D --> E[Security Review]
+	E --> F[PR]
 ```
 
-The Feature Factory is the core workshop workflow: agents take a concrete issue, analyze the codebase, implement the change, run tests, and produce a reviewable pull request.
+Die Feature Factory ist der Kern-Workflow des Workshops: Agenten nehmen ein konkretes Issue, analysieren die Codebasis, implementieren die Aenderung, fuehren Tests aus und erzeugen eine reviewbare Pull Request.
 
-Security review is part of the workflow, not an afterthought.
+Security Review ist Teil des Workflows und kein nachtraeglicher Zusatz.
 
-## Why it matters
+## Warum das wichtig ist
 
-- It makes agent use repeatable.
-- It provides a structure participants can reuse at work.
-- It gives a natural place to insert security checks.
+- Es macht den Einsatz von Agenten wiederholbar.
+- Es liefert eine Struktur, die Teilnehmende in der Arbeit wiederverwenden koennen.
+- Es schafft einen natuerlichen Platz fuer Security Checks.
 
-## Recommended checkpoints
+## Empfohlene Checkpoints
 
-- Did the agent stay within the intended files?
-- Did the implementation introduce secrets, unsafe input handling, or overbroad permissions?
-- Did the diff remain understandable to a human reviewer?
+- Ist der Agent innerhalb der vorgesehenen Dateien geblieben?
+- Hat die Implementierung Secrets, unsichere Input-Behandlung oder zu breite Berechtigungen eingefuehrt?
+- Ist der Diff fuer einen menschlichen Reviewer weiterhin gut nachvollziehbar?

@@ -1,15 +1,16 @@
 # Agentic Workflows
 
-This module covers repeatable patterns for using agents safely and effectively in real projects.
+Dieses Modul behandelt wiederverwendbare Muster, um Agenten in realen Projekten sicher und wirksam einzusetzen.
 
-## Topics
+## Themen
 
 - [Feature Factory](feature-factory.md)
 - [Security Guard Rails](security-guardrails.md)
 - [Secure Software Practices](secure-software.md)
+- [Zugangsdaten und Agenten](zugangsdaten-und-agenten.md)
 
-## Suggested order
+## Empfohlene Reihenfolge
 
-1. Read the feature factory pattern.
-2. Review the agent guard rails before running any tool-enabled agent.
-3. Use the secure software checklist while reviewing generated code.
+1. Zuerst das Feature-Factory-Pattern lesen.
+2. Danach die Agent-Guard-Rails reviewen, bevor ein toolfaehiger Agent genutzt wird.
+3. Beim Review von generiertem Code die Secure-Software-Checkliste verwenden.
