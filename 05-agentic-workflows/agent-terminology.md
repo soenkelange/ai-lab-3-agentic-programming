@@ -18,7 +18,7 @@ Das ist besonders in Cursor wichtig, wo Rules und Skills ein zentrales Produktiv
 
 ## Terminologie-Mapping
 
-| Konzept | Bedeutung | Cursor | Claude Code | Windsurf | GitHub Copilot | Aider | Pi / OpenCode |
+| Konzept | Bedeutung | Cursor | Claude Code | Devin Desktop (ehemals Windsurf) | GitHub Copilot | Aider | Pi / OpenCode |
 |---|---|---|---|---|---|---|---|
 | **System prompt** | Hoch priorisierte Verhaltensinstruktion für den Agenten | Basis-Instruktionen des Agenten, meist verborgen | Model-/Runtime-Instruktionen, meist verborgen | Plattform-Instruktionen, meist verborgen | Service-Level-Instruktionen, meist verborgen | Prompt-Template / Model-Instruktionen | Plattform- oder Prompt-Level-Instruktionen |
 | **User prompt** | Die Aufgabe, die der Nutzer gerade stellt | Chat-Nachricht, Kommando oder Anfrage | Chat- / Terminal-Anfrage | Chat-Anfrage | Chat-Anfrage | CLI-Instruktion | CLI- / Chat-Anfrage |
@@ -41,8 +41,13 @@ Cursor macht **Rules** und **Skills** sehr sichtbar und produktiv. Behandle sie 
 ### Claude Code
 Claude Code betont **Skills**, **Sub-Agents** und **Tooling**. Das mentale Model ist sehr ähnlich, aber mit anderer Benennung und stärkerem Terminal-First-Fokus.
 
-### Windsurf
-Windsurf präsentiert die Idee eher als Workspace-Instruktionen, Agent-Verhalten und Projektkonfiguration statt als stark gebrandete Skill-Objekte.
+### Devin Desktop (ehemals Windsurf)
+Devin Desktop präsentiert die Idee nicht nur als IDE-Assistenz, sondern zunehmend als Agent Command Center mit Workspace-Instruktionen, Session-Koordination und geteiltem Kontext.
+
+### Wichtige Einordnung 2026
+- Coding Agent: führt konkrete Coding-Tasks aus (z. B. Cursor, Claude Code, Aider).
+- Agent Orchestrator: koordiniert mehrere Agents und Sessions (z. B. Devin Desktop).
+- Multi-Agent-Framework: wird im Code implementiert und betrieben (z. B. LangGraph, CrewAI, AutoGen).
 
 ### GitHub Copilot
 Copilot unterstützt dieselbe konzeptionelle Schicht, aber mit eigener Begriffswelt und eigenen Dateitypen.

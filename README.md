@@ -119,6 +119,7 @@ flowchart TD
    M07 --> M07A[lab-01-single-agent-ticket.md]
    M07 --> M07B[checkpoint-01.md]
    M07 --> M07C[checkpoint-02.md]
+   M07 --> M07D[api-keys-und-registrierung.md]
 
    M08 --> M08A[half-day-agenda.md]
 
@@ -167,6 +168,7 @@ flowchart TD
    click M07A "07-hands-on-labs/lab-01-single-agent-ticket.md" "lab-01-single-agent-ticket.md"
    click M07B "07-hands-on-labs/checkpoint-01.md" "checkpoint-01.md"
    click M07C "07-hands-on-labs/checkpoint-02.md" "checkpoint-02.md"
+   click M07D "07-hands-on-labs/api-keys-und-registrierung.md" "api-keys-und-registrierung.md"
 
    click M08A "08-workshop-facilitator/half-day-agenda.md" "half-day-agenda.md"
 
@@ -220,33 +222,39 @@ Nach diesem Material kannst du:
 
 ## 🛠️ Empfohlener Tech Stack (Kostenlos oder Minimal)
 
-> **Philosophie:** Kostenlos starten, später upgraden wenn nötig.
+> **Philosophie:** Free-first, plattformunabhaengig und workshoptauglich in 2 Stunden.
 
-### Tier 1: Kostenlos + Powerful
+### Tier 1: Kostenlos + Schnell startklar
 
-| Layer | Empfehlung | Kosten | Warum |
-|-------|-----------|--------|------|
-| **Model** | Claude 3.5 Sonnet (via API) | $0 (free tier) oder $15-60/1M tokens | Beste Tool Use & Agent Reasoning |
-| **Inference** | LiteLLM (Abstraction) | $0 (Tool) | Provider-agnostisch |
-| **Lokal Alternative** | Qwen3.1 Coder via Ollama | $0 (100% offline) | Garantiert kostenlos, keine Abhängigkeiten |
-| **Coding Agent** | Claude Code (Web UI) | $0 | Integriertes MCP, bestes Verständnis |
-| **Alternatives Agent-Tool** | Pi Coding Agent (CLI) | $0 (Open Source) | Multi-Provider, persistentes Memory |
+| Layer | Standard | Kosten | Warum |
+|-------|----------|--------|------|
+| **CLI Agent** | Aider | $0 (Open Source) | Stabil, git-nativ, schnell erklaerbar |
+| **VS Code Agent** | Continue | $0 (Open Source) | Agent-Modus in VS Code, MCP-faehig |
+| **Inference Provider** | Google AI Studio | $0 (Free Tier) | Hohe Limits, kein Kreditkartenzwang |
+| **Standard-Model** | Gemini 2.0 Flash | $0 im Free Tier | Sehr schnell fuer Hands-on-Uebungen |
+| **Lokal Alternative** | Ollama + Qwen3 | $0 (100% lokal) | Offline-faehig, keine Cloud-Abhaengigkeit |
+
+### Frei verfuegbare Alternativen (ebenfalls vorbereitet)
+
+| Kategorie | Tools |
+|-----------|------|
+| **CLI Agents** | Aider, Pi Agent, OpenCode |
+| **VS Code Agents** | Continue, Cline, Tabby, Codeium |
+| **Inference** | Google AI Studio, GitHub Models, OpenRouter, Ollama lokal |
 
 ### Setup in 10 Minuten
 
 ```bash
-# Option A: Cloud + LiteLLM (Anthropic Free Tier)
-export ANTHROPIC_API_KEY="sk-ant-..."  # https://claudeapi.com
-pip install litellm
-# Dann: Claude Code Web UI nutzen (https://claude.ai)
+# 1) Dev Container oeffnen (installiert alle Tools automatisch)
+# VS Code: Reopen in Container
 
-# Option B: 100% Lokal mit Ollama
-brew install ollama
-ollama pull qwen3.1-coder:7b
-ollama serve  # (eigenes Terminal)
+# 2) Umgebungsdatei erstellen
+cp .env.example .env
 
-# Test
-python -c "from litellm import completion; print(completion(model='ollama/qwen3.1-coder', messages=[{'role':'user', 'content':'hi'}]))"
+# 3) Aider mit Gemini starten
+export OPENAI_API_KEY="$GEMINI_API_KEY"
+export OPENAI_API_BASE="https://generativelanguage.googleapis.com/v1beta/openai"
+aider --model gemini/gemini-2.0-flash
 ```
 
 ---

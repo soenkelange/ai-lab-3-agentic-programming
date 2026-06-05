@@ -9,8 +9,9 @@
 
 | Konzept | Definition | Beispiele |
 |---------|-----------|----------|
-| **Agent** | Ein System, das ein Model + Tools nutzt, um Ziele eigenständig zu verfolgen | Claude Code, Cursor IDE, Pi Agent, Aider |
-| **Framework** | Code-Bibliothek zum Orchestrieren von Agents (Workflows, State, Tool-Calling) | LangGraph, CrewAI, PydanticAI, Mastra |
+| **Coding Agent** | Ein ausführender Agent, der direkt an Code arbeitet (single-session Fokus) | Claude Code, Cursor IDE, Pi Agent, Aider |
+| **Agent Orchestrator / Command Center** | Koordiniert mehrere Agents, Sessions und Kontext über Workflows hinweg | Devin Desktop (ehemals Windsurf), Devin Cloud |
+| **Multi-Agent-Framework** | Code-Bibliothek zum Bauen von Orchestrierung (Workflows, State, Tool-Calling) | LangGraph, CrewAI, AutoGen, PydanticAI, Mastra |
 | **Model** | Das LLM selbst | Claude 3.5, GPT-5, Qwen3 Coder |
 
 ---
@@ -49,7 +50,7 @@ flowchart TD
   B --> C[Du reviewst]
 ```
 
-**Beispiele:** GitHub Copilot, Cursor IDE, Windsurf
+**Beispiele:** GitHub Copilot, Cursor IDE, Claude Code (im IDE- oder CLI-Modus)
 
 **Vorteil:**
 - ✅ Sofort produktiv
@@ -75,7 +76,7 @@ flowchart TD
   C --> D[API User: Löse Issue #42]
 ```
 
-**Beispiele:** LangGraph, CrewAI, PydanticAI, Mastra
+**Beispiele:** LangGraph, CrewAI, AutoGen, PydanticAI, Mastra
 
 **Vorteil:**
 - ✅ Kontrolle über alles
@@ -101,6 +102,22 @@ flowchart TD
 ```
 
 **Das ist der pragmatische Weg für fast alle Teams.**
+
+---
+
+## Wichtige Abgrenzung: Agent vs. Orchestrator vs. Framework
+
+```mermaid
+flowchart LR
+  A[Coding Agents\nCursor, Copilot, Claude Code, Aider, Pi] --> B[Agent Orchestrator\nDevin Desktop als Agent Command Center]
+  B --> C[Multi-Agent-Framework\nLangGraph, CrewAI, AutoGen]
+```
+
+- **Coding Agent:** Führt konkrete Entwicklungsaufgaben aus.
+- **Orchestrator:** Koordiniert mehrere Agents und Sessions, inklusive Kontext-Sharing.
+- **Framework:** Baustein auf Code-Ebene, um eigene Multi-Agent-Systeme zu entwickeln und zu betreiben.
+
+Für die aktuelle Marktlage heißt das: **Devin Desktop (ehemals Windsurf)** ist nicht nur ein weiterer Coding Agent, sondern zunehmend ein **Orchestrator-Interface** für mehrere lokale und Cloud-Agents.
 
 ---
 
@@ -166,10 +183,12 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    A[Brauchst du Multi-Agent?] -->|Ja| B[Framework: LangGraph / CrewAI / PydanticAI]
-    A -->|Nein| C[IDE-Agent genug?]
-    C -->|Ja| D[Cursor / Copilot]
-    C -->|Nein| E[Claude Code + Framework]
+  A[Brauchst du Multi-Agent?] -->|Ja| B[Brauchst du ein Command Center statt nur Code-Execution?]
+  B -->|Ja| C[Devin Desktop als Orchestrator]
+  B -->|Nein| D[Framework: LangGraph / CrewAI / AutoGen / PydanticAI]
+  A -->|Nein| E[IDE-Agent genug?]
+  E -->|Ja| F[Cursor / Copilot / Claude Code]
+  E -->|Nein| G[Claude Code + Framework]
 ```
 
 ---
@@ -188,6 +207,39 @@ flowchart TD
 2. **Kontrolle:** Brauche ich Model-Flexibilität? → dann LiteLLM + Framework
 3. **Komplexität:** Will ich 1 Agent oder 5? → dann eher Framework
 4. **Team-Fähigkeit:** Python? → Framework. Nicht-Devs? → IDE-Agent.
+
+---
+
+## Kurzer Ausblick: Agentic Enterprise
+
+Hier nur als Orientierung, ohne Deep Dive: Wenn Teams von Agentic Programming Richtung Agentic Enterprise wachsen, werden typischerweise diese Themen wichtig:
+
+- **DevSecOps:** Security und Betrieb frueh mitdenken.
+- **MLOps:** Modelle, Versionen, Evaluation und Rollout systematisch betreiben.
+- **LLMOps:** Prompts, Kontext, Evaluation und Betrieb von LLM-basierten Systemen gezielt steuern.
+- **Guardrails:** klare Grenzen fuer Tool-Nutzung, Datenzugriff und Freigaben.
+- **Governance:** Nachvollziehbarkeit, Rollen, Verantwortlichkeiten.
+- **Skalierung:** von Einzel-Agenten zu stabilen Team-Workflows.
+
+```mermaid
+flowchart LR
+  A[Agentic Programming\nPrompt + Tool Use] --> B[Team-Workflows\nSingle/Multi-Agent]
+  B --> C[Agentic DevSecOps\nPolicy + Guardrails + Audit]
+  C --> D[Agentic Enterprise\nGoverned, Scalable, Compliant]
+```
+
+Fuer einen spaeteren Deep Dive in Guardrails ist diese Referenz hilfreich:
+
+- [NVIDIA NeMo Guardrails](https://github.com/NVIDIA-NeMo/Guardrails)
+
+Fuer die Abgrenzung von MLOps und LLMOps ist diese Referenz hilfreich:
+
+- [ZenML: MLOps vs LLMOps](https://www.zenml.io/blog/mlops-vs-llmops)
+
+Im Curriculum passt dieser Ausblick besonders zu:
+
+- [05-agentic-workflows/security-guardrails.md](../05-agentic-workflows/security-guardrails.md)
+- [05-agentic-workflows/secure-software.md](../05-agentic-workflows/secure-software.md)
 
 ---
 

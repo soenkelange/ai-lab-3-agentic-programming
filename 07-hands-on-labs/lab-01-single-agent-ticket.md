@@ -27,34 +27,50 @@ Du wirst:
 
 ## Setup (20 Min)
 
-### Option A: Claude Code Web UI (empfohlen für Anfänger)
+Vor dem Setup: Eine detaillierte Schritt-fuer-Schritt-Anleitung fuer Registrierung und API Keys findest du hier:
 
-**Kostet:** Nichts (mit Anthropic API Free Tier)
+- [API Keys und Registrierung](api-keys-und-registrierung.md)
+
+### Option A: Dev Container (empfohlen für den Workshop)
+
+**Kostet:** Nichts (nur Free-Tier-Keys)
 
 ```bash
-# 1. Anthropic Account + API Key
-# https://claudeapi.com
-# Sign up → API Keys → Copy "ANTHROPIC_API_KEY"
+# 1. Projekt in VS Code oeffnen
+# 2. "Reopen in Container" ausfuehren
+# 3. Tools werden automatisch installiert:
+#    - CLI: Aider, Pi Agent, OpenCode
+#    - VS Code: Continue, Cline, Tabby, Codeium
 
-# 2. Claude Code öffnen
-# → https://claude.ai
-# → Click "Code Mode" (oben)
+# 4. Provider konfigurieren
+cp .env.example .env
 ```
 
-### Option B: Pi Coding Agent CLI (Wenn du Terminal magst)
+### Option B: Aider CLI + Gemini 2.0 Flash
 
 ```bash
-# 1. Pi installieren
-pip install pi-agent
-# oder: https://github.com/pi-ai/pi-agent
+# 1. API Key erstellen
+# https://aistudio.google.com/app/apikey
 
-# 2. API Key setzen
-export ANTHROPIC_API_KEY="sk-ant-..."  # oder OpenAI, etc.
-export PI_MODEL="claude-3-5-sonnet"
+# 2. Kompatibilitaetsvariablen setzen
+export OPENAI_API_KEY="$GEMINI_API_KEY"
+export OPENAI_API_BASE="https://generativelanguage.googleapis.com/v1beta/openai"
 
-# 3. Repo klonen (falls noch nicht geschehen)
-git clone <dein-repo> mein-projekt
-cd mein-projekt
+# 3. Aider starten
+aider --model gemini/gemini-2.0-flash
+```
+
+### Option C: Freie Alternativen
+
+```bash
+# Pi Agent (CLI)
+pi --help
+
+# OpenCode (CLI)
+opencode --help
+
+# Lokal ohne Cloud
+ollama pull qwen3:8b
 ```
 
 ---

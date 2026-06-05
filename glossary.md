@@ -8,6 +8,12 @@ Ein System, das ein Model nutzt, um Ziele durch Aktionen zu verfolgen. Ein Agent
 **Agentic Programming**
 Die Praxis, Software-Systeme so zu bauen, dass Agenten einen wesentlichen Teil der Arbeit übernehmen, zum Beispiel Analyse, Implementierung, Tests und Dokumentation.
 
+**Agent Orchestrator**
+Systemschicht, die mehrere Agents, Sessions und Kontextfluesse koordiniert. Im Unterschied zum Coding Agent steht hier die Steuerung von Agentenarbeit im Vordergrund, nicht die einzelne Code-Edit-Interaktion.
+
+**AutoGen**
+Framework fuer Multi-Agent-Orchestrierung, bei dem spezialisierte Agenten in Rollen oder Dialogmustern zusammenarbeiten.
+
 **API Key**
 Technischer Schlüssel zur Authentifizierung gegen einen Dienst. API Keys müssen vertraulich behandelt, regelmäßig rotiert und möglichst eng berechtigt werden.
 
@@ -24,6 +30,9 @@ Die maximale Menge an Eingabetext, die ein Model in einem Schritt gleichzeitig b
 
 **Cursor IDE**
 Eigenständige IDE auf Basis von VS Code mit stark integrierten Agent-Funktionen, etwa Rules, Agent-Modi und Tool-Interaktion.
+
+**Coding Agent**
+Ausfuehrender Agent, der direkt an Code arbeitet und Aufgaben wie Implementierung, Refactoring, Debugging oder Tests in einer Sitzung erledigt.
 
 ## D
 
@@ -182,8 +191,8 @@ Abhängigkeit von einem einzelnen Anbieter, die Wechselkosten, Risiken und strat
 
 ## W
 
-**Windsurf IDE**
-Agentenorientierte Entwicklungsumgebung auf VS-Code-Basis mit Fokus auf kollaborative Workflows.
+**Devin Desktop (ehemals Windsurf)**
+IDE mit Agent Command Center, die lokale und Cloud-Agents in einer gemeinsamen Arbeitsflaeche koordinieren kann.
 
 **Workflow**
 Definierte Abfolge von Schritten, Rollen und Prüfungen zur reproduzierbaren Bearbeitung einer Aufgabe.

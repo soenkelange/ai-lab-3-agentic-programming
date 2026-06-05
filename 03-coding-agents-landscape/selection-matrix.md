@@ -9,13 +9,13 @@ Für den 2-Stunden-Standardpfad nutzen wir **Aider oder OpenCode mit einem lokal
 
 Cursor bleibt eine sehr gute Vergleichsreferenz, ist aber nicht die kostenlose Baseline.
 
-Die gleichen Konzepte lassen sich danach auf Cursor, Claude Code, Windsurf, Copilot und Pi übertragen.
+Die gleichen Konzepte lassen sich danach auf Cursor, Claude Code, Devin Desktop (ehemals Windsurf), Copilot und Pi übertragen.
 
 ---
 
 ## Terminologie-Mapping
 
-| Konzept | Cursor | Claude Code | Windsurf | GitHub Copilot | Aider | Pi / OpenCode |
+| Konzept | Cursor | Claude Code | Devin Desktop (ehemals Windsurf) | GitHub Copilot | Aider | Pi / OpenCode |
 |---|---|---|---|---|---|---|
 | system prompt | versteckte Basis-Instruktionen | versteckte Basis-Instruktionen | versteckte Basis-Instruktionen | versteckte Plattform-Instruktionen | Prompt-Template | versteckte Plattform-Instruktionen |
 | user prompt | Chat oder Kommando | Chat- oder Terminal-Anfrage | Chat-Anfrage | Chat-Anfrage | CLI-Instruktion | CLI- oder Chat-Anfrage |
@@ -29,31 +29,36 @@ Die gleichen Konzepte lassen sich danach auf Cursor, Claude Code, Windsurf, Copi
 
 ## Schnell-Entscheidung (Entscheidungsbaum)
 
-```
-                    Suchst du einen Agent?
-                           /      \
-                          /        \
-                     GUI/IDE?      CLI/Scripting?
-                     /      \           /      \
-                   /        \         /        \
-              Pro?      Free?   Local?     Cloud OK?
-              /          /  \     /  \        /  \
-          Copilot    Cursor Wind  Aider Pi  Claude Code
-          (GitHub)            surf   (Old)       (Anthropic)
-                                            (Web UI)
+```mermaid
+flowchart TD
+  S[Suchst du einen Agent?]
+  S --> G[GUI oder IDE]
+  S --> C[CLI oder Scripting]
+
+  G --> GB[Bezahltes Pro-Tool ok?]
+  GB -->|Ja| G1[Cursor]
+  GB -->|Ja, mehr Team-Fokus| G2[Devin Desktop]
+  GB -->|Ja, schon im GitHub-Stack| G3[GitHub Copilot]
+  GB -->|Nein| G4[Kein klarer GUI-Free-Fit in dieser Matrix]
+
+  C --> CL[Lokales oder OSS-Setup wichtig?]
+  CL -->|Ja, robust und einfach| C1[Aider]
+  CL -->|Ja, flexibel und provider-offen| C2[Pi oder OpenCode]
+  CL -->|Nein, Web ist ok| C3[Claude Code]
 ```
 
 ---
 
 ## Vollständige Vergleichsmatrix
 
-| Eigenschaft | GitHub Copilot | Cursor | Windsurf | Claude Code | Pi Agent | Aider | OpenCode |
+| Eigenschaft | GitHub Copilot | Cursor | Devin Desktop (ehemals Windsurf) | Claude Code | Pi Agent | Aider | OpenCode |
 |-----------|---|---|---|---|---|---|---|
 | **Kosten** | $10/Monat | $20/Monat | $20/Monat | Kostenlos (Web UI) | Kostenlos | Kostenlos | Kostenlos |
-| **Typ** | VSCode Ext | IDE | IDE | Web UI + CLI | CLI | CLI | CLI |
+| **Typ** | VSCode Ext | IDE | IDE + Agent Command Center | Web UI + CLI | CLI | CLI | CLI |
+| **Erste gelesene Instruktionsdatei (typisch)** | `AGENTS.md` (naechste Datei im Baum) | `.cursor/rules/*.md` bzw. Projektregel | Workspace-/Projekt-Instruktionen (produktabhaengig) | `CLAUDE.md` | Projekt-Config oder Prompt-Datei, kein klarer Standard | `.aider.conf.yml`, keine Standard-Repo-Regeldatei | `AGENTS.md` |
 | **Lokal?** | Nein | Nein | Nein | Web nur | Ja (CLI) | Ja | Ja |
 | **Model-Wahl** | Nur CoPilot Models | Limited | Limited | Nur Claude | Claude + mehrere | Bring-your-own | Beliebig |
-| **MCP Support?** | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | TBD |
+| **MCP Support?** | ✅ | ✅ | ⚠️ Eingeschraenkt / unklar dokumentiert | ✅ | ❓ Oeffentlich unklar | ❌ | ✅ |
 | **für Teams (5+ Devs)** | ✅ Gut | ✅ | ✅ | ✅ (Web) | ⚠️ CLI | ⚠️ | ⚠️ |
 | **Beste für Refactoring** | ✅ Gut | ✅✅ Exzellent | ✅✅ Exzellent | ✅✅ Exzellent | ✅ Gut | ✅ Gut | ⚠️ |
 | **Debugging Support** | ✅ | ✅✅ | ✅✅ | ✅ | ✅ | ✅ | ⚠️ |
@@ -121,12 +126,13 @@ Cursor IDE = VSCode + bessere Agent-Integration + eigene Features
 
 ---
 
-### 🏄 Windsurf
+### 🏄 Devin Desktop (ehemals Windsurf)
 
-**Typ:** Eigenständige, IDE, Cursor-Konkurrent
+**Typ:** Eigenständige IDE mit Agent Command Center
 
 ```
-Windsurf = Cursor aber mit Fokus auf größere Projekte + Team-Workflows
+Devin Desktop = Windsurf-Weiterentwicklung mit Fokus auf Agent-Orchestrierung,
+Kanban-gestuetzte Agent-Steuerung und Team-Workflows.
 ```
 
 **Am besten geeignet für:**
@@ -143,7 +149,7 @@ Windsurf = Cursor aber mit Fokus auf größere Projekte + Team-Workflows
 
 **Setup:** 5 min
 
-**Einschätzung:** Windsurf gewinnt oft bei größeren Projekten. Cursor hat aber mehr Marktanteil.
+**Einschätzung:** Devin Desktop verschiebt den Fokus vom reinen Coding Agent hin zum Orchestrator fuer mehrere lokale und Cloud-Agents.
 
 ---
 
@@ -270,10 +276,10 @@ flowchart TD
   S --> C[Ich will Open-Source]
 
   A --> A1[Cursor]
-  A --> A2[Windsurf]
+  A --> A2[Devin Desktop]
 
   B --> B1[Claude Code Web UI]
-  B --> B2[Windsurf oder Pi]
+  B --> B2[Devin Desktop oder Pi]
 
   C --> C1[Aider / Pi / OpenCode]
 ```
@@ -286,7 +292,7 @@ flowchart TD
 
 | Bedingung | Empfehlung |
 |---|---|
-| Wir zahlen gerne | Cursor / Windsurf |
+| Wir zahlen gerne | Cursor / Devin Desktop |
 | Kostenlos | Claude Code (Web) / Pi / Aider |
 | Kostenlos + Enterprise | OpenCode selbst hosten |
 
@@ -301,7 +307,7 @@ flowchart TD
 
 | Bedingung | Empfehlung |
 |---|---|
-| IDE ist zentral | Cursor / Windsurf / Copilot |
+| IDE ist zentral | Cursor / Devin Desktop / Copilot |
 | Terminal ist zentral | Pi / Aider / OpenCode |
 | Web ist zentral | Claude Code |
 
@@ -310,7 +316,7 @@ flowchart TD
 | Bedingung | Empfehlung |
 |---|---|
 | Einzelne Developer | Cursor (bestes UI) |
-| Team 5-20 | Windsurf / Claude Code + LiteLLM |
+| Team 5-20 | Devin Desktop / Claude Code + LiteLLM |
 | Enterprise 100+ | Claude Code + custom Agent Pipeline + LangGraph |
 
 ---
@@ -319,8 +325,8 @@ flowchart TD
 
 | Use Case | #1 Pick | #2 Alternative | #3 Fallback |
 |----------|---------|----------|----------|
-| **Schnelle Solo-Productivität** | Cursor | Claude Code | Windsurf |
-| **Team mit Refactor-Tasks** | Windsurf | Cursor | Pi (CLI) |
+| **Schnelle Solo-Productivität** | Cursor | Claude Code | Devin Desktop |
+| **Team mit Refactor-Tasks** | Devin Desktop | Cursor | Pi (CLI) |
 | **Enterprise mit Costed Control** | Claude Code + LangGraph | Pi | OpenCode |
 | **Offline / Geheim** | Aider + Ollama | OpenCode + Qwen | Cursor (lokal mit Qwen) |
 | **Automation / CI-CD** | Pi | Aider | claude-code-cli |
