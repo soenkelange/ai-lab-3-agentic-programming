@@ -72,67 +72,107 @@ Mit Capstone und Multi-Agent Orchestration.
 
 ## 📚 Repository-Struktur: Die 8 Module
 
-```
-00-start-here/              ← START HIER (Orientierung)
-├── learning-paths.md       ← Dein persönlicher Einstiegspunkt
-├── prerequisites.md        ← Voraussetzungen
-└── repo-tour.md           ← Wohin zuerst?
+```mermaid
+flowchart TD
+   R[Repository]
 
-01-agentic-foundations/     ← KONZEPTIONELLE GRUNDLAGEN
-├── model-vs-agent.md       ← Der zentrale Unterschied
-├── agent-vs-framework.md   ← Was ist austauschabar?
-└── architecture-stack.md   ← Die Tech-Ebenen
+   R --> M00[00-start-here]
+   R --> M01[01-agentic-foundations]
+   R --> M02[02-models-and-inference]
+   R --> M03[03-coding-agents-landscape]
+   R --> M04[04-mcp-and-tooling]
+   R --> M05[05-agentic-workflows]
+   R --> M06[06-multi-agent-architectures]
+   R --> M07[07-hands-on-labs]
+   R --> M08[08-workshop-facilitator]
+   R --> AS[assets]
+   R --> GL[glossary.md]
+   R --> FQ[faq.md]
 
-02-models-and-inference/    ← MODELLE & INFRASTRUKTUR
-├── primer.md              ← Schnelleinstieg
-├── frontier-vs-open-weights.md
-├── providers-vs-runtimes.md
-└── abstraction-layers-litellm.md  ← Der Gold-Standard
+   M00 --> M00A[learning-paths.md]
+   M00 --> M00B[prerequisites.md]
+   M00 --> M00C[two-hour-workshop-path.md]
 
-03-coding-agents-landscape/ ← AGENT-WERKZEUGE
-├── ide-agents.md          ← Cursor, Copilot, Windsurf
-├── terminal-agents.md     ← Claude Code, Pi, Aider
-└── selection-matrix.md    ← Vergleichstabellen
+   M01 --> M01A[model-vs-agent.md]
+   M01 --> M01B[agent-vs-framework.md]
 
-04-mcp-and-tooling/        ← MODEL CONTEXT PROTOCOL
-├── mcp-core-concepts.md   ← PFLICHTLEKTÜRE
-├── mcp-server-patterns.md
-└── integration-examples.md
+   M02 --> M02A[abstraction-layers-litellm.md]
 
-05-agentic-workflows/      ← WIEDERVERWENDBARE PATTERNS
-├── feature-factory.md
-├── security-guardrails.md
-├── secure-software.md
-├── zugangsdaten-und-agenten.md
-├── agent-terminology.md
-├── workflows-terminology-matrix.md
-├── review-agents.md
-└── documentation-agents.md
+   M03 --> M03A[selection-matrix.md]
+   M03 --> M03B[terminal-agents.md]
 
-06-multi-agent-architectures/ ← SWARMS & ORCHESTRATION
-├── swarm-patterns.md
-├── orchestration-frameworks.md
-└── failure-modes.md
+   M04 --> M04A[mcp-core-concepts.md]
 
-07-hands-on-labs/          ← DEINE PRAKTISCHEN ÜBUNGEN
-├── lab-01-single-agent-ticket.md    ← Anfänger
-├── lab-02-mcp-integration.md        ← Intermediate
-├── lab-03-multi-agent-pipeline.md   ← Capstone
-├── checkpoint-01.md, 02.md, 03.md   ← Validierungen
-└── solutions/                       ← Referenz
+   M05 --> M05A[feature-factory.md]
+   M05 --> M05B[security-guardrails.md]
+   M05 --> M05C[secure-software.md]
+   M05 --> M05D[zugangsdaten-und-agenten.md]
+   M05 --> M05E[agent-terminology.md]
+   M05 --> M05F[workflows-terminology-matrix.md]
 
-08-workshop-facilitator/   ← TRAINER-MATERIAL
-├── half-day-agenda.md
-├── full-day-agenda.md
-├── discussion-prompts.md
-└── demo-script.md
+   M06 --> M06A[swarm-patterns.md]
+   M06 --> M06B[orchestration-frameworks.md]
+   M06 --> M06C[failure-modes.md]
 
-assets/
-├── diagrams/               ← Mermaid & Visuals
-└── templates/              ← Wiederverwendbar
+   M07 --> M07A[lab-01-single-agent-ticket.md]
+   M07 --> M07B[checkpoint-01.md]
+   M07 --> M07C[checkpoint-02.md]
 
-glossary.md                ← Akronyme & Begriffe
-faq.md                     ← Häufige Fragen
+   M08 --> M08A[half-day-agenda.md]
+
+   AS --> ASD[diagrams]
+   AS --> AST[templates]
+   AST --> ASTA[security-review-skill.md]
+   AST --> ASTB[ui-specification.md]
+
+   click M00 "00-start-here/" "00-start-here"
+   click M01 "01-agentic-foundations/" "01-agentic-foundations"
+   click M02 "02-models-and-inference/" "02-models-and-inference"
+   click M03 "03-coding-agents-landscape/" "03-coding-agents-landscape"
+   click M04 "04-mcp-and-tooling/" "04-mcp-and-tooling"
+   click M05 "05-agentic-workflows/" "05-agentic-workflows"
+   click M06 "06-multi-agent-architectures/" "06-multi-agent-architectures"
+   click M07 "07-hands-on-labs/" "07-hands-on-labs"
+   click M08 "08-workshop-facilitator/" "08-workshop-facilitator"
+   click AS "assets/" "assets"
+   click AST "assets/templates/" "assets/templates"
+
+   click M00A "00-start-here/learning-paths.md" "learning-paths.md"
+   click M00B "00-start-here/prerequisites.md" "prerequisites.md"
+   click M00C "00-start-here/two-hour-workshop-path.md" "two-hour-workshop-path.md"
+
+   click M01A "01-agentic-foundations/model-vs-agent.md" "model-vs-agent.md"
+   click M01B "01-agentic-foundations/agent-vs-framework.md" "agent-vs-framework.md"
+
+   click M02A "02-models-and-inference/abstraction-layers-litellm.md" "abstraction-layers-litellm.md"
+
+   click M03A "03-coding-agents-landscape/selection-matrix.md" "selection-matrix.md"
+   click M03B "03-coding-agents-landscape/terminal-agents.md" "terminal-agents.md"
+
+   click M04A "04-mcp-and-tooling/mcp-core-concepts.md" "mcp-core-concepts.md"
+
+   click M05A "05-agentic-workflows/feature-factory.md" "feature-factory.md"
+   click M05B "05-agentic-workflows/security-guardrails.md" "security-guardrails.md"
+   click M05C "05-agentic-workflows/secure-software.md" "secure-software.md"
+   click M05D "05-agentic-workflows/zugangsdaten-und-agenten.md" "zugangsdaten-und-agenten.md"
+   click M05E "05-agentic-workflows/agent-terminology.md" "agent-terminology.md"
+   click M05F "05-agentic-workflows/workflows-terminology-matrix.md" "workflows-terminology-matrix.md"
+
+   click M06A "06-multi-agent-architectures/swarm-patterns.md" "swarm-patterns.md"
+   click M06B "06-multi-agent-architectures/orchestration-frameworks.md" "orchestration-frameworks.md"
+   click M06C "06-multi-agent-architectures/failure-modes.md" "failure-modes.md"
+
+   click M07A "07-hands-on-labs/lab-01-single-agent-ticket.md" "lab-01-single-agent-ticket.md"
+   click M07B "07-hands-on-labs/checkpoint-01.md" "checkpoint-01.md"
+   click M07C "07-hands-on-labs/checkpoint-02.md" "checkpoint-02.md"
+
+   click M08A "08-workshop-facilitator/half-day-agenda.md" "half-day-agenda.md"
+
+   click ASTA "assets/templates/security-review-skill.md" "security-review-skill.md"
+   click ASTB "assets/templates/ui-specification.md" "ui-specification.md"
+
+   click GL "glossary.md" "glossary.md"
+   click FQ "faq.md" "faq.md"
 ```
 
 ---
