@@ -1,582 +1,385 @@
-AI Lab III - Agentic Programming
+# 🤖 AI Lab III — Agentic Programming
 
-# Was ist Agentic Programming?
+**Level:** Advanced  
+**Sprache:** Deutsch  
+**Dauer:** Halbtag bis 2 Tage  
+**Status:** Live, Juni 2026
 
-Früher:
+Umfassendes, praxisorientiertes Material zu **agentic Programming** für erfahrene Softwareingenieur:innen, Architekt:innen und AI-Enthusiast:innen.
 
-```text
-Mensch schreibt Code
-LLM hilft beim Autocomplete
+Dieses Repository transformiert Sie von Theorieverstehen zu aktiver, produktiver Agent-Implementierung.
+
+---
+
+## 🎯 30-Sekunden-Essenz
+
+| Punkt | Gestern (Pre-2024) | Heute (2026+) |
+|-------|----------|-----------|
+| **Fokus** | Mensch schreibt Code | Agent schreibt Code |
+| **Flow** | Manual Coding | Goal → Agent → PR |
+| **Tool** | LLM-Chat | Coding Agent (IDE oder CLI) |
+| **Infra** | API Keys | LiteLLM + MCP |
+| **Skalierung** | 1 Agent | Multi-Agent Swarms |
+
+**Die Revolution:** 🔑 **Agenten führen Aktionen aus**, nicht nur Text zu generieren.
+
+---
+
+## 🗺️ Schnelle Navigation
+
+<details open>
+<summary><strong>⏱️ Ich habe 5 Minuten</strong></summary>
+
+→ Lies die nächsten zwei Absätze. Das ist dein "Aha-Moment".
+
+</details>
+
+<details>
+<summary><strong>⏱️ Ich habe 30 Minuten</strong></summary>
+
+→ [Lernpfade: 30-Min Route](00-start-here/learning-paths.md#ultra-schnell)
+
+</details>
+
+<details>
+<summary><strong>⏱️ Ich habe 2 Stunden (Anfänger)</strong></summary>
+
+→ [Lernpfad 1: Anfänger](00-start-here/learning-paths.md#pfad-1-anfänger)
+
+Die beste Einstiegsroute: Konzepte + Live-Lab.
+
+</details>
+
+<details>
+<summary><strong>⏱️ Ich habe 3 Stunden (mit Vorwissen)</strong></summary>
+
+→ [Lernpfad 2: Intermediate](00-start-here/learning-paths.md#pfad-2-intermediate)
+
+Für die, die bereits Modelle verstehen.
+
+</details>
+
+<details>
+<summary><strong>⏱️ Ich habe einen ganzen Tag (Architekt-Level)</strong></summary>
+
+→ [Lernpfad 3: Full Workshop](00-start-here/learning-paths.md#pfad-3-advanced--full-workshop)
+
+Mit Capstone und Multi-Agent Orchestration.
+
+</details>
+
+---
+
+## 📚 Repository-Struktur: Die 8 Module
+
 ```
-
-Heute:
-
-```text
-Mensch beschreibt Ziel
-Agent plant
-Agent analysiert Codebasis
-Agent implementiert
-Agent testet
-Agent erstellt PR
-Agent dokumentiert
-Mensch reviewt
-```
-
-Der wesentliche Unterschied:
-
-**Agenten führen Aktionen aus.**
-Nicht nur Textgenerierung.
-
-Typische Agent-Fähigkeiten:
-
-* Dateien lesen
-* Dateien ändern
-* Shell-Kommandos ausführen
-* Tests starten
-* Git nutzen
-* Tickets lesen
-* PRs erstellen
-* externe APIs aufrufen
-* andere Agenten delegieren
-
-Claude Code beschreibt sich inzwischen explizit als „agentic coding tool“. ([Aibars][1])
-
----
-
-Für ein aktuelles AI-Lab (Stand 2026) würde ich die Landschaft etwas anders strukturieren als noch vor einem Jahr. Die eigentliche Trennlinie verläuft inzwischen nicht mehr zwischen IDEs, sondern zwischen:
-
-```text
-Modelle
-↓
-Inference Layer
-↓
-Agent Frameworks
-↓
-Coding Agents
-↓
-Agentic Workflows
-```
-
-Das hilft den Teilnehmern zu verstehen, welche Bausteine austauschbar sind.
-
----
-
-# Coding Agents
-
-## IDE-zentrierte Agents
-
-### [GitHub Copilot](https://github.com/features/copilot?utm_source=chatgpt.com)
-
-Der Enterprise-Standard.
-
-Aktuelle Entwicklung:
-
-* Chat
-* Agent Mode
-* GitHub-Agenten
-* automatische PR-Erstellung
-* Integration in GitHub Workflows
-
-GitHub positioniert Copilot inzwischen klar als Coding Agent und nicht mehr nur als Autocomplete. ([The Verge][1])
-
----
-
-### [Cursor](https://cursor.com?utm_source=chatgpt.com)
-
-Aktuell vermutlich die am weitesten verbreitete Agent-IDE.
-
-Stärken:
-
-* hervorragendes Codebase-Verständnis
-* Agent Mode
-* Multi-File Refactoring
-* sehr beliebt bei Startups
-
----
-
-### [Windsurf](https://windsurf.com?utm_source=chatgpt.com)
-
-Starker Cursor-Konkurrent.
-
-Fokus:
-
-* größere Projekte
-* Team Workflows
-* Agent-first Bedienkonzept
-
----
-
-## Terminal-native Agents
-
-Hier findet momentan die meiste Innovation statt.
-
----
-
-### [Claude Code](https://www.anthropic.com/claude-code?utm_source=chatgpt.com)
-
-Der Referenzpunkt für Agentic Coding.
-
-Features:
-
-* Terminal-basiert
-* Shell-Zugriff
-* Git-Integration
-* MCP
-* Subagents
-* Skills
-* große Repositories
-
-Viele Entwickler betrachten Claude Code aktuell als Benchmark für agentisches Software Engineering.
-
----
-
-### [OpenAI Codex CLI](https://github.com/openai/codex?utm_source=chatgpt.com)
-
-OpenAIs Antwort auf Claude Code.
-
-Eigenschaften:
-
-* Terminal Agent
-* MCP
-* Tool Use
-* lokale und Cloud-Ausführung
-
----
-
-### [OpenCode](https://github.com/opencode-ai/opencode?utm_source=chatgpt.com)
-
-Open-Source Alternative.
-
-Interessant für:
-
-* lokale Modelle
-* Self Hosting
-* maximale Anpassbarkeit
-
----
-
-### [Aider](https://aider.chat?utm_source=chatgpt.com)
-
-Der Veteran unter den Coding Agents.
-
-Stärken:
-
-* Git-zentrierte Entwicklung
-* einfache Bedienung
-* Bring-your-own-Model
-
----
-
-### [Pi Coding Agent](https://pi-go.sh?utm_source=chatgpt.com)
-
-Einer der spannendsten Newcomer 2026.
-
-Merkmale:
-
-* Terminal-Agent
-* Multi-Provider-Unterstützung
-* Claude, GPT, Gemini, Ollama
-* lokale Modelle
-* persistente Memory-Layer
-* LSP-Integration
-* stark auf planbasierte Entwicklung ausgerichtet ([Pi-Go][2])
-
-Rund um Pi entsteht gerade ein eigenes Ökosystem, inklusive nativer Desktop-Oberfläche („pi-gui“). ([pi-gui][3])
-
----
-
-# 2. Modelle
-
-Ein wichtiger Punkt für das AI-Lab:
-
-> Agent ≠ Modell
-
-Ein Agent kann unterschiedliche Modelle nutzen.
-
----
-
-## Frontier-Modelle
-
-### Claude Sonnet
-
-Sehr stark bei:
-
-* Architektur
-* Refactoring
-* Agentenverhalten
-* Tool Use
-
----
-
-### GPT-5
-
-Stärken:
-
-* Reasoning
-* Agent Workflows
-* Tool Calling
-* komplexe Multi-Step-Aufgaben
-
----
-
-### Gemini
-
-Stärken:
-
-* riesige Kontexte
-* multimodal
-* starke Integration in Google-Ökosysteme
-
----
-
-## Open-Weights Modelle
-
-### Qwen3 Coder
-
-Der wichtigste Open-Weights-Herausforderer.
-
-Sehr beliebt für:
-
-* lokale Inference
-* Agenten
-* Self Hosting
-
----
-
-### Llama
-
-Oft Grundlage für:
-
-* On-Prem-Agenten
-* Enterprise-Deployments
-
----
-
-# 3. Inference Layer
-
-Viele Teams konzentrieren sich auf Modelle und übersehen die eigentliche Architektur-Ebene:
-
-```text
-Agent
-↓
-Inference Layer
-↓
-Modelle
+00-start-here/              ← START HIER (Orientierung)
+├── learning-paths.md       ← Dein persönlicher Einstiegspunkt
+├── prerequisites.md        ← Voraussetzungen
+└── repo-tour.md           ← Wohin zuerst?
+
+01-agentic-foundations/     ← KONZEPTIONELLE GRUNDLAGEN
+├── model-vs-agent.md       ← Der zentrale Unterschied
+├── agent-vs-framework.md   ← Was ist austauschabar?
+└── architecture-stack.md   ← Die Tech-Ebenen
+
+02-models-and-inference/    ← MODELLE & INFRASTRUKTUR
+├── primer.md              ← Schnelleinstieg
+├── frontier-vs-open-weights.md
+├── providers-vs-runtimes.md
+└── abstraction-layers-litellm.md  ← Der Gold-Standard
+
+03-coding-agents-landscape/ ← AGENT-WERKZEUGE
+├── ide-agents.md          ← Cursor, Copilot, Windsurf
+├── terminal-agents.md     ← Claude Code, Pi, Aider
+└── selection-matrix.md    ← Vergleichstabellen
+
+04-mcp-and-tooling/        ← MODEL CONTEXT PROTOCOL
+├── mcp-core-concepts.md   ← PFLICHTLEKTÜRE
+├── mcp-server-patterns.md
+└── integration-examples.md
+
+05-agentic-workflows/      ← WIEDERVERWENDBARE PATTERNS
+├── feature-factory.md
+├── security-guardrails.md
+├── secure-software.md
+├── agent-terminology.md
+├── workflows-terminology-matrix.md
+├── review-agents.md
+└── documentation-agents.md
+
+06-multi-agent-architectures/ ← SWARMS & ORCHESTRATION
+├── swarm-patterns.md
+├── orchestration-frameworks.md
+└── failure-modes.md
+
+07-hands-on-labs/          ← DEINE PRAKTISCHEN ÜBUNGEN
+├── lab-01-single-agent-ticket.md    ← Anfänger
+├── lab-02-mcp-integration.md        ← Intermediate
+├── lab-03-multi-agent-pipeline.md   ← Capstone
+├── checkpoint-01.md, 02.md, 03.md   ← Validierungen
+└── solutions/                       ← Referenz
+
+08-workshop-facilitator/   ← TRAINER-MATERIAL
+├── half-day-agenda.md
+├── full-day-agenda.md
+├── discussion-prompts.md
+└── demo-script.md
+
+assets/
+├── diagrams/               ← Mermaid & Visuals
+└── templates/              ← Wiederverwendbar
+
+glossary.md                ← Akronyme & Begriffe
+faq.md                     ← Häufige Fragen
 ```
 
 ---
 
-## Direkte Provider
+## 🎓 Was du lernst (Konkrete Outcomes)
 
-* Anthropic
-* OpenAI
-* Google
+Nach diesem Material kannst du:
 
-Vorteil:
+### ✅ Konzeptuell Verstehen
+- [ ] Den Unterschied zwischen Model, Agent, Framework, und Workflow
+- [ ] Warum MCP zentral ist (nicht ChatGPT Plugins 2.0)
+- [ ] Inference Provider vs. Runtime unterscheiden
+- [ ] Multi-Agent Architectures designen
 
-* beste Modelle
-* schnellste Features
+### ✅ Agentische Produktivität Verstehen
+- [ ] System Prompts, Rules, Skills und Sub-Agents unterscheiden
+- [ ] Die Terminologie verschiedener Coding Agents in eine gemeinsame Tabelle übertragen
+- [ ] Regeln und Skills als zentrale Produktivitäts- und Sicherheits-Schicht einsetzen
 
-Nachteil:
+### ✅ Praktisch Anwenden
+- [ ] Ein echtes GitHub-Issue mit Claude Code lösen
+- [ ] Einen MCP Server schreiben
+- [ ] Eine 3+ Agent Pipeline orchestrieren
+- [ ] Ein echtes Codebase-Refactoring mit Agenten
 
-* mehrere API Keys
-* mehrere APIs
+### ✅ Strategisch Entscheiden
+- [ ] Die richtige Agent-IDE für dein Team (Cursor vs. Copilot vs. Claude Code vs. Pi)
+- [ ] Kostenmodelle fair von einander unterscheiden
+- [ ] Fehlerszenarien in agentic Systems kennen
+- [ ] Sicherheits-Grenzen für Agenten-Tooling festlegen
+- [ ] Secure-Coding-Prinzipien in agentische Workflows integrieren
+- [ ] Produktions-ready Deployments planen
 
----
-
-## Aggregierende Inference Provider
-
-### [OpenRouter](https://openrouter.ai?utm_source=chatgpt.com)
-
-Der bekannteste Aggregator.
-
----
-
-### [Together AI](https://www.together.ai?utm_source=chatgpt.com)
-
-Besonders stark bei Open Models.
-
----
-
-### [Fireworks AI](https://fireworks.ai?utm_source=chatgpt.com)
-
-Optimiert für hohe Performance.
+### ✅ Workshop-Standardpfad Anwenden
+- [ ] Einen Cursor-first 2-Stunden-Workshoppfad durchführen
+- [ ] Eine wiederverwendbare Skill- oder Rule-Datei anlegen
+- [ ] Dieselbe Instruktion in anderen Coding Agents übersetzen
 
 ---
 
-### [Groq](https://groq.com?utm_source=chatgpt.com)
-
-Bekannt für extrem niedrige Latenzen.
-
----
-
-### [Langdock](https://langdock.com?utm_source=chatgpt.com)
-
-Besonders relevant im deutschsprachigen Enterprise-Umfeld.
-
-Eigenschaften:
-
-* einheitliche API
-* Zugriff auf viele Frontier-Modelle
-* EU-Datenhaltung
-* Self-Hosting-Optionen
-* Agents, Workflows und Unternehmensintegration in einer Plattform ([langdock.com][4])
-
-Für viele deutsche Unternehmen ist Langdock inzwischen eine interessante Alternative zu direkter OpenAI- oder Anthropic-Nutzung.
-
----
-
-## Inference Abstraction Layer
-
-### [LiteLLM](https://litellm.ai?utm_source=chatgpt.com)
-
-Extrem wichtig für moderne Agentensysteme.
-
-LiteLLM ist eigentlich kein Provider, sondern eine Abstraktions- und Proxy-Schicht.
-
-Vorteile:
-
-```text
-Ein API-Endpunkt
-↓
-Anthropic
-OpenAI
-Gemini
-Groq
-Together
-Ollama
-vLLM
-...
-```
-
-Nutzen:
-
-* Provider-Wechsel ohne Codeänderung
-* Routing
-* Load Balancing
-* Fallbacks
-* Kostenkontrolle
-
-LiteLLM hat sich faktisch als Standard-Abstraktionsschicht für viele Agent-Plattformen etabliert. ([Reddit][5])
-
----
-
-## Lokale Inference
-
-### [Ollama](https://ollama.com?utm_source=chatgpt.com)
-
-Der Quasi-Standard.
-
----
-
-### [vLLM](https://github.com/vllm-project/vllm?utm_source=chatgpt.com)
-
-Für produktive GPU-Server.
-
----
-
-### [LM Studio](https://lmstudio.ai?utm_source=chatgpt.com)
-
-Sehr beliebt für Entwickler-Workstations.
-
----
-
-# 4. MCP – die wichtigste Infrastrukturentwicklung
-
-## Model Context Protocol
-
-MCP verbindet Agenten mit externen Systemen:
-
-```text
-Agent
-↓
-MCP
-↓
-GitHub
-Jira
-Slack
-Filesystem
-Browser
-Database
-Monitoring
-```
-
-MCP entwickelt sich gerade zum De-facto-Standard für Tool-Integration.
-
-Für das AI-Lab würde ich MCP als Pflichtbestandteil betrachten.
-
----
-
-# 5. Agentic Programming Patterns
-
-## Scaffold Generation
-
-Aus:
-
-```text
-Erzeuge eine FastAPI-Anwendung
-```
-
-entsteht:
-
-* Projektstruktur
-* Docker
-* Tests
-* CI/CD
-* Dokumentation
-
----
-
-## Feature Factory
-
-```text
-Ticket
-↓
-Analyse
-↓
-Implementierung
-↓
-Tests
-↓
-PR
-```
-
-Der heute wohl wichtigste Agent-Workflow.
-
----
-
-## Code Review Agent
-
-Prüft:
-
-* Lesbarkeit
-* Architektur
-* Testbarkeit
-* Wartbarkeit
-
----
-
-## Security Review Agent
-
-Prüft:
-
-* SQL Injection
-* XSS
-* Secrets
-* Dependency Risks
-
----
-
-## Refactoring Agent
-
-Typische Aufgaben:
-
-* Framework-Migrationen
-* API-Umstellungen
-* große Umstrukturierungen
-
----
-
-## Documentation Agent
-
-Generiert:
-
-* README
-* ADRs
-* Architekturdiagramme
-* API-Dokumentation
-
----
-
-# 6. Multi-Agent / Swarm Architekturen
-
-Das vermutlich wichtigste Zukunftsthema.
-
-Statt:
-
-```text
-1 Agent
-```
-
-nutzt man:
-
-```text
-Planner
-↓
-Architect
-↓
-Coder
-↓
-Reviewer
-↓
-Security
-↓
-Tester
+## 🛠️ Empfohlener Tech Stack (Kostenlos oder Minimal)
+
+> **Philosophie:** Kostenlos starten, später upgraden wenn nötig.
+
+### Tier 1: Kostenlos + Powerful
+
+| Layer | Empfehlung | Kosten | Warum |
+|-------|-----------|--------|------|
+| **Model** | Claude 3.5 Sonnet (via API) | $0 (free tier) oder $15-60/1M tokens | Beste Tool Use & Agent Reasoning |
+| **Inference** | LiteLLM (Abstraction) | $0 (Tool) | Provider-agnostisch |
+| **Lokal Alternative** | Qwen3.1 Coder via Ollama | $0 (100% offline) | Garantiert kostenlos, keine Abhängigkeiten |
+| **Coding Agent** | Claude Code (Web UI) | $0 | Built-in MCP, bestes Verständnis |
+| **Alt Agent Tool** | Pi Coding Agent (CLI) | $0 (Open Source) | Multi-Provider, persisten Memory |
+
+### Setup in 10 Minuten
+
+```bash
+# Option A: Cloud + LiteLLM (Anthropic Free Tier)
+export ANTHROPIC_API_KEY="sk-ant-..."  # https://claudeapi.com
+pip install litellm
+# Dann: Claude Code Web UI nutzen (https://claude.ai)
+
+# Option B: 100% Lokal mit Ollama
+brew install ollama
+ollama pull qwen3.1-coder:7b
+ollama serve  # (eigenes Terminal)
+
+# Test
+python -c "from litellm import completion; print(completion(model='ollama/qwen3.1-coder', messages=[{'role':'user', 'content':'hi'}]))"
 ```
 
 ---
 
-Frameworks:
+## 🚀 Dein Einstieg — Drei Optionen
 
-* [LangGraph](https://www.langchain.com/langgraph?utm_source=chatgpt.com)
-* [CrewAI](https://crewai.com?utm_source=chatgpt.com)
-* [OpenAI Agents SDK](https://platform.openai.com/docs/guides/agents-sdk?utm_source=chatgpt.com)
-* [PydanticAI](https://ai.pydantic.dev?utm_source=chatgpt.com)
-* [Mastra](https://mastra.ai?utm_source=chatgpt.com)
-* [Letta](https://www.letta.com?utm_source=chatgpt.com)
+### Option 1: Schnelle Orientierung (5 min)
+
+```
+→ Lies obiges "30-Sekunden-Essenz" (✓ gerade gemacht!)
+→ [Model vs. Agent verstehen](01-agentic-foundations/model-vs-agent.md) (10 min)
+→ Entscheidung treffen: "Will ich tiefer gehen?"
+```
+
+**Resultat:** Du weißt, warum Agenten anders sind.
 
 ---
 
-# Meine Empfehlung für das AI-Lab
+### Option 2: Anfänger-Track (2 Stunden + Hands-On)
 
-Wenn du nur **einen halben Tag** hast, würde ich diese Agenda wählen:
-
-### Teil 1 – Landscape (30 min)
-
-* Modelle
-* Inference Layer
-* LiteLLM
-* Langdock
-* MCP
-
-### Teil 2 – Coding Agents (45 min)
-
-* Claude Code
-* Codex CLI
-* Cursor
-* Pi Coding Agent
-* OpenCode
-
-### Teil 3 – Live Demo (60 min)
-
-Ein echtes Ticket:
-
-```text
-Issue
-↓
-Plan
-↓
-Implementierung
-↓
-Tests
-↓
-PR
+```
+1. [Lernpfad 1 Anfänger](00-start-here/learning-paths.md#pfad-1-anfänger) (30 min Theorie)
+2. [Lab 1: Single Agent Ticket](07-hands-on-labs/lab-01-single-agent-ticket.md) (45 min Praxis)
+3. [Checkpoint 1](07-hands-on-labs/checkpoint-01.md) (10 min Validierung)
+⚠️ Optional: [Lab 1 nochmal mit anderem Issue](07-hands-on-labs/lab-01-single-agent-ticket.md) (45 min Vertiefung)
 ```
 
-mit Claude Code oder Pi.
+**Resultat:** Du hast einen Agent in Action gesehen. Deine erste PR.
 
-### Teil 4 – Advanced Topics (45 min)
+---
 
-* Swarms
-* LangGraph
-* Agent Memory
-* MCP Server
-* lokale Modelle mit Qwen3 Coder
+### Option 3: Architectürisches Verständnis (3 Stunden)
 
-Das ergibt einen sehr aktuellen Überblick über die Agentic-Programming-Landschaft und zeigt gleichzeitig die Architekturprinzipien hinter dem Hype. Der größte Erkenntnisgewinn für viele Entwickler ist dabei meist, dass **Modelle austauschbar werden, während Agenten, MCP und die Inference-Layer zur eigentlichen Plattform werden.**
+```
+1. [Foundations Deep Dive](01-agentic-foundations/) (30 min)
+2. [Inference Layer + LiteLLM](02-models-and-inference/abstraction-layers-litellm.md) (30 min)
+3. [MCP Fundamentals](04-mcp-and-tooling/mcp-core-concepts.md) (25 min)
+4. [Lab 2: MCP Integration](07-hands-on-labs/lab-02-mcp-integration.md) (1 h)
+5. [Multi-Agent Intro](06-multi-agent-architectures/swarm-patterns.md) (20 min)
+```
 
-[1]: https://www.theverge.com/news/669339/github-ai-coding-agent-fix-bugs?utm_source=chatgpt.com "GitHub's new AI coding agent can fix bugs for you"
-[2]: https://pi-go.sh/?utm_source=chatgpt.com "pi-go — Terminal AI Coding Agent"
-[3]: https://www.pi-gui.com/?utm_source=chatgpt.com "pi-gui — A native desktop for AI coding agents"
-[4]: https://langdock.com/enterprise?utm_source=chatgpt.com "Enterprise AI Platform | Langdock"
-[5]: https://www.reddit.com/r/AI_Agents/comments/1ql33dp/some_rough_edges_we_hit_running_litellm_in/?utm_source=chatgpt.com "Some rough edges we hit running LiteLLM in production"
+**Resultat:** Du kannst Agenten-Systeme in der Tiefe designen.
+
+---
+
+## 💼 Workshop-Modi (Wie du das Repo nutzt)
+
+### 🎓 Selbststudium (Async)
+- Repo klonen
+- Einen [Lernpfad](00-start-here/learning-paths.md) wählen
+- Labs lokal durcharbeiten
+- Optional: Issues im Repo posten für Austausch
+
+### 👨‍🏫 Instructor-Led (Synchron)
+- Halbtag (4h): [Agenda hier](08-workshop-facilitator/half-day-agenda.md)
+- Ganztag (8h): [Agenda hier](08-workshop-facilitator/full-day-agenda.md)
+- Trainer nutzt `08-workshop-facilitator/` Material + Moderations-Tipps
+- Teilnehmer in Breakout Groups
+
+### 🤝 Team Dojo (Wiederholendes Lernen)
+- Wöchentlich 1h: Ein Modul + ein Mini-Lab
+- Preparation async → Sync Discussion
+- Anwendung auf echtes Ticket der Woche
+
+---
+
+## 🔍 Häufige Einstiegsfragen
+
+<details>
+<summary><strong>F: Ich kenne Agents überhaupt nicht. Wo anfangen?</strong></summary>
+
+→ [Lernpfad 1: Anfänger](00-start-here/learning-paths.md#pfad-1-anfänger)
+
+30 Min Konzepte + 45 Min Lab = echte Kompetenz.
+
+</details>
+
+<details>
+<summary><strong>F: Ich habe kein Budget — geht das trotzdem?</strong></summary>
+
+→ **Ja!** Setup Option B (Ollama + Qwen3.1 Coder): Völlig kostenlos, läuft lokal.
+
+Oder Anthropic Free Tier (15 Requests pro Minute), das reicht für Labs.
+
+</details>
+
+<details>
+<summary><strong>F: Ist das Material nur für Startup oder auch Enterprise?</strong></summary>
+
+→ **Beide!** 
+
+Für **Startups:** Option B (Ollama) + Cursor IDE = $0-20  
+Für **Enterprise:** Claude Code + LangGraph + Custom MCP = Enterprise-Ready
+
+</details>
+
+<details>
+<summary><strong>F: Kann ich das mit meinem Team durcharbeiten?</strong></summary>
+
+→ **Ja!** Schau dir [Team Dojo Modus](00-start-here/workshop-modes.md) an.
+
+Oder host einen [1-Tag Workshop](08-workshop-facilitator/full-day-agenda.md) mit diesem Material.
+
+</details>
+
+<details>
+<summary><strong>F: Diese Begriffe sind konfus (Agent vs Framework vs MCP?)</strong></summary>
+
+→ [Glossary.md](glossary.md) hilft. Oder:
+- [Model vs. Agent](01-agentic-foundations/model-vs-agent.md)
+- [Agent vs. Framework](01-agentic-foundations/agent-vs-framework.md)
+
+</details>
+
+---
+
+## 📚 Zusätzliche Ressourcen
+
+- [📖 Glossar & Akronyme](glossary.md) — Begriff nachschlagen
+- [❓ FAQ](faq.md) — "Das funktioniert nicht"
+- [🔗 Weiterführende Ressourcen](REFERENCES.md) — Originalquellen
+- [💬 Diskussionen im Repo](faq.md) — Fragen und Antworten an einem Ort
+
+---
+
+## 🎯 Learning Path Entscheidungsbaum
+
+```
+                     START HIER
+                        |
+              ┌─────────┴─────────┐
+              |                   |
+         "Lass mich       "Ich will
+          orientieren"     seriös
+                          lernen"
+           |                 |
+    5-min Read      ┌────────┴────────┐
+           |        |                 |
+           v    Anfänger?         Fortgeschrittene?
+      Gemacht!      |                 |
+                    v                 v
+                 Lernpfad 1      Lernpfad 2
+                 (2 Stunden)    (3 Stunden)
+                 + Lab 1          + Lab 2
+                    |                 |
+                    └─────────┬────────┘
+                              |
+                              v
+                        Willst du mehr?
+                              |
+                              v
+                          Lernpfad 3:
+                         Full Workshop
+                         + Lab 3 Capstone
+```
+
+**Nächster Schritt:** Wähle einen Pfad oben. Klick auf den Link. Los geht's! 🚀
+
+---
+
+## 📝 Lizenz
+
+Dieses Material wird unter einer offenen Lizenz bereitgestellt (Details TBA).  
+Beiträge sind willkommen: Issues, PRs, Diskussionen.
+
+---
+
+## 🗣️ Feedback & Austausch
+
+- **Bug Report:** GitHub Issues
+- **Frage/Diskussion:** GitHub Discussions
+- **Beitrag:** PRs mit Improvements
+- **Workshop-Anfrage:** (wird noch bekanntgegeben)
+
+---
+
+**Material aktualisiert:** Juni 2026  
+**Level:** Advanced / Praktiker  
+**Sprache:** Deutsch (English in Vorbereitung)  
+**Status:** 🟢 Live — Aktuelle Version
+
+🎉 **Willkommen im agentic Programming.** Viel Spaß beim Lernen!
