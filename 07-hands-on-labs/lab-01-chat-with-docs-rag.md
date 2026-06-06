@@ -3,7 +3,7 @@
 > **Dauer:** 90 Minuten (20 min Setup + 70 min Lab)  
 > **Level:** Anfänger  
 > **Ziel:** Ein self-contained End-to-End-Projekt mit einem Coding Agent erstellen  
-> **Ergebnis:** Laufende Docker-Compose-App mit Upload + RAG-Chat fuer PDF-Dateien
+> **Ergebnis:** Laufende Docker-Compose-App mit Upload + RAG-Chat für PDF-Dateien
 
 ---
 
@@ -12,16 +12,16 @@
 Du wirst:
 
 1. ✅ Einen Agenten technisch verifizieren (Hello-World-Scaffold)
-2. ✅ Mit einem konkreten Prompt eine vollstaendige Chat-with-the-Docs RAG-App erzeugen
-3. ✅ Die App ueber Docker Compose starten und testen
-4. ✅ Optional einen Vertiefungspfad waehlen (UI, Security, Architektur, Evaluation)
+2. ✅ Mit einem konkreten Prompt eine vollständige Chat-with-the-Docs RAG-App erzeugen
+3. ✅ Die App über Docker Compose starten und testen
+4. ✅ Optional einen Vertiefungspfad wählen (UI, Security, Architektur, Evaluation)
 5. ✅ Checkpoint: Wo war der Agent stark, wo brauchte er Steuerung?
 
 ---
 
 ## Setup (20 Min)
 
-Vor dem Setup: Eine detaillierte Schritt-fuer-Schritt-Anleitung fuer Registrierung und API Keys findest du hier:
+Vor dem Setup: Eine detaillierte Schritt-für-Schritt-Anleitung für Registrierung und API Keys findest du hier:
 
 - [API Keys und Registrierung](api-keys-und-registrierung.md)
 
@@ -36,26 +36,38 @@ node --version
 python3 --version
 ```
 
-Wenn einer der Befehle fehlschlaegt, zuerst Umgebung reparieren. Sonst verlierst du spaeter unnoetig Zeit im Agent-Loop.
+Wenn einer der Befehle fehlschlägt, zuerst Umgebung reparieren. Sonst verlierst du später unnötig Zeit im Agent-Loop.
 
-### Option A: Dev Container (empfohlen für den Workshop)
+### Verbindliche Basis: Dev Container
 
-**Kostet:** Nichts (nur Free-Tier-Keys)
+Unabhängig vom später gewählten Coding Agent wird dieses Lab im Dev Container ausgeführt.
+Das ist die gemeinsame, reproduzierbare Laufzeitumgebung für alle Teilnehmenden.
 
 ```bash
-# 1) Projekt in VS Code oeffnen
-# 2) "Reopen in Container" ausfuehren
+# 1) Projekt in VS Code öffnen
+# 2) "Reopen in Container" ausführen
 # 3) Provider konfigurieren
 cp .env.example .env || true
 ```
 
-### Option B: Aider CLI + Gemini 2.0 Flash
+### Danach: Coding Agent wählen
+
+Du kannst danach frei wählen, mit welchem Agent du die Aufgaben ausführst.
+
+#### Option 1: Aider CLI + Gemini 2.0 Flash
+
+Hinweis zu Kosten:
+
+- In der Regel im Free Tier nutzbar, solange die Limits nicht überschritten werden.
+- Ob Zahlungsinformationen nötig sind, hängt von Provider, Region und Kontostatus ab.
+- Für den Workshop nutze bevorzugt einen Provider mit verfügbarem kostenfreien Kontingent oder arbeite lokal mit Ollama.
+- API-Key-Schritte stehen in [API Keys und Registrierung](api-keys-und-registrierung.md).
 
 ```bash
 # 1. API Key erstellen
 # https://aistudio.google.com/app/apikey
 
-# 2. Kompatibilitaetsvariablen setzen
+# 2. Kompatibilitätsvariablen setzen
 export GEMINI_API_KEY="<dein_key>"
 export OPENAI_API_KEY="$GEMINI_API_KEY"
 export OPENAI_API_BASE="https://generativelanguage.googleapis.com/v1beta/openai"
@@ -64,7 +76,7 @@ export OPENAI_API_BASE="https://generativelanguage.googleapis.com/v1beta/openai"
 aider --model gemini/gemini-2.0-flash
 ```
 
-### Option C: Freie Alternativen
+#### Option 2: Freie Alternativen
 
 ```bash
 # Pi Agent (CLI)
@@ -81,31 +93,48 @@ ollama pull qwen3:8b
 
 ## 🎯 Lab Anleitung
 
-### Lernziel fuer dieses Lab
+Wichtiger Grundsatz für dieses Lab:
+
+- Fuehre die Schritte in genau der Reihenfolge aus.
+- Nutze die Prompt-Bloecke 1:1 (copy/paste).
+- Wenn Moderation und Dokument voneinander abweichen, wird das Dokument aktualisiert.
+
+### Lernziel für dieses Lab
 
 Du baust ein minimales "NotebookLM-light":
 
 - Frontend: Upload von PDF + Chat-UI
 - Backend: Parser -> Chunker -> Embeddings -> Retrieval -> Antwort
 - Datenhaltung: Vektorindex + Metadaten
-- Betrieb: Ein Kommando ueber Docker Compose
+- Betrieb: Ein Kommando über Docker Compose
 
-### Was Teilnehmende haeufig blockiert
+### Was Teilnehmende häufig blockiert
 
 Typische Stolperstellen in diesem Lab sind:
 
 - Unklare "Done"-Definition nach dem Prompt
 - Docker/Netzwerk-Probleme zwischen Frontend und Backend
 - Fehlender LLM-Key ohne funktionierenden Fallback
-- Keine Testdaten (PDF) fuer die Verifikation
+- Keine Testdaten (PDF) für die Verifikation
 
-Die naechsten Schritte sind deshalb bewusst mit messbaren Checks formuliert.
+Die nächsten Schritte sind deshalb bewusst mit messbaren Checks formuliert.
 
 ---
 
 ### Schritt 1: Agent-Setup testen mit Hello World (15 Min)
 
-Nutze den folgenden Prompt 1:1. Ziel ist nicht Features, sondern ein schneller Integritaetstest von Agent + Tooling + Build + Docker.
+Fuehre zuerst diese Vorbereitung aus:
+
+```bash
+mkdir -p /tmp/lab1-rag-trial
+cd /tmp/lab1-rag-trial
+pwd
+```
+
+Du bist der Ausführende. Ein Coding Agent setzt die Aufgabe um.
+Prompt den Agenten mit dem folgenden Text 1:1:
+
+Ziel ist nicht Features, sondern ein schneller Integritätstest von Agent + Tooling + Build + Docker.
 
 ```text
 Du arbeitest in einem leeren Projektordner. Bitte scaffold ein minimales Full-Stack "Hello, World" mit Docker Compose.
@@ -114,7 +143,7 @@ Technische Vorgaben:
 - Backend: FastAPI (Python 3.11), Endpoint GET /api/health liefert JSON {"status":"ok"}
 - Frontend: Vite + React + TypeScript, zeigt "Hello Agent Lab"
 - Reverse Proxy optional, aber nicht erforderlich
-- Docker Compose muss beide Services starten koennen
+- Docker Compose muss beide Services starten können
 
 Abnahmekriterien:
 1) docker compose up --build startet ohne Fehler
@@ -123,13 +152,13 @@ Abnahmekriterien:
 4) README mit Startanleitung und Troubleshooting
 
 Arbeitsweise:
-- Erzeuge alle benoetigten Dateien
+- Erzeuge alle benötigten Dateien
 - Fuehre Build/Start selbst aus
 - Fixe Fehler iterativ selbststaendig
 - Gib am Ende eine kurze Zusammenfassung mit den wichtigsten Dateien und Testschritten aus
 ```
 
-Wenn dieser Schritt fehlschlaegt, repariere zuerst den Setup-Stack. Nicht direkt mit RAG weitermachen.
+Wenn dieser Schritt fehlschlägt, repariere zuerst den Setup-Stack. Nicht direkt mit RAG weitermachen.
 
 Verifiziere Schritt 1 explizit mit:
 
@@ -137,23 +166,32 @@ Verifiziere Schritt 1 explizit mit:
 docker compose up --build -d
 curl -s http://localhost:8000/api/health
 docker compose ps
+curl -s http://localhost:5173 | head -n 20
 ```
 
 Erwartung:
 
 - Health antwortet mit `{"status":"ok"}`
 - Beide Services sind `Up`
+- Frontend liefert HTML aus
 
 Wenn das nicht klappt, stoppe hier und behebe zuerst Ports, Service-Namen oder Build-Fehler.
+
+Wenn etwas fehlschlägt, dokumentiere zur Diagnose:
+
+```bash
+docker compose logs --tail=120
+```
 
 ---
 
 ### Schritt 2: Hauptaufgabe prompten: Chat-with-the-Docs RAG (35 Min)
 
 Nutze den folgenden Prompt als Startpunkt (copy/paste). Er ist absichtlich konkret, damit das Lab self-contained bleibt.
+Fuehre diesen Schritt im selben Arbeitsordner aus (`/tmp/lab1-rag-trial`).
 
 ```text
-Baue eine lauffaehige "Chat-with-the-Docs" RAG Applikation als Docker-Compose-Projekt.
+Baue eine lauffähige "Chat-with-the-Docs" RAG Applikation als Docker-Compose-Projekt.
 
 Zielbild:
 - User kann PDF-Dateien im Frontend hochladen
@@ -167,7 +205,7 @@ Verbindliche technische Anforderungen:
 - Frontend: React + TypeScript + Vite
 - Vektorspeicher: ChromaDB (lokal persistiert)
 - Embeddings: sentence-transformers (all-MiniLM-L6-v2) lokal
-- LLM-Antworten: austauschbar ueber Provider-Adapter (OpenAI-kompatibel)
+- LLM-Antworten: austauschbar über Provider-Adapter (OpenAI-kompatibel)
 
 2) RAG Pipeline im Backend
 - PDF Parser (z. B. pypdf)
@@ -186,26 +224,26 @@ Verbindliche technische Anforderungen:
 
 4) Frontend Features
 - Upload-Komponente mit Fortschrittsanzeige
-- Dokumentliste mit Loeschfunktion
+- Dokumentliste mit Löschfunktion
 - Chatfenster mit Rollen (user/assistant)
 - Anzeige von Quellen pro Antwort
-- Fehlerzustaende (keine Dokumente, API down, leere Frage)
+- Fehlerzustände (keine Dokumente, API down, leere Frage)
 
 5) Betrieb / DevEx
 - docker compose up --build startet alles
-- Persistente Volumes fuer Vektordaten
-- .env.example mit allen noetigen Variablen
-- README mit Quickstart, Architekturueberblick, bekannten Grenzen
+- Persistente Volumes für Vektordaten
+- .env.example mit allen nötigen Variablen
+- README mit Quickstart, Architekturüberblick, bekannten Grenzen
 
-6) Qualitaet
-- Backend: mindestens Unit-Tests fuer Chunking und Retrieval-Logik
+6) Qualität
+- Backend: mindestens Unit-Tests für Chunking und Retrieval-Logik
 - Lint/Format sinnvoll eingerichtet
 - Klare Projektstruktur (backend/, frontend/, docker-compose.yml)
 
 Bitte fuehre die Umsetzung aus, teste die App lokal und behebe Fehler iterativ.
 Am Ende liefere:
 - kurze Architekturzusammenfassung
-- ausgefuehrte Test-/Startkommandos
+- ausgeführte Test-/Startkommandos
 - offene To-dos als Liste
 ```
 
@@ -220,12 +258,12 @@ Bevor du Dateien schreibst, liefere zuerst:
 Implementiere danach milestone-basiert und warte nach jedem Milestone auf mein "weiter".
 ```
 
-Hinweis fuer das Modell:
-- Wenn kein externer LLM-Key verfuegbar ist, soll ein lokaler Fallback-Modus eingebaut werden (z. B. regelbasierte Antwort mit Retrieved Context), damit die Demo technisch funktioniert.
+Hinweis für das Modell:
+- Wenn kein externer LLM-Key verfügbar ist, soll ein lokaler Fallback-Modus eingebaut werden (z. B. regelbasierte Antwort mit Retrieved Context), damit die Demo technisch funktioniert.
 
 ### Erwartete Mindest-Artefakte nach Schritt 2
 
-Nutze diese Liste fuer ein schnelles Reality-Check:
+Nutze diese Liste für ein schnelles Reality-Check:
 
 - `docker-compose.yml`
 - `backend/Dockerfile`
@@ -248,36 +286,36 @@ Beobachte gezielt diese Phasen:
 Planung -> Scaffold -> Implementierung -> Test -> Fix -> Doku
 ```
 
-Interventionsbeispiele (wenn noetig):
+Interventionsbeispiele (wenn nötig):
 
 ```text
-Bitte trenne Embedding- und LLM-Layer strikter. Ich moechte einen klaren Provider-Adapter.
+Bitte trenne Embedding- und LLM-Layer strikter. Ich möchte einen klaren Provider-Adapter.
 ```
 
 ```text
-Die Quellenangaben sind zu duenn. Bitte ergaenze Seite, Dateiname und Chunk-ID im Response-Objekt.
+Die Quellenangaben sind zu dünn. Bitte ergaenze Seite, Dateiname und Chunk-ID im Response-Objekt.
 ```
 
 ```text
-Docker Compose startet, aber Frontend kann Backend nicht erreichen. Bitte pruefe CORS, Base-URL und Service-Namen im Compose-Netzwerk.
+Docker Compose startet, aber Frontend kann Backend nicht erreichen. Bitte prüfe CORS, Base-URL und Service-Namen im Compose-Netzwerk.
 ```
 
 ```text
-Ergaenze einen minimalen E2E-Test fuer Upload -> Frage -> Antwort mit Quelle.
+Ergaenze einen minimalen E2E-Test für Upload -> Frage -> Antwort mit Quelle.
 ```
 
 ---
 
 ### Schritt 4: Abnahme-Checkliste (10 Min)
 
-Die Loesung gilt als "done", wenn alles erfuellt ist:
+Die Loesung gilt als "done", wenn alles erfüllt ist:
 
 ```
-☐ docker compose up --build laeuft stabil
+☐ docker compose up --build läuft stabil
 ☐ PDF Upload funktioniert
 ☐ Fragen zum Dokument geben plausible Antworten
-☐ Antwort enthaelt nachvollziehbare Quellen
-☐ Dokumente sind auflistbar und loeschbar
+☐ Antwort enthält nachvollziehbare Quellen
+☐ Dokumente sind auflistbar und löschbar
 ☐ README beschreibt Start + Architektur + Grenzen
 ☐ Mindestens Basistests sind vorhanden und laufen
 ```
@@ -296,7 +334,7 @@ curl -L -o ./dein-dokument.pdf https://www.w3.org/WAI/ER/tests/xhtml/testfiles/r
 # 1) Stack starten
 docker compose up --build -d
 
-# 2) Health pruefen
+# 2) Health prüfen
 curl -s http://localhost:8000/api/health
 
 # 3) PDF hochladen (Pfad anpassen)
@@ -314,29 +352,29 @@ Erwartung an die Chat-Antwort:
 - Eine fachlich plausible Antwort
 - Mindestens eine Quelle mit Dateiname, Seite und Chunk-ID
 
-Wenn Quellen fehlen: Retrieval oder Response-Schema nachschaerfen.
+Wenn Quellen fehlen: Retrieval oder Response-Schema nachschärfen.
 
 ### Troubleshooting: Schnelle Diagnosematrix
 
 | Symptom | Wahrscheinliche Ursache | Konkrete Aktion |
 |---|---|---|
-| Frontend laedt, aber keine API Calls funktionieren | Falsche Backend-URL / CORS | Base-URL im Frontend und CORS in FastAPI pruefen |
+| Frontend lädt, aber keine API Calls funktionieren | Falsche Backend-URL / CORS | Base-URL im Frontend und CORS in FastAPI prüfen |
 | Upload liefert 4xx/5xx | Multipart-Handling oder Dateivalidierung fehlerhaft | Endpoint `POST /api/upload` mit kleinem PDF isoliert testen |
-| Antwort ohne Quellen | Retrieval-Objekte werden nicht in Antwort gemappt | Response-Schema + Mapping fuer `sources[]` korrigieren |
+| Antwort ohne Quellen | Retrieval-Objekte werden nicht in Antwort gemappt | Response-Schema + Mapping für `sources[]` korrigieren |
 | Sehr schlechte Antworten | Chunking/Top-k ungeeignet | Chunk-Groesse, Overlap und Top-k anpassen |
-| Compose startet nicht stabil | Build/Port-Konflikte | `docker compose logs`, Ports und Abhaengigkeiten pruefen |
+| Compose startet nicht stabil | Build/Port-Konflikte | `docker compose logs`, Ports und Abhaengigkeiten prüfen |
 
 ---
 
 ## Vertiefungspfade (optional, 20-40 Min)
 
-Waehle einen Pfad nach Interesse.
+Wähle einen Pfad nach Interesse.
 
 ### Pfad A: UI Fine-Tuning mit MCP Playwright
 
 Ziel:
-- Chat UX verbessern (Layout, Lesbarkeit, Quellen-Panel, leere Zustaende)
-- Regressionen ueber Browser-Automatisierung absichern
+- Chat UX verbessern (Layout, Lesbarkeit, Quellen-Panel, leere Zustände)
+- Regressionen über Browser-Automatisierung absichern
 
 Prompt-Idee:
 
@@ -353,26 +391,26 @@ Ziel:
 Prompt-Idee:
 
 ```text
-Fuehre ein Security Review fuer die Chat-with-the-Docs App durch. Untersuche Upload-Validierung, Prompt-Injection-Risiken, Secret-Handling, AuthN/AuthZ-Luecken, SSRF/Path Traversal und Container-Hardening. Liefere Findings nach Kritikalitaet inkl. konkreter Remediation Steps.
+Fuehre ein Security Review für die Chat-with-the-Docs App durch. Untersuche Upload-Validierung, Prompt-Injection-Risiken, Secret-Handling, AuthN/AuthZ-Luecken, SSRF/Path Traversal und Container-Hardening. Liefere Findings nach Kritikalität inkl. konkreter Remediation Steps.
 ```
 
 ### Pfad C: Architektur-Review Agent
 
 Ziel:
-- Skalierbarkeit, Wartbarkeit und Betriebsfaehigkeit bewerten
+- Skalierbarkeit, Wartbarkeit und Betriebsfähigkeit bewerten
 
 Prompt-Idee:
 
 ```text
-Fuehre ein Architektur-Review fuer diese RAG-App durch. Bewerte Schichten, Kopplung, Austauschbarkeit von Komponenten, Beobachtbarkeit, Fehlertoleranz und Kostenpfade. Gib 10 priorisierte Architekturverbesserungen mit kurzer Begruendung.
+Fuehre ein Architektur-Review für diese RAG-App durch. Bewerte Schichten, Kopplung, Austauschbarkeit von Komponenten, Beobachtbarkeit, Fehlertoleranz und Kostenpfade. Gib 10 priorisierte Architekturverbesserungen mit kurzer Begründung.
 ```
 
-### Pfad D: Evaluation und Qualitaet (zusatzliche Idee)
+### Pfad D: Evaluation und Qualität (zusatzliche Idee)
 
 Ziel:
 - Nicht nur "funktioniert", sondern messbar "gut"
 
-Moegliche Aufgaben:
+Mögliche Aufgaben:
 - Golden Questions Datensatz mit erwarteten Antworten erstellen
 - Retrieval-Metriken erfassen (Hit-Rate, Top-k Treffer)
 - Halluzinationsrate manuell in einer kleinen Stichprobe bewerten
@@ -382,7 +420,7 @@ Moegliche Aufgaben:
 Ziel:
 - App wie ein echtes Produkt betreiben
 
-Moegliche Aufgaben:
+Mögliche Aufgaben:
 - Structured Logging + Request IDs
 - Health/Readiness getrennt
 - Einfache Metriken (Latenz, Fehlerquote, Token-Verbrauch)
@@ -393,7 +431,7 @@ Nach dem Lab, beantworte diese Fragen (5-10 Min):
 
 ### Inhaltlich
 
-1. **Wie war die Qualitaet des generierten Code/Text?**
+1. **Wie war die Qualität des generierten Code/Text?**
    - [ ] Exzellent (hätte ich selbst nicht besser gemacht)
    - [ ] Gut (minor Fixes notwendig)
    - [ ] OK (funktioniert aber unpoliert)
@@ -441,7 +479,7 @@ Nach dem Lab, beantworte diese Fragen (5-10 Min):
 - ✅ Verständnis: Agent analysierte Kontext richtig
 - ✅ Qualität: Output war nützlich
 
-**Naechster Gedanke:** Wie skaliert das? -> [MCP Core Concepts](../04-mcp-and-tooling/mcp-core-concepts.md)
+**Nächster Gedanke:** Wie skaliert das? -> [MCP Core Concepts](../04-mcp-and-tooling/mcp-core-concepts.md)
 
 ### Wenn der Agent falsch war:
 
@@ -452,18 +490,18 @@ Nach dem Lab, beantworte diese Fragen (5-10 Min):
 3. **Model war nicht gut genug** → Stärkeres Model oder bessere Prompts
 4. **Problem steckt im Stack** -> Docker/Netzwerk/Env sauber entkoppeln
 
-**Naechster Gedanke:** Strukturiere die Anforderung besser und messe Qualitaet mit kleinen Evaluationssets.
+**Nächster Gedanke:** Strukturiere die Anforderung besser und messe Qualität mit kleinen Evaluationssets.
 
 ---
 
-## 🔗 Naechster Schritt
+## 🔗 Nächster Schritt
 
 Du hast Lab 1 gemacht. Die Wege:
 
 <details open>
-<summary>Route A: Du willst tiefer in RAG-Qualitaet</summary>
+<summary>Route A: Du willst tiefer in RAG-Qualität</summary>
 
-Probiere als naechstes:
+Probiere als nächstes:
 - Evaluation Dataset mit 20 Fragen
 - Vergleich unterschiedlicher Chunking-Strategien
 - Vergleich lokaler vs. externer Embeddings
@@ -500,4 +538,4 @@ Dann: [MCP Core Concepts](../04-mcp-and-tooling/mcp-core-concepts.md)
 
 ---
 
-**Du hast gerade agentic Programming in einem realistischen End-to-End-Flow umgesetzt. Glueckwunsch!**
+**Du hast gerade agentic Programming in einem realistischen End-to-End-Flow umgesetzt. Glückwunsch!**

@@ -1,11 +1,11 @@
-# API Keys und Registrierung fuer Labs
+# API Keys und Registrierung für Labs
 
-> Ziel: Teilnehmende koennen innerhalb weniger Minuten die benoetigten API Keys selbst erstellen.
+> Ziel: Teilnehmende können innerhalb weniger Minuten die benötigten API Keys selbst erstellen.
 > Stand: 2026-06
 
 ## Welche Keys brauche ich wirklich?
 
-Fuer den 2h-Workshop reicht ein Provider:
+Für den 2h-Workshop reicht ein Provider:
 
 - Pflicht: Google AI Studio (Gemini API Key)
 - Optional: GitHub Models Token
@@ -13,24 +13,24 @@ Fuer den 2h-Workshop reicht ein Provider:
 - Optional: Anthropic API Key
 
 Hinweis:
-- Fuer Ollama lokal wird kein API Key benoetigt.
+- Für Ollama lokal wird kein API Key benötigt.
 - Bitte niemals echte Keys in Prompts, Commits oder Screenshots teilen.
 
 ---
 
-## 1) Google AI Studio (Standard fuer den Workshop)
+## 1) Google AI Studio (Standard für den Workshop)
 
 - Registrierung: https://aistudio.google.com/
 - API-Key-Verwaltung direkt: https://aistudio.google.com/app/apikey
 - API-Dokumentation (OpenAI-kompatibel): https://ai.google.dev/gemini-api/docs/openai
 
-### Schritt-fuer-Schritt
+### Schritt-für-Schritt
 
-1. Oeffne https://aistudio.google.com/ und melde dich mit deinem Google-Konto an.
-2. Falls abgefragt, bestaetige die Nutzungsbedingungen.
-3. Oeffne https://aistudio.google.com/app/apikey.
+1. Öffne https://aistudio.google.com/ und melde dich mit deinem Google-Konto an.
+2. Falls abgefragt, bestätige die Nutzungsbedingungen.
+3. Öffne https://aistudio.google.com/app/apikey.
 4. Klicke auf Create API key.
-5. Waehle ein bestehendes Google-Cloud-Projekt oder erstelle ein neues Projekt.
+5. Wähle ein bestehendes Google-Cloud-Projekt oder erstelle ein neues Projekt.
 6. Kopiere den erzeugten Key sofort und speichere ihn lokal in deiner .env.
 
 ### Eintragen in .env
@@ -60,12 +60,12 @@ aider --model gemini/gemini-2.0-flash
 - Token erstellen: https://github.com/settings/tokens
 - Dokumentation: https://docs.github.com/en/github-models
 
-### Schritt-fuer-Schritt
+### Schritt-für-Schritt
 
 1. Melde dich bei https://github.com/ an.
-2. Oeffne https://github.com/settings/tokens.
+2. Öffne https://github.com/settings/tokens.
 3. Klicke Generate new token (classic) oder Fine-grained token.
-4. Vergib einen Namen, setze ein Ablaufdatum und waehle minimale Rechte.
+4. Vergib einen Namen, setze ein Ablaufdatum und wähle minimale Rechte.
 5. Erstelle den Token und kopiere ihn sofort.
 
 ### Eintragen in .env
@@ -92,12 +92,12 @@ export OPENAI_API_BASE="https://models.inference.ai.azure.com"
 - Modelle: https://openrouter.ai/models
 - Dokumentation: https://openrouter.ai/docs
 
-### Schritt-fuer-Schritt
+### Schritt-für-Schritt
 
-1. Oeffne https://openrouter.ai/ und registriere dich.
+1. Öffne https://openrouter.ai/ und registriere dich.
 2. Gehe zu https://openrouter.ai/keys.
 3. Klicke Create key.
-4. Optional: Setze ein Limit/Budget fuer den Workshop.
+4. Optional: Setze ein Limit/Budget für den Workshop.
 5. Kopiere den Key und trage ihn in die .env ein.
 
 ### Eintragen in .env
@@ -122,10 +122,10 @@ export OPENAI_API_BASE="https://openrouter.ai/api/v1"
 - API Keys: https://console.anthropic.com/settings/keys
 - Doku: https://docs.anthropic.com/
 
-### Schritt-fuer-Schritt
+### Schritt-für-Schritt
 
-1. Oeffne https://console.anthropic.com/ und registriere dich.
-2. Oeffne https://console.anthropic.com/settings/keys.
+1. Öffne https://console.anthropic.com/ und registriere dich.
+2. Öffne https://console.anthropic.com/settings/keys.
 3. Klicke Create key.
 4. Kopiere den Key und hinterlege ihn lokal.
 
@@ -142,9 +142,9 @@ ANTHROPIC_API_KEY="PASTE_HERE"
 - Download: https://ollama.com/download
 - Modellbibliothek: https://ollama.com/library
 
-### Schritt-fuer-Schritt
+### Schritt-für-Schritt
 
-1. Installiere Ollama ueber https://ollama.com/download.
+1. Installiere Ollama über https://ollama.com/download.
 2. Starte Ollama lokal.
 3. Ziehe ein Modell, zum Beispiel:
 
@@ -156,20 +156,20 @@ ollama pull qwen3:8b
 
 ---
 
-## Troubleshooting (haeufige Probleme)
+## Troubleshooting (häufig Probleme)
 
 1. Fehlermeldung 401/403: Key falsch, abgelaufen oder keine Berechtigung.
 2. Fehlermeldung 429: Rate-Limit erreicht, kurz warten oder Modell wechseln.
-3. Kein Modell verfuegbar: Pruefe Modellnamen exakt.
+3. Kein Modell verfügbar: Prüfe Modellnamen exakt.
 4. Client ignoriert .env: Stelle sicher, dass Variablen im aktuellen Shell-Kontext exportiert sind.
 
 ---
 
-## Sicherheits-Hinweise fuer den Workshop
+## Sicherheits-Hinweise für den Workshop
 
 - Keys nur lokal in .env speichern, nie in .env.example.
 - .env nie committen.
-- Fuer Demos nur Test- oder Free-Tier-Keys nutzen.
+- Für Demos nur Test- oder Free-Tier-Keys nutzen.
 - Bei Verdacht auf Leck: Key sofort rotieren/revoken.
 
 Siehe auch:
