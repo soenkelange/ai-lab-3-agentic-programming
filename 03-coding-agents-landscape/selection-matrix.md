@@ -377,4 +377,4 @@ Danach hast du eine echte Aussage: "Das ist mein Agent."
 
 ---
 
-**Nächster Schritt:** [Hands-On Lab 1 — Dein erster Agent](../07-hands-on-labs/lab-01-single-agent-ticket.md)
+**Nächster Schritt:** [Hands-On Lab 1 — Dein erster Agent](../07-hands-on-labs/lab-01-chat-with-docs-rag.md)

@@ -28,7 +28,7 @@ Dieses Dokument fasst zusammen, was in dieser Phase fertiggestellt wurde.
 - **04-mcp-and-tooling/mcp-core-concepts.md** — Architecture + praktisches Verständnis
 
 ### Hands-On Labs (Modul 07)
-- **07-hands-on-labs/lab-01-single-agent-ticket.md** — Single Agent Ticket (45 min Lab)
+- **07-hands-on-labs/lab-01-chat-with-docs-rag.md** — Chat-with-the-Docs RAG App (90 min Lab)
 - **07-hands-on-labs/checkpoint-01.md** — Self-Assessment nach Lab 1
 
 ### Workshop Facilitator (Modul 08)

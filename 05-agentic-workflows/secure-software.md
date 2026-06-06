@@ -95,4 +95,4 @@ Ein Feature ist erst dann fertig, wenn:
 ## Siehe auch
 
 - [Security Guard Rails](security-guardrails.md)
-- [Lab 1](../07-hands-on-labs/lab-01-single-agent-ticket.md)
+- [Lab 1](../07-hands-on-labs/lab-01-chat-with-docs-rag.md)

@@ -34,7 +34,7 @@
 | 1 | [Agentic Foundations](../01-agentic-foundations/) | 15 min | "Agenten machen X, nicht nur Y" verstanden |
 | 2 | [Models 101](../02-models-and-inference/primer.md) | 20 min | "Provider vs. Runtime" Unterschied klar |
 | 3 | [Agent Tools Landscape](../03-coding-agents-landscape/selection-matrix.md) | 25 min | Versteht, dass Claude Code ≠ Cursor ≠ Aider |
-| 4 | [💻 Lab 1 Live](../07-hands-on-labs/lab-01-single-agent-ticket.md) | 45 min | *Ich habe einen echten Bug mit Claude Code gelöst* |
+| 4 | [💻 Lab 1 Live](../07-hands-on-labs/lab-01-chat-with-docs-rag.md) | 90 min | *Ich habe eine lauffaehige Chat-with-the-Docs RAG App gebaut* |
 | 5 | [Checkpoint & Reflexion](../07-hands-on-labs/checkpoint-01.md) | 15 min | Validierung: Hab ich wirklich verstanden? |
 
 ### Setup (<5 Min)
@@ -105,7 +105,7 @@ ollama pull qwen3.1:coder
 
 ### Mittags: Live Hands-On (2h)
 
-- [Lab 1 gemeinsam](../07-hands-on-labs/lab-01-single-agent-ticket.md) (30 min)
+- [Lab 1 gemeinsam](../07-hands-on-labs/lab-01-chat-with-docs-rag.md) (60 min)
 - [Lab 2 in Breakouts](../07-hands-on-labs/lab-02-mcp-integration.md) (90 min)
 - Peer Learning & Troubleshooting
 

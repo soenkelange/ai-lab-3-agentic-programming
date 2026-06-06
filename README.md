@@ -73,113 +73,136 @@ Mit Capstone und Multi-Agent Orchestration.
 ## 📚 Repository-Struktur: Die 8 Module
 
 ```mermaid
-flowchart TD
+flowchart TB
    R[Repository]
 
-   R --> M00[00-start-here]
-   R --> M01[01-agentic-foundations]
-   R --> M02[02-models-and-inference]
-   R --> M03[03-coding-agents-landscape]
-   R --> M04[04-mcp-and-tooling]
-   R --> M05[05-agentic-workflows]
-   R --> M06[06-multi-agent-architectures]
-   R --> M07[07-hands-on-labs]
-   R --> M08[08-workshop-facilitator]
-   R --> AS[assets]
-   R --> GL[glossary.md]
-   R --> FQ[faq.md]
-   R --> FQE[faq-executive.md]
-   R --> FQS[faq-engineering-security.md]
-
-   M00 --> M00A[learning-paths.md]
-   M00 --> M00B[prerequisites.md]
-   M00 --> M00C[two-hour-workshop-path.md]
-
-   M01 --> M01A[model-vs-agent.md]
-   M01 --> M01B[agent-vs-framework.md]
-
-   M02 --> M02A[abstraction-layers-litellm.md]
-
-   M03 --> M03A[selection-matrix.md]
-   M03 --> M03B[terminal-agents.md]
-
-   M04 --> M04A[mcp-core-concepts.md]
-
-   M05 --> M05A[feature-factory.md]
-   M05 --> M05B[security-guardrails.md]
-   M05 --> M05C[secure-software.md]
-   M05 --> M05D[zugangsdaten-und-agenten.md]
-   M05 --> M05E[agent-terminology.md]
-   M05 --> M05F[workflows-terminology-matrix.md]
-
-   M06 --> M06A[swarm-patterns.md]
-   M06 --> M06B[orchestration-frameworks.md]
-   M06 --> M06C[failure-modes.md]
-
-   M07 --> M07A[lab-01-single-agent-ticket.md]
-   M07 --> M07B[checkpoint-01.md]
-   M07 --> M07C[checkpoint-02.md]
-   M07 --> M07D[api-keys-und-registrierung.md]
-
-   M08 --> M08A[half-day-agenda.md]
-
-   AS --> ASD[diagrams]
-   AS --> AST[templates]
-   AST --> ASTA[security-review-skill.md]
-   AST --> ASTB[ui-specification.md]
-
-   click M00 "00-start-here/" "00-start-here"
-   click M01 "01-agentic-foundations/" "01-agentic-foundations"
-   click M02 "02-models-and-inference/" "02-models-and-inference"
-   click M03 "03-coding-agents-landscape/" "03-coding-agents-landscape"
-   click M04 "04-mcp-and-tooling/" "04-mcp-and-tooling"
-   click M05 "05-agentic-workflows/" "05-agentic-workflows"
-   click M06 "06-multi-agent-architectures/" "06-multi-agent-architectures"
-   click M07 "07-hands-on-labs/" "07-hands-on-labs"
-   click M08 "08-workshop-facilitator/" "08-workshop-facilitator"
-   click AS "assets/" "assets"
-   click AST "assets/templates/" "assets/templates"
-
-   click M00A "00-start-here/learning-paths.md" "learning-paths.md"
-   click M00B "00-start-here/prerequisites.md" "prerequisites.md"
-   click M00C "00-start-here/two-hour-workshop-path.md" "two-hour-workshop-path.md"
-
-   click M01A "01-agentic-foundations/model-vs-agent.md" "model-vs-agent.md"
-   click M01B "01-agentic-foundations/agent-vs-framework.md" "agent-vs-framework.md"
-
-   click M02A "02-models-and-inference/abstraction-layers-litellm.md" "abstraction-layers-litellm.md"
-
-   click M03A "03-coding-agents-landscape/selection-matrix.md" "selection-matrix.md"
-   click M03B "03-coding-agents-landscape/terminal-agents.md" "terminal-agents.md"
-
-   click M04A "04-mcp-and-tooling/mcp-core-concepts.md" "mcp-core-concepts.md"
-
-   click M05A "05-agentic-workflows/feature-factory.md" "feature-factory.md"
-   click M05B "05-agentic-workflows/security-guardrails.md" "security-guardrails.md"
-   click M05C "05-agentic-workflows/secure-software.md" "secure-software.md"
-   click M05D "05-agentic-workflows/zugangsdaten-und-agenten.md" "zugangsdaten-und-agenten.md"
-   click M05E "05-agentic-workflows/agent-terminology.md" "agent-terminology.md"
-   click M05F "05-agentic-workflows/workflows-terminology-matrix.md" "workflows-terminology-matrix.md"
-
-   click M06A "06-multi-agent-architectures/swarm-patterns.md" "swarm-patterns.md"
-   click M06B "06-multi-agent-architectures/orchestration-frameworks.md" "orchestration-frameworks.md"
-   click M06C "06-multi-agent-architectures/failure-modes.md" "failure-modes.md"
-
-   click M07A "07-hands-on-labs/lab-01-single-agent-ticket.md" "lab-01-single-agent-ticket.md"
-   click M07B "07-hands-on-labs/checkpoint-01.md" "checkpoint-01.md"
-   click M07C "07-hands-on-labs/checkpoint-02.md" "checkpoint-02.md"
-   click M07D "07-hands-on-labs/api-keys-und-registrierung.md" "api-keys-und-registrierung.md"
-
-   click M08A "08-workshop-facilitator/half-day-agenda.md" "half-day-agenda.md"
-
-   click ASTA "assets/templates/security-review-skill.md" "security-review-skill.md"
-   click ASTB "assets/templates/ui-specification.md" "ui-specification.md"
-
-   click GL "glossary.md" "glossary.md"
-   click FQ "faq.md" "faq.md"
-   click FQE "faq-executive.md" "faq-executive.md"
-   click FQS "faq-engineering-security.md" "faq-engineering-security.md"
+   R --> M00[00-start-here\nEinstieg und Lernpfade]
+   R --> M01[01-agentic-foundations\nGrundbegriffe und Abgrenzungen]
+   R --> M02[02-models-and-inference\nModelle, Provider, Abstraktion]
+   R --> M03[03-coding-agents-landscape\nTools und Auswahl]
+   R --> M04[04-mcp-and-tooling\nMCP und Tooling]
+   R --> M05[05-agentic-workflows\nWorkflows, Security, Terminologie]
+   R --> M06[06-multi-agent-architectures\nPatterns und Orchestrierung]
+   R --> M07[07-hands-on-labs\nHands-on-Labs und Checkpoints]
+   R --> M08[08-workshop-facilitator\nFacilitation und Agenda]
 ```
+
+Die Grafik zeigt bewusst nur die acht Kernmodule. Die eigentliche Navigation ist unten als sprechende Linkübersicht aufgebaut, damit du direkt in die Inhalte springen kannst, ohne technische Dateinamen lesen zu müssen.
+
+### Schnellnavigation
+
+| Modul | Direktzugang |
+|-------|--------------|
+| 00 | [Start hier](#modul-00) |
+| 01 | [Agentic Foundations](#modul-01) |
+| 02 | [Models und Inference](#modul-02) |
+| 03 | [Coding Agents Landscape](#modul-03) |
+| 04 | [MCP und Tooling](#modul-04) |
+| 05 | [Agentic Workflows](#modul-05) |
+| 06 | [Multi-Agent Architectures](#modul-06) |
+| 07 | [Hands-on Labs](#modul-07) |
+| 08 | [Workshop Facilitator](#modul-08) |
+| Extra | [Querschnitt und Hilfsmaterial](#querschnitt) |
+
+<a id="modul-00"></a>
+<details>
+<summary><strong>00 Start hier</strong> - Einstieg, Voraussetzungen, Lernpfade</summary>
+
+- [Lernpfade und empfohlene Reihenfolgen](00-start-here/learning-paths.md)
+- [Voraussetzungen für Workshop und Labs](00-start-here/prerequisites.md)
+- [Der Zwei-Stunden-Workshop-Pfad](00-start-here/two-hour-workshop-path.md)
+
+</details>
+
+<a id="modul-01"></a>
+<details>
+<summary><strong>01 Agentic Foundations</strong> - Grundbegriffe und Abgrenzungen</summary>
+
+- [Was ein Model ist und was ein Agent leistet](01-agentic-foundations/model-vs-agent.md)
+- [Wann ein Agent sinnvoll ist und wann ein Framework](01-agentic-foundations/agent-vs-framework.md)
+
+</details>
+
+<a id="modul-02"></a>
+<details>
+<summary><strong>02 Models und Inference</strong> - Modelle, Provider, Abstraktion</summary>
+
+- [Abstraktionsschichten mit LiteLLM verstehen](02-models-and-inference/abstraction-layers-litellm.md)
+
+</details>
+
+<a id="modul-03"></a>
+<details>
+<summary><strong>03 Coding Agents Landscape</strong> - Tools und Auswahl</summary>
+
+- [Entscheidungsmatrix für Agenten-Tools](03-coding-agents-landscape/selection-matrix.md)
+- [Terminal-basierte Coding Agents im Überblick](03-coding-agents-landscape/terminal-agents.md)
+
+</details>
+
+<a id="modul-04"></a>
+<details>
+<summary><strong>04 MCP und Tooling</strong> - MCP-Grundlagen und Tooling</summary>
+
+- [MCP-Kernkonzepte verständlich erklärt](04-mcp-and-tooling/mcp-core-concepts.md)
+
+</details>
+
+<a id="modul-05"></a>
+<details>
+<summary><strong>05 Agentic Workflows</strong> - Workflows, Security, Terminologie</summary>
+
+- [Feature Factory: vom Ziel zur Umsetzung](05-agentic-workflows/feature-factory.md)
+- [Security Guardrails für Agenten-Workflows](05-agentic-workflows/security-guardrails.md)
+- [Secure Software in agentischen Umgebungen](05-agentic-workflows/secure-software.md)
+- [Zugangsdaten und Agenten sicher handhaben](05-agentic-workflows/zugangsdaten-und-agenten.md)
+- [Wichtige Begriffe rund um agentische Workflows](05-agentic-workflows/agent-terminology.md)
+- [Begriffe und Workflows in einer gemeinsamen Matrix](05-agentic-workflows/workflows-terminology-matrix.md)
+- [Workflow-README des Moduls](05-agentic-workflows/README.md)
+
+</details>
+
+<a id="modul-06"></a>
+<details>
+<summary><strong>06 Multi-Agent Architectures</strong> - Patterns und Orchestrierung</summary>
+
+- [Swarm-Patterns für mehrere Agenten](06-multi-agent-architectures/swarm-patterns.md)
+- [Orchestrierungs-Frameworks einordnen](06-multi-agent-architectures/orchestration-frameworks.md)
+- [Typische Failure Modes und Gegenmaßnahmen](06-multi-agent-architectures/failure-modes.md)
+
+</details>
+
+<a id="modul-07"></a>
+<details>
+<summary><strong>07 Hands-on Labs</strong> - Praktische Übungen und Checkpoints</summary>
+
+- [Lab: Self-contained Chat-with-the-Docs RAG App bauen](07-hands-on-labs/lab-01-chat-with-docs-rag.md)
+- [Checkpoint 1 für den praktischen Fortschritt](07-hands-on-labs/checkpoint-01.md)
+- [Checkpoint 2 für den praktischen Fortschritt](07-hands-on-labs/checkpoint-02.md)
+- [API-Keys und Registrierung für die Übungen](07-hands-on-labs/api-keys-und-registrierung.md)
+
+</details>
+
+<a id="modul-08"></a>
+<details>
+<summary><strong>08 Workshop Facilitator</strong> - Durchführung und Moderation</summary>
+
+- [Halbtages-Agenda für die Durchführung](08-workshop-facilitator/half-day-agenda.md)
+
+</details>
+
+<a id="querschnitt"></a>
+<details>
+<summary><strong>Querschnitt und Hilfsmaterial</strong> - Glossar, FAQs und Templates</summary>
+
+- [Glossar der zentralen Begriffe](glossary.md)
+- [Häufige Fragen im Überblick](faq.md)
+- [FAQ für Entscheider:innen](faq-executive.md)
+- [FAQ zu Engineering und Security](faq-engineering-security.md)
+- [Template für einen Security-Review-Skill](assets/templates/security-review-skill.md)
+- [Template für eine UI-Spezifikation](assets/templates/ui-specification.md)
+
+</details>
 
 ---
 
@@ -274,9 +297,9 @@ aider --model gemini/gemini-2.0-flash
 ### Option 2: Anfänger-Track (2 Stunden + Hands-On)
 
 1. [Lernpfad 1 Anfänger](00-start-here/learning-paths.md#pfad-1-anfänger) (30 min Theorie)
-2. [Lab 1: Single Agent Ticket](07-hands-on-labs/lab-01-single-agent-ticket.md) (45 min Praxis)
+2. [Lab 1: Chat-with-the-Docs RAG App](07-hands-on-labs/lab-01-chat-with-docs-rag.md) (90 min Praxis)
 3. [Checkpoint 1](07-hands-on-labs/checkpoint-01.md) (10 min Validierung)
-4. Optional: [Lab 1 nochmal mit anderem Issue](07-hands-on-labs/lab-01-single-agent-ticket.md) (45 min Vertiefung)
+4. Optional: [Lab 1 Vertiefung mit optionalen Pfaden](07-hands-on-labs/lab-01-chat-with-docs-rag.md) (20-40 min Vertiefung)
 
 **Resultat:** Du hast einen Agent in Action gesehen. Deine erste PR.
 

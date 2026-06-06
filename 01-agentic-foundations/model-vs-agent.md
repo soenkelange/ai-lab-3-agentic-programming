@@ -161,7 +161,7 @@ Ein Agent nutzt ein Model, aber das Model ist nur eine Komponente—nicht das Ga
 
 ## Dein erstes Aha-Moment erlebst du hier
 
-→ [Lab 1: Single Agent Ticket](../07-hands-on-labs/lab-01-single-agent-ticket.md)
+→ [Lab 1: Chat-with-the-Docs RAG App](../07-hands-on-labs/lab-01-chat-with-docs-rag.md)
 
 Dort wirst du sehen:
 - Agent analysiert ein echtes Issue

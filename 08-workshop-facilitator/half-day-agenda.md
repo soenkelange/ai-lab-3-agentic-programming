@@ -97,7 +97,7 @@ Trainer stoppt und fragt:
 
 Alle Teilnehmer:
 1. API Key (Anthropic oder Ollama) vorbereitet
-2. [Lab 1 Instructions](../07-hands-on-labs/lab-01-single-agent-ticket.md) öffnet
+2. [Lab 1 Instructions](../07-hands-on-labs/lab-01-chat-with-docs-rag.md) öffnet
 3. Ein echtes GitHub Issue wählt (oder aus diesem Repo)
 
 ### Execution (70 Min)

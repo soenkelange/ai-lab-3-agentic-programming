@@ -1,6 +1,6 @@
 # Checkpoint 1: Wart mal, was habe ich mitgenommen?
 
-> Nach Lab 1 (Single Agent Ticket)  
+> Nach Lab 1 (Chat-with-the-Docs RAG App)  
 > ⏱️ 10 Minuten Self-Assessment  
 > 🎯 Ziel: Validieren, dass du die Konzepte verstanden hast
 
@@ -36,7 +36,7 @@ Teste dich:
 - Will ich Model-Flexibilität (LiteLLM)?
 - Ist Team-Nutzung geplant?
 
-✅ **Wenn ja, zurück zu** [Lab 1](../07-hands-on-labs/lab-01-single-agent-ticket.md) und probiere ein anderes Tool.
+✅ **Wenn ja, zurück zu** [Lab 1](../07-hands-on-labs/lab-01-chat-with-docs-rag.md) und probiere ein anderes Tool.
 ❌ **Wenn nein, siehe** [Module 3: Agent Selection](../03-coding-agents-landscape/selection-matrix.md)
 
 </details>
@@ -77,7 +77,7 @@ Wenn du Lab 1 gemacht hast, hast du:
 
 **Wenn Häkchen >= 7:** Du hast die Essenz verstanden ✅
 
-**Wenn Häkchen < 7:** Gehe nochmal zu [Lab 1](lab-01-single-agent-ticket.md), probiere es mit einem anderen Issue.
+**Wenn Häkchen < 7:** Gehe nochmal zu [Lab 1](lab-01-chat-with-docs-rag.md), probiere es mit einem anderen Issue.
 
 ---
 
@@ -123,7 +123,7 @@ MCP gibt dem Agent bessere Tools = weniger Friktionen.
 <details>
 <summary>❌ Nicht optimal / nicht fertig</summary>
 
-→ Versuche [Lab 1 nochmal mit anderem Issue](lab-01-single-agent-ticket.md)
+→ Versuche [Lab 1 nochmal mit anderem Issue](lab-01-chat-with-docs-rag.md)
 
 Vielleicht war das erste Issue zu komplex. Find etwas Kleineres und probiere nochmal.
 
@@ -148,4 +148,4 @@ Das ist nicht wenig. Das ist ein echter Paradigmenwechsel.
 
 ---
 
-[← Zurück zu Lab 1](lab-01-single-agent-ticket.md) | [Weiter zu MCP →](../04-mcp-and-tooling/mcp-core-concepts.md)
+[← Zurück zu Lab 1](lab-01-chat-with-docs-rag.md) | [Weiter zu MCP →](../04-mcp-and-tooling/mcp-core-concepts.md)
