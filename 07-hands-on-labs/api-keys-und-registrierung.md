@@ -104,7 +104,7 @@ export OPENAI_API_BASE="https://models.inference.ai.azure.com"
 
 ```bash
 OPENROUTER_API_KEY="PASTE_HERE"
-OPENROUTER_MODEL="qwen/qwen3-coder:free"
+OPENROUTER_MODEL="openrouter/qwen/qwen3-coder"
 ```
 
 ### Nutzung mit OpenAI-kompatiblen Clients
@@ -112,6 +112,7 @@ OPENROUTER_MODEL="qwen/qwen3-coder:free"
 ```bash
 export OPENAI_API_KEY="$OPENROUTER_API_KEY"
 export OPENAI_API_BASE="https://openrouter.ai/api/v1"
+export OPENAI_MODEL="openrouter/qwen/qwen3-coder"
 ```
 
 ---

@@ -54,26 +54,28 @@ cp .env.example .env || true
 
 Du kannst danach frei wählen, mit welchem Agent du die Aufgaben ausführst.
 
-#### Option 1: Aider CLI + Gemini 2.0 Flash
+#### Option 1: Aider CLI + OpenRouter
 
 Hinweis zu Kosten:
 
-- In der Regel im Free Tier nutzbar, solange die Limits nicht überschritten werden.
-- Ob Zahlungsinformationen nötig sind, hängt von Provider, Region und Kontostatus ab.
-- Für den Workshop nutze bevorzugt einen Provider mit verfügbarem kostenfreien Kontingent oder arbeite lokal mit Ollama.
+- OpenRouter ist OpenAI-kompatibel und laeuft stabil mit bezahltem Guthaben.
+- Kosten entstehen abhaengig vom gewaehlten Modell und Verbrauch.
 - API-Key-Schritte stehen in [API Keys und Registrierung](api-keys-und-registrierung.md).
 
 ```bash
 # 1. API Key erstellen
-# https://aistudio.google.com/app/apikey
+# https://openrouter.ai/keys
 
-# 2. Kompatibilitätsvariablen setzen
-export GEMINI_API_KEY="<dein_key>"
-export OPENAI_API_KEY="$GEMINI_API_KEY"
-export OPENAI_API_BASE="https://generativelanguage.googleapis.com/v1beta/openai"
+# 2. .env pflegen (passt zu .env.example)
+# OPENROUTER_API_KEY setzen und OPENAI_MODEL=openrouter/qwen/qwen3-coder eintragen
+# dann Variablen aus .env in die Shell laden
+set -a
+. ./.env
+set +a
 
 # 3. Aider starten
-aider --model gemini/gemini-2.0-flash
+# OPENAI_MODEL muss in .env gesetzt sein
+aider --model "$OPENAI_MODEL"
 ```
 
 #### Option 2: Freie Alternativen
