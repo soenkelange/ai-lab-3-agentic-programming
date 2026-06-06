@@ -51,6 +51,18 @@ install_python_pkg ollama
 log "Freie CLI-Alternativen (npm) installieren"
 install_npm_first_available "OpenCode CLI" "@opencode-ai/cli" "opencode-ai" "opencode"
 
+log "Docker Tooling pruefen"
+if command -v docker >/dev/null 2>&1; then
+  docker --version || true
+  if docker info >/dev/null 2>&1; then
+    log "Docker Daemon erreichbar (DooD aktiv)"
+  else
+    log "WARN: Docker CLI verfuegbar, aber kein Daemon erreichbar (Socket/Mount pruefen)"
+  fi
+else
+  log "WARN: Docker CLI nicht gefunden"
+fi
+
 log "Tool-Versionen anzeigen"
 "$PYTHON_BIN" --version || true
 node --version || true
