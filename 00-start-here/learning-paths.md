@@ -4,10 +4,10 @@
 
 | Profil | Zeit | Startpunkt |
 |--------|------|-----------|
-| **Ich will den Workshop-Standardpfad** | 2h | [Free-First 2h Path](two-hour-workshop-path.md) |
-| **Ich bin neu bei Agenten** | 2h | [Pfad 1: Anfänger](#pfad-1-anfänger) |
+| **Ich will den Workshop-Standardpfad** | 2.5h | [Workshop Standard 2.5h](#pfad-1-workshop-standard-25-stunden) |
+| **Ich bin neu bei Agenten** | 2.5h | [Pfad 1: Workshop-Standard](#pfad-1-workshop-standard-25-stunden) |
 | **Ich verstehe Models, will Tools lernen** | 3h | [Pfad 2: Foundations](#pfad-2-intermediate) |
-| **Ich bin Architekt und will skalierbare Systeme** | 1 Tag | [Pfad 3: Full Workshop](../08-workshop-facilitator/half-day-agenda.md) |
+| **Ich bin Architekt und will skalierbare Systeme** | 1 Tag | [Pfad 3: Full Workshop](../08-workshop-facilitator/half-day-agenda.md#optional-full-day-workshop-8-stunden) |
 | **Ich habe nur 30 Minuten** | 30min | [Ultra-Schnell](#ultra-schnell) |
 
 ---
@@ -17,49 +17,54 @@
 **Ziel:** Verstehen, *warum* Agenten anders sind.
 
 1. [Was ist agentic Programming?](../01-agentic-foundations/model-vs-agent.md) — 10 min
-2. [Diese eine Grafik](../01-agentic-foundations/architecture-stack.md#the-stack) — 5 min
+2. [Selection Matrix](../03-coding-agents-landscape/selection-matrix.md) — 5 min
 3. [Agent vs. Framework](../01-agentic-foundations/agent-vs-framework.md) — 10 min
 4. Diskussionsfrage: Was würde ich morgen mit Claude Code versuchen? — 5 min
 
 ---
 
-## Pfad 1: Anfänger (2 Stunden + Hands-On)
+## Pfad 1: Workshop-Standard (2.5 Stunden)
 
-**Zielgruppe:** Developer/Engineer, die Agenten von innen kennenlernen wollen.
+**Zielgruppe:** Einsteiger, Nicht-Programmierer mit Technikinteresse und IT-Enthusiast:innen.
+
+**Default-Setup:** Aider + Google AI Studio (Free Tier)
+
+**Didaktisches Ziel:** Theorie kompakt, dann ein konkretes Hands-on, in dem ein Coding Agent eine Full-Stack LLM-Chat-App plant und baut.
 
 ### Blöcke
 
 | # | Modul | Dauer | Ergebnis |
 |---|-------|-------|------------|
-| 1 | [Agentic Foundations](../01-agentic-foundations/) | 15 min | "Agenten machen X, nicht nur Y" verstanden |
-| 2 | [Models 101](../02-models-and-inference/primer.md) | 20 min | "Provider vs. Runtime" Unterschied klar |
-| 3 | [Agent Tools Landscape](../03-coding-agents-landscape/selection-matrix.md) | 25 min | Versteht, dass Claude Code ≠ Cursor ≠ Aider |
-| 4 | [💻 Lab 1 Live](../07-hands-on-labs/lab-01-chat-with-docs-rag.md) | 90 min | *Ich habe eine lauffaehige Chat-with-the-Docs RAG App gebaut* |
-| 5 | [Checkpoint & Reflexion](../07-hands-on-labs/checkpoint-01.md) | 15 min | Validierung: Hab ich wirklich verstanden? |
+| 1 | [Model vs. Agent](../01-agentic-foundations/model-vs-agent.md) | 15 min | Agentisches Grundverstaendnis ist gesetzt |
+| 2 | [Agent vs. Framework](../01-agentic-foundations/agent-vs-framework.md) | 10 min | Coding Agent, Orchestrator und Framework sind sauber getrennt |
+| 3 | [Selection Matrix](../03-coding-agents-landscape/selection-matrix.md) | 10 min | Teilnehmende verstehen agentenuebergreifende Wahlfreiheit |
+| 4 | [Agent Terminology](../05-agentic-workflows/agent-terminology.md) | 10 min | Rules, Skills, Memory und Tool Policy sind eingeordnet |
+| 5 | [Security Guardrails](../05-agentic-workflows/security-guardrails.md) | 5 min | Sicherheits-Minimum vor dem Hands-on ist klar |
+| 6 | [Lab 1: LLM Chat + Bonus RAG](../07-hands-on-labs/lab-01-chat-with-docs-rag.md) | 95 min | Agent plant und implementiert eine lauffaehige Full-Stack-Chat-App |
+| 7 | [Checkpoint 1](../07-hands-on-labs/checkpoint-01.md) | 5 min | Verifikation und kurze Reflexion |
 
-### Setup (<5 Min)
+### Setup (<10 Min)
 
 ```bash
-# Option A: Kostenlos mit Anthropic + Claude Code
-# → Brauchst nur ANTHROPIC_API_KEY
-# → Download: https://claudeapi.com (free tier genügt)
+# 1) Voraussetzungen pruefen
+docker --version
+docker compose version
+node --version
+python3 --version
 
-# Option B: 100% Offline
-brew install ollama
-ollama pull qwen3.1:coder
-# → Völlig kostenlos, läuft lokal
+# 2) Provider waehlen (Standard: Google AI Studio)
+# Siehe: ../_shared/_provider-options.md
 ```
 
 ### Anschließend
 
-- Probiere selbst ein echtes Ticket aus deinem Repo
-- Oder: [Pfad 2](#pfad-2-intermediate) für tieferes Wissen
+- Probiere selbst ein echtes Ticket aus deinem Repo.
+- Oder: [Pfad 2](#pfad-2-intermediate) fuer tieferes Wissen.
 
-### Wenn du einen festen Workshop-Start brauchst
+### Vertiefung: Rules und Skills (optional)
 
-- Nutze stattdessen den [Free-First 2h Path](two-hour-workshop-path.md)
-- Dieser Pfad ist die empfohlene Standardroute für den Workshop
-- Er behandelt Regeln, Skills und Sicherheitsgrenzen vor Sub-Agents
+- Nutze [Workshop Rules und Skills](workshop-rules-and-skills.md), wenn du ein separates Governance-Training einbauen willst.
+- Dieser Pfad ist eine Ergaenzung, nicht der Hauptpfad.
 
 ---
 
@@ -72,10 +77,10 @@ ollama pull qwen3.1:coder
 | # | Modul | Dauer | Fokus |
 |---|-------|-------|--------|
 | 1 | [Model vs. Agent Deep Dive](../01-agentic-foundations/model-vs-agent.md) | 15 min | Warum sind das unterschiedliche Dinge? |
-| 2 | [Agent vs. Framework](../01-agentic-foundations/agent-vs-framework.md) | 10 min | Was ist austauschabar? |
+| 2 | [Agent vs. Framework](../01-agentic-foundations/agent-vs-framework.md) | 10 min | Was ist austauschbar? |
 | 3 | [Inference Layer Architektur](../02-models-and-inference/abstraction-layers-litellm.md) | 30 min | LiteLLM als Plattform-Layer |
 | 4 | [MCP Fundamentals](../04-mcp-and-tooling/mcp-core-concepts.md) | 25 min | Das Rückgrat: MCP ist nicht optional |
-| 5 | [💻 Lab 2: MCP Integration](../07-hands-on-labs/lab-02-mcp-integration.md) | 60 min | *Ich habe einen MCP Server geschrieben* |
+| 5 | [Checkpoint 2: Vertiefung und Transfer](../07-hands-on-labs/checkpoint-02.md) | 60 min | *Ich habe ein robustes Umsetzungs- und Verbesserungsbild* |
 | 6 | [Multi-Agent Patterns Intro](../06-multi-agent-architectures/swarm-patterns.md) | 20 min | Wie skaliert man auf > 1 Agent? |
 
 ### Fachlich kritisch
@@ -106,12 +111,12 @@ ollama pull qwen3.1:coder
 ### Mittags: Live Hands-On (2h)
 
 - [Lab 1 gemeinsam](../07-hands-on-labs/lab-01-chat-with-docs-rag.md) (60 min)
-- [Lab 2 in Breakouts](../07-hands-on-labs/lab-02-mcp-integration.md) (90 min)
+- [Checkpoint 2 in Breakouts](../07-hands-on-labs/checkpoint-02.md) (90 min)
 - Peer Learning & Troubleshooting
 
 ### Nachmittags: Capstone (2-3h)
 
-- [Lab 3 Final: Multi-Agent Pipeline](../07-hands-on-labs/lab-03-multi-agent-pipeline.md)
+- [Swarm Patterns: Multi-Agent Pipeline](../06-multi-agent-architectures/swarm-patterns.md)
   - Echtes Ticket → 3+ Agent Workflow
   - Orchestrierungsdesign
   - Error Handling und Fallbacks
@@ -130,7 +135,7 @@ ollama pull qwen3.1:coder
 <details>
 <summary>Ich bin Developer, noch keine Agenten angefasst</summary>
 
-→ **Pfad 1: Anfänger**. Dann ein eigenes Ticket mit Claude Code.
+→ **Pfad 1: Workshop-Standard**. Danach ein eigenes Ticket mit Claude Code.
 
 </details>
 
@@ -151,14 +156,14 @@ ollama pull qwen3.1:coder
 <details>
 <summary>Ich leite einen Workshop / Dojo für mein Team</summary>
 
-→ [Workshop Facilitator Guide](../08-workshop-facilitator/) + Pfad 3 Struktur.
+→ [Workshop Agenda](../08-workshop-facilitator/half-day-agenda.md) + [Facilitation-Skript](../08-workshop-facilitator/facilitation-script-2.5h.md).
 
 </details>
 
 <details>
 <summary>Ich will schnell eine Entscheidung treffen: Claude Code vs. Cursor vs. Pi?</summary>
 
-→ [Selection Matrix](../03-coding-agents-landscape/selection-matrix.md) (5 min) + ein kurzer [Tool-Vergleich](../03-coding-agents-landscape/ide-agents.md) (10 min).
+→ [Selection Matrix](../03-coding-agents-landscape/selection-matrix.md) (5 min) + ein kurzer [Terminal-Agents Ueberblick](../03-coding-agents-landscape/terminal-agents.md) (10 min).
 
 </details>
 

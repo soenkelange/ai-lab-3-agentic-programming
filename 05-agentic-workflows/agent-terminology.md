@@ -18,18 +18,11 @@ Das ist besonders in Cursor wichtig, wo Rules und Skills ein zentrales Produktiv
 
 ## Terminologie-Mapping
 
-| Konzept | Bedeutung | Cursor | Claude Code | Devin Desktop (ehemals Windsurf) | GitHub Copilot | Aider | Pi / OpenCode |
-|---|---|---|---|---|---|---|---|
-| **System prompt** | Hoch priorisierte Verhaltensinstruktion für den Agenten | Basis-Instruktionen des Agenten, meist verborgen | Model-/Runtime-Instruktionen, meist verborgen | Plattform-Instruktionen, meist verborgen | Service-Level-Instruktionen, meist verborgen | Prompt-Template / Model-Instruktionen | Plattform- oder Prompt-Level-Instruktionen |
-| **User prompt** | Die Aufgabe, die der Nutzer gerade stellt | Chat-Nachricht, Kommando oder Anfrage | Chat- / Terminal-Anfrage | Chat-Anfrage | Chat-Anfrage | CLI-Instruktion | CLI- / Chat-Anfrage |
-| **Instructions** | Persistente projektweite Anleitung für Verhalten und Stil | Meist als Rules und Projektkontext repräsentiert | Oft Projekt-Instruktionen oder Workflow-Guidance | Meist Workspace-Instruktionen | Ja: explizite Instruktionsdateien für Projektverhalten | Meist Repo-Notizen und Prompt-Templates | Oft Config- oder Instruktionsdateien |
-| **Rules** | Persistente Einschränkungen, die das Verhalten steuern | Ja: Projektregeln / User-Regeln | Oft Projekt-Instruktionen oder Workflow-Guidance | Ja, typischerweise projektweite Instruktionen | Ja: über Instruktionsdateien und Policy-Guidance umsetzbar | Meist über Prompt-Templates oder Repo-Instruktionen | Oft Config oder Prompt-Policy |
-| **Skills** | Wiederverwendbare, aufgabenspezifische Capability-Pakete | Ja: Skills sind ein First-Class-Konzept | Ja: Skills sind ein First-Class-Konzept | Teilweise Workflow-Packs oder Agent-Verhalten | Meist nicht so benannt | Meist nicht so benannt | Teilweise Templates oder Plugins |
-| **Agents** | Benutzerdefinierte spezialisierte Agent-Modi für gezielte Workflows | Agent-Modi / Workflow-Rollen | Sub-Agents und spezialisierte Rollen | In manchen Workflows unterstützt | Ja: Custom Agents sind ein unterstütztes Konzept | Meist nicht im Fokus | Teilweise über Orchestrierung unterstützt |
-| **Hooks** | Ereignisgetriebene Automation zur Policy-Durchsetzung oder zum Auslösen von Workflows | Teilweise über Workspace-Automation | Teilweise über Workflow-Tooling | Teilweise über Workspace-Automation | Ja: Hooks werden für Policy-/Automation-Workflows unterstützt | Meist über Shell-Skripte und Git-Hooks | Meist über Config oder Shell-Hooks |
-| **Sub-agents** | Verschachtelte spezialisierte Agenten, die einen Teil einer Aufgabe übernehmen | In Agent-Workflows unterstützt | Explizit unterstützt | In manchen Workflows unterstützt | Kann über Custom Agents und Delegations-Workflows modelliert werden | Meist nicht im Fokus | Teilweise über Orchestrierung unterstützt |
-| **Memory** | Persistenter Kontext über Aufgaben hinweg | Projekt-Memory / Kontextfunktionen | Memory- / Persistenzfunktionen | Persistenter Workspace-Kontext | Eingeschränkt / plattformabhängig | Meist Git-Historie und Repo-Kontext | Persistente Memory-Funktionen in manchen Tools |
-| **Tool policy** | Welche Tools erlaubt, blockiert oder nur mit Freigabe nutzbar sind | Rules und Einstellungen können das einschränken | Integrierte Tool-Berechtigungen und Freigaben | Workspace-Policies und Freigaben | Admin-/Workspace-Policy | CLI-Verhalten plus Repository-Konventionen | Über Agent-Einstellungen konfigurierbar |
+Die zentrale, gepflegte Matrix liegt in:
+
+- [Terminologie-Matrix](../_shared/_terminology-matrix.md)
+
+Diese Seite erklaert die Begriffe didaktisch und zeigt die empfohlene Reihenfolge fuer den Workshop.
 
 ---
 
@@ -60,7 +53,7 @@ Typische Copilot-Begriffe, die explizit vermittelt werden sollten:
 - Agents: Custom-Agent-Modi für spezialisierte Aufgaben.
 - Hooks: Policy- und Automation-Trigger für Guard Rails.
 
-für Workshop-Konsistenz sollten diese als direkte Entsprechungen zu "Rules + Skills + Agents + Policy Automation" in anderen Tools behandelt werden.
+Fuer Workshop-Konsistenz sollten diese als direkte Entsprechungen zu "Rules + Skills + Agents + Policy Automation" in anderen Tools behandelt werden.
 
 ### Aider
 Aider ist näher an promptgetriebener CLI-Automation. Die Konzepte existieren weiterhin, werden aber meist über Repo-Konventionen, Prompt-Templates oder Kommando-Nutzungsmuster umgesetzt.

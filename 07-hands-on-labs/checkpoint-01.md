@@ -105,7 +105,7 @@ Basierend auf deinem Lab 1 Ergebnis, wähle:
 <details>
 <summary>✅ Es funktionierte exzellent</summary>
 
-→ Gehen zu [Lab 3: Multi-Agent Pipeline](../07-hands-on-labs/lab-03-multi-agent-pipeline.md)
+→ Gehen zu [Module 6: Swarm Patterns](../06-multi-agent-architectures/swarm-patterns.md)
 
 Das zeigt dir, wie man mehrere Agenten orchestriert = echte Skalierung.
 
@@ -114,7 +114,7 @@ Das zeigt dir, wie man mehrere Agenten orchestriert = echte Skalierung.
 <details>
 <summary>⚠️ Es funktionierte, aber mit Friktionen</summary>
 
-→ Gehe zu [Module 4: MCP Fundamentals](../04-mcp-and-tooling/mcp-core-concepts.md) + [Lab 2](../07-hands-on-labs/lab-02-mcp-integration.md)
+→ Gehe zu [Module 4: MCP Fundamentals](../04-mcp-and-tooling/mcp-core-concepts.md) + [Checkpoint 2](../07-hands-on-labs/checkpoint-02.md)
 
 MCP gibt dem Agent bessere Tools = weniger Friktionen.
 
