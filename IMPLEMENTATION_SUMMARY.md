@@ -43,10 +43,9 @@ Dieses Dokument fasst zusammen, was in dieser Phase fertiggestellt wurde.
 ## ⚠️ Zu-Do: Noch zu erstellen (für Phase 2)
 
 ### Labs (Modul 07)
-- [ ] `lab-02-mcp-integration.md` — MCP Server schreiben + integrieren
 - [ ] `lab-03-multi-agent-pipeline.md` — Capstone: Full Orchestration
 - [ ] `solutions/` — Referenz-Implementierungen
-- [ ] `checkpoint-02.md`, `checkpoint-03.md` — Weitere Validierungs-Checks
+- [ ] `checkpoint-03.md` — Weiterer Validierungs-Check
 
 ### Workflows (Modul 05)
 - [ ] `feature-factory.md` — Ticket → Implementation → PR Automation

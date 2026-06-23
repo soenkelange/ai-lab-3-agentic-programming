@@ -130,7 +130,7 @@ Trainer stellt Fragen:
 ### Next Steps (7 Min)
 
 - "Wenn ihr tiefer gehen wollt:"
-  - Lab 2: MCP Integration
+  - Checkpoint 2: Vertiefung und Transfer
   - Modul 4: MCP Core Concepts
   - Modul 6: Multi-Agent Patterns
 - "für euer Team:"
