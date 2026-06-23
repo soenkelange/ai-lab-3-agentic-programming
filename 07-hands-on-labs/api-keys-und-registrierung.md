@@ -1,16 +1,19 @@
-# API Keys und Registrierung für Labs
+# API Keys und Registrierung fuer Labs
 
-> Ziel: Teilnehmende können innerhalb weniger Minuten die benötigten API Keys selbst erstellen.
+> Ziel: Teilnehmende koennen innerhalb weniger Minuten den benoetigten API Key erstellen.
 > Stand: 2026-06
 
 ## Welche Keys brauche ich wirklich?
 
-Für den 2h-Workshop reicht ein Provider:
+Fuer den 2.5h-Workshop reicht ein Provider:
 
 - Pflicht: Google AI Studio (Gemini API Key)
 - Optional: GitHub Models Token
 - Optional: OpenRouter API Key
 - Optional: Anthropic API Key
+
+Zentrale Vergleichsuebersicht:
+- [Provider-Optionen](../_shared/_provider-options.md)
 
 Hinweis:
 - Für Ollama lokal wird kein API Key benötigt.
@@ -18,7 +21,7 @@ Hinweis:
 
 ---
 
-## 1) Google AI Studio (Standard für den Workshop)
+## 1) Google AI Studio (Standard fuer den Workshop)
 
 - Registrierung: https://aistudio.google.com/
 - API-Key-Verwaltung direkt: https://aistudio.google.com/app/apikey
@@ -52,9 +55,11 @@ export OPENAI_API_BASE="https://generativelanguage.googleapis.com/v1beta/openai"
 aider --model gemini/gemini-2.0-flash
 ```
 
+Wenn das funktioniert, kannst du direkt mit Lab 1 starten.
+
 ---
 
-## 2) GitHub Models (freie Alternative mit GitHub-Account)
+## 2) GitHub Models (Alternative mit GitHub-Account)
 
 - Einstieg: https://github.com/marketplace/models
 - Token erstellen: https://github.com/settings/tokens
@@ -85,7 +90,7 @@ export OPENAI_API_BASE="https://models.inference.ai.azure.com"
 
 ---
 
-## 3) OpenRouter (freie Community-Modelle)
+## 3) OpenRouter (Modellvielfalt)
 
 - Registrierung: https://openrouter.ai/
 - Key-Verwaltung: https://openrouter.ai/keys
@@ -175,3 +180,6 @@ ollama pull qwen3:8b
 
 Siehe auch:
 - ../05-agentic-workflows/zugangsdaten-und-agenten.md
+
+Naechster Schritt:
+- [Lab 1 starten](lab-01-chat-with-docs-rag.md)

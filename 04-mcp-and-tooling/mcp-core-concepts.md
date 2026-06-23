@@ -367,7 +367,7 @@ Aber: Sobald du scalierst zu mehreren Agenten oder komplexeren Workflows, brauch
 ## Nächste Schritte
 
 1. **Verstehen:** Du hast jetzt die Konzepte
-2. **Hands-On:** [Lab 2: MCP Integration](../07-hands-on-labs/lab-02-mcp-integration.md)
+2. **Hands-On:** [Checkpoint 2: Vertiefung](../07-hands-on-labs/checkpoint-02.md)
 3. **Production:** [Multi-Agent Patterns](../06-multi-agent-architectures/swarm-patterns.md)
 
 ---
@@ -385,4 +385,4 @@ MCP is the middle layer. Ohne MCP müssen Agents zu hacky mit Tool-Integration u
 
 ---
 
-[← Zurück zu Module 3](../03-coding-agents-landscape/) | [Weiter zu Lab 2 →](../07-hands-on-labs/lab-02-mcp-integration.md)
+[← Zurück zu Module 3](../03-coding-agents-landscape/) | [Weiter zu Checkpoint 2 →](../07-hands-on-labs/checkpoint-02.md)

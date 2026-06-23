@@ -1,158 +1,69 @@
-# Voraussetzungen & Setup
+# Voraussetzungen und Setup
 
-> Was du *vor* dem Starten haben solltest
+> Ziel: In unter 10 Minuten sicherstellen, dass das Hands-on reproduzierbar startet.
 
----
+## Workshop-Standard
 
-## Technische Voraussetzungen
+- Dauer: 2.5 Stunden
+- Default-Agent: Aider
+- Default-Provider: Google AI Studio (Free Tier)
 
-### Unverzichtbar
+Provider- und Agent-Alternativen sind moeglich, solange die Lab-Aufgaben unveraendert umgesetzt werden.
 
-- ✅ Einen Computer (Mac, Linux, oder Windows) mit Internet
-- ✅ Einen Code-Editor installiert (VSCode bevorzugt)
-- ✅ `git` installiert (für Versionskontrolle)
-- ✅ Python 3.9+ (falls du Terminal Agents testest) — optional
-- ✅ 15 GB Speicherplatz (wenn du Ollama lokal nutzen willst)
+Zentrale Uebersicht:
+- [Provider-Optionen](../_shared/_provider-options.md)
 
-### Hochgradig empfohlen
+## Pre-Lab-Checkliste (Fail-fast)
 
-- 🔑 Eine API Key von Anthropic (https://claudeapi.com) — kostenlos mit Free Tier
-  - **Oder:** Ein kompletter Computer mit GPU (für Ollama lokal)
-- 🔗 GitHub Account für die Labs
-- ⚡ Gutes Internet (Labs laden Repos hoch)
-
-### Optional
-
-- Dockerinstallationen (falls du MCP Server containerisieren willst)
-- Eine IDE deiner Wahl (Cursor, VSCode, Windsurf) — aber nicht notwendig
-
----
-
-## Konzeptionelle Voraussetzungen
-
-Du solltest bereits wissen... (⚡ oder schnell selbst lernen)
-
-### Must-Haves
-
-- ✅ **Git Basics:** Commits, Branches, PRs verstehen
-- ✅ **Programmierung:** Mindestens eine Programmiersprache können
-- ✅ **APIs:** Grundkonzept von API Keys & HTTP Requests
-- ✅ **Models mal gehört haben:** "LLM sind Textvorhersage-Maschinen"
-
-### Nice-to-Have
-
-- 📚 Web-Service Basis (REST, JSON)
-- 📚 Devops Konzepte (CI/CD, Docker)—hilft bei Lab 3
-- 📚 Python (falls du LiteLLM oder MCP schreiben willst)
-
----
-
-## Schnell-Setup (5 Minuten)
-
-Wähle einen Weg:
-
-### Weg A: Schnelleinstieg (Cloud + Web)
+Fuehre diese Befehle vor dem Lab aus:
 
 ```bash
-# 1. Erstelle API Key
-# → https://claudeapi.com (sign up für free tier)
-# → Copy API Key
-
-# 2. Setze ENV
-export ANTHROPIC_API_KEY="sk-ant-..."
-
-# 3. Öffne dann:
-# → https://claude.ai (login)
-# → Klick "Code Mode"
-
-# Fertig! Du kannst jetzt Module lesen + Lab 1 machen.
+git --version
+docker --version
+docker compose version
+node --version
+python3 --version
 ```
 
-⏱️ Zeit: 2 Minuten  
-💰 Kosten: $0  
-🖥️ Setup-Typ: Cloud
+Wenn einer der Checks fehlschlaegt, zuerst Umgebung reparieren und erst dann mit dem Agent starten.
 
-### Weg B: Offline (Lokale GPU)
+## Pflicht-Voraussetzungen
 
-```bash
-# 1. Install Ollama
-brew install ollama  # macOS
-# oder: https://ollama.ai (Windows)
+- Computer mit Internetzugang
+- VS Code oder vergleichbarer Editor
+- Git, Docker, Docker Compose, Node.js, Python 3.9+
+- Schreibzugriff auf das Arbeitsverzeichnis
 
-# 2. Download Model
-ollama pull qwen3.1-coder:7b
-# Alternative: ollama pull llama2:7b
+## Konzeptionelle Mindestbasis
 
-# 3. Starte den Server
-ollama serve
+- Verstehen, was ein API Key ist
+- Grundidee von HTTP Requests und JSON
+- Grundlegende Orientierung in einem Projektordner
 
-# 4. In neuem Terminal, teste:
-from litellm import completion
-response = completion(
-    model="ollama/qwen3.1-coder",
-    messages=[{"role":"user", "content":"hi"}]
-)
-print(response)
-```
+## Setup-Varianten
 
-⏱️ Zeit: 15 Minuten (download)  
-💰 Kosten: $0  
-🖥️ Setup-Typ: Lokal, GPU empfohlen
+### Variante A (Empfohlen): Aider + Google AI Studio
 
----
+1. API Key in Google AI Studio erstellen.
+2. Lokale .env konfigurieren.
+3. Aider mit dem gewaehlten Modell starten.
 
-## Wahl: Welches Setup?
+### Variante B (Alternative): Ollama lokal
 
-| Situation | Empfehlung |
-|-----------|-----------|
-| "Ich hab keine GPU" | Weg A (Cloud) |
-| "Ich hab GPU, will offline" | Weg B (Ollama) |
-| "Ich bin unsicher" | Weg A (schneller, risikofrei) |
-| "Sicherheit ist kritisch" | Weg B (nichts geht nach außen) |
+1. Ollama installieren.
+2. Lokales Modell laden.
+3. Agent mit lokalem Modell nutzen.
 
----
+Hinweis:
+- Fuer konkrete Registrierschritte und .env-Beispiele siehe:
+  - [API Keys und Registrierung](../07-hands-on-labs/api-keys-und-registrierung.md)
 
-## Troubleshooting Setup
+## Sicherheits-Minimum
 
-<details>
-<summary>API Key funktioniert nicht</summary>
-
-```bash
-# Test
-echo $ANTHROPIC_API_KEY
-
-# Wenn leer: neu setzen
-export ANTHROPIC_API_KEY="sk-ant-..."
-
-# Dann neu testen
-curl https://api.anthropic.com/v1/messages \
-  -H "x-api-key: $ANTHROPIC_API_KEY" \
-  -H "content-type: application/json" \
-  -d '{"model":"claude-3-5-sonnet","max_tokens":1000,"messages":[{"role":"user","content":"hi"}]}'
-```
-
-</details>
-
-<details>
-<summary>Ollama lädt, aber lädt und lädt</summary>
-
-```bash
-# Das ist normal. Ein 7B Model ist ~4GB
-# Warte einfach. Oder:
-
-netlim qwen3.1-coder:7b  # skip download
-# oder
-ollama pull llama2:7b    # kleiner (3B)
-```
-
-</details>
-
----
+- .env niemals committen
+- API Keys nie in Prompts oder Screenshots teilen
+- nur Test- oder Free-Tier-Keys im Workshop verwenden
 
 ## Nächster Schritt
 
-Sobald du Setup O oder B gemacht hast:
-
-→ [Lernpfad wählen](learning-paths.md)
-
-Los geht's! 🚀
+- [Lernpfade waehlen](learning-paths.md)

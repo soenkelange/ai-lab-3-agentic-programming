@@ -42,9 +42,9 @@ Dieses Repository transformiert Sie von Theorieverstehen zu aktiver, produktiver
 </details>
 
 <details>
-<summary><strong>⏱️ Ich habe 2 Stunden (Anfänger)</strong></summary>
+<summary><strong>⏱️ Ich habe 2.5 Stunden (Einsteiger)</strong></summary>
 
-→ [Lernpfad 1: Anfänger](00-start-here/learning-paths.md#pfad-1-anfänger)
+→ [Lernpfad 1: Workshop-Standard](00-start-here/learning-paths.md#pfad-1-workshop-standard-25-stunden)
 
 Die beste Einstiegsroute: Konzepte + Live-Lab.
 
@@ -110,7 +110,8 @@ Die Grafik zeigt bewusst nur die acht Kernmodule. Die eigentliche Navigation ist
 
 - [Lernpfade und empfohlene Reihenfolgen](00-start-here/learning-paths.md)
 - [Voraussetzungen für Workshop und Labs](00-start-here/prerequisites.md)
-- [Der Zwei-Stunden-Workshop-Pfad](00-start-here/two-hour-workshop-path.md)
+- [Workshop Rules und Skills (Governance-Vertiefung)](00-start-here/workshop-rules-and-skills.md)
+- [Legacy-Hinweis: Zwei-Stunden-Workshoppfad](00-start-here/two-hour-workshop-path.md)
 
 </details>
 
@@ -177,6 +178,7 @@ Die Grafik zeigt bewusst nur die acht Kernmodule. Die eigentliche Navigation ist
 <summary><strong>07 Hands-on Labs</strong> - Praktische Übungen und Checkpoints</summary>
 
 - [Lab: Self-contained Chat-with-the-Docs RAG App bauen](07-hands-on-labs/lab-01-chat-with-docs-rag.md)
+- [Teilnehmer-Worksheet fuer Lab 1 (Kern + Bonus)](07-hands-on-labs/worksheet-lab-01-llm-chat.md)
 - [Checkpoint 1 für den praktischen Fortschritt](07-hands-on-labs/checkpoint-01.md)
 - [Checkpoint 2 für den praktischen Fortschritt](07-hands-on-labs/checkpoint-02.md)
 - [API-Keys und Registrierung für die Übungen](07-hands-on-labs/api-keys-und-registrierung.md)
@@ -188,6 +190,7 @@ Die Grafik zeigt bewusst nur die acht Kernmodule. Die eigentliche Navigation ist
 <summary><strong>08 Workshop Facilitator</strong> - Durchführung und Moderation</summary>
 
 - [Halbtages-Agenda für die Durchführung](08-workshop-facilitator/half-day-agenda.md)
+- [Facilitation-Skript fuer den 2.5h-Standard](08-workshop-facilitator/facilitation-script-2.5h.md)
 
 </details>
 
@@ -201,6 +204,8 @@ Die Grafik zeigt bewusst nur die acht Kernmodule. Die eigentliche Navigation ist
 - [FAQ zu Engineering und Security](faq-engineering-security.md)
 - [Template für einen Security-Review-Skill](assets/templates/security-review-skill.md)
 - [Template für eine UI-Spezifikation](assets/templates/ui-specification.md)
+- [Zentrale Terminologie-Matrix](./_shared/_terminology-matrix.md)
+- [Zentrale Provider-Optionen](./_shared/_provider-options.md)
 
 </details>
 
@@ -294,12 +299,12 @@ aider --model gemini/gemini-2.0-flash
 
 ---
 
-### Option 2: Anfänger-Track (2 Stunden + Hands-On)
+### Option 2: Einsteiger-Track (2.5 Stunden)
 
-1. [Lernpfad 1 Anfänger](00-start-here/learning-paths.md#pfad-1-anfänger) (30 min Theorie)
-2. [Lab 1: Chat-with-the-Docs RAG App](07-hands-on-labs/lab-01-chat-with-docs-rag.md) (90 min Praxis)
-3. [Checkpoint 1](07-hands-on-labs/checkpoint-01.md) (10 min Validierung)
-4. Optional: [Lab 1 Vertiefung mit optionalen Pfaden](07-hands-on-labs/lab-01-chat-with-docs-rag.md) (20-40 min Vertiefung)
+1. [Lernpfad 1 Workshop-Standard](00-start-here/learning-paths.md#pfad-1-workshop-standard-25-stunden) (50 min Theorie + Setup)
+2. [Lab 1: LLM Chat App mit Bonus-RAG](07-hands-on-labs/lab-01-chat-with-docs-rag.md) (95 min Praxis)
+3. [Checkpoint 1](07-hands-on-labs/checkpoint-01.md) (5 min Validierung)
+4. Optional: Bonus-RAG im selben Lab (20-30 min)
 
 **Resultat:** Du hast einen Agent in Action gesehen. Deine erste PR.
 
@@ -310,7 +315,7 @@ aider --model gemini/gemini-2.0-flash
 1. [Foundations Deep Dive](01-agentic-foundations/) (30 min)
 2. [Inference Layer + LiteLLM](02-models-and-inference/abstraction-layers-litellm.md) (30 min)
 3. [MCP Fundamentals](04-mcp-and-tooling/mcp-core-concepts.md) (25 min)
-4. [Lab 2: MCP Integration](07-hands-on-labs/lab-02-mcp-integration.md) (1 h)
+4. [Checkpoint 2: Vertiefung und Transfer](07-hands-on-labs/checkpoint-02.md) (1 h)
 5. [Multi-Agent Intro](06-multi-agent-architectures/swarm-patterns.md) (20 min)
 
 **Resultat:** Du kannst Agenten-Systeme in der Tiefe designen.
@@ -326,9 +331,9 @@ aider --model gemini/gemini-2.0-flash
 - Optional: Issues im Repo posten für Austausch
 
 ### 👨‍🏫 Instructor-Led (synchron)
-- Halbtag (4h): [Agenda hier](08-workshop-facilitator/half-day-agenda.md)
-- Ganztag (8h): [Agenda hier](08-workshop-facilitator/full-day-agenda.md)
-- Trainer nutzt `08-workshop-facilitator/` Material + Moderations-Tipps
+- Standard (2.5h): [Agenda hier](08-workshop-facilitator/half-day-agenda.md)
+- Praxisleitfaden: [Facilitation-Skript](08-workshop-facilitator/facilitation-script-2.5h.md)
+- Trainer nutzt die Materialien in [08-workshop-facilitator](08-workshop-facilitator/half-day-agenda.md) plus Moderations-Tipps
 - Teilnehmende in Breakout-Gruppen
 
 ### 🤝 Team Dojo (wiederholendes Lernen)
@@ -343,9 +348,9 @@ aider --model gemini/gemini-2.0-flash
 <details>
 <summary><strong>F: Ich kenne Agents überhaupt nicht. Wo anfangen?</strong></summary>
 
-→ [Lernpfad 1: Anfänger](00-start-here/learning-paths.md#pfad-1-anfänger)
+→ [Lernpfad 1: Workshop-Standard](00-start-here/learning-paths.md#pfad-1-workshop-standard-25-stunden)
 
-30 Min Konzepte + 45 Min Lab = echte Kompetenz.
+Kompakte Theorie + konkretes Hands-on ergeben schnell belastbare Kompetenz.
 
 </details>
 
@@ -354,7 +359,7 @@ aider --model gemini/gemini-2.0-flash
 
 → **Ja!** Setup-Option B (Ollama + Qwen3.1 Coder): Völlig kostenlos, läuft lokal.
 
-Oder Anthropic Free Tier (15 Requests pro Minute), das reicht für Labs.
+Oder Google AI Studio Free Tier als Standardpfad fuer die Labs.
 
 </details>
 
@@ -371,9 +376,9 @@ für **Enterprise:** Claude Code + LangGraph + Custom MCP = produktionsreif auf 
 <details>
 <summary><strong>F: Kann ich das mit meinem Team durcharbeiten?</strong></summary>
 
-→ **Ja!** Schau dir den [Team-Dojo-Modus](00-start-here/workshop-modes.md) an.
+→ **Ja!** Starte mit [Lernpfad 1](00-start-here/learning-paths.md#pfad-1-workshop-standard-25-stunden) und skaliere dann in [Pfad 3](00-start-here/learning-paths.md#pfad-3-advanced--full-workshop).
 
-Oder host einen [1-Tag Workshop](08-workshop-facilitator/full-day-agenda.md) mit diesem Material.
+Oder hoste einen Workshop mit [Agenda](08-workshop-facilitator/half-day-agenda.md) plus [Facilitation-Skript](08-workshop-facilitator/facilitation-script-2.5h.md).
 
 </details>
 

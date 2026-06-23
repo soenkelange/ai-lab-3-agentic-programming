@@ -1,9 +1,24 @@
-# ✋ Lab 1: Chat-with-the-Docs RAG App — Dein erster echter Build
+# Lab 1: LLM Chat App mit Bonus-RAG
 
-> **Dauer:** 90 Minuten (20 min Setup + 70 min Lab)  
+> **Dauer:** 95 Minuten (15 min Setup + 80 min Lab)  
 > **Level:** Anfänger  
 > **Ziel:** Ein self-contained End-to-End-Projekt mit einem Coding Agent erstellen  
-> **Ergebnis:** Laufende Docker-Compose-App mit Upload + RAG-Chat für PDF-Dateien
+> **Ergebnis (Kern):** Laufende Docker-Compose-App fuer einen Full-Stack LLM-Chat
+> **Ergebnis (Bonus):** Erweiterung auf RAG mit PDF-Dateien
+
+---
+
+## Warum dieses Lab zentral ist (Meta-Lernziel)
+
+Du nutzt den Agenten nicht nur als Assistenten.
+Du laesst den Agenten den gesamten Entwicklungszyklus demonstrieren:
+
+1. Spezifikation verstehen
+2. Architektur und Milestones planen
+3. Code und Tests erzeugen
+4. Fehler beheben und iterieren
+
+Das ist agentic programming in der Praxis: Ein Agent baut eine Anwendung, die selbst LLM-Inferenz nutzt.
 
 ---
 
@@ -12,14 +27,14 @@
 Du wirst:
 
 1. ✅ Einen Agenten technisch verifizieren (Hello-World-Scaffold)
-2. ✅ Mit einem konkreten Prompt eine vollständige Chat-with-the-Docs RAG-App erzeugen
+2. ✅ Mit einem konkreten Prompt eine vollstaendige Full-Stack LLM-Chat-App erzeugen
 3. ✅ Die App über Docker Compose starten und testen
-4. ✅ Optional einen Vertiefungspfad wählen (UI, Security, Architektur, Evaluation)
+4. ✅ Optional auf RAG mit PDF erweitern
 5. ✅ Checkpoint: Wo war der Agent stark, wo brauchte er Steuerung?
 
 ---
 
-## Setup (20 Min)
+## Setup (15 Min)
 
 Vor dem Setup: Eine detaillierte Schritt-für-Schritt-Anleitung für Registrierung und API Keys findest du hier:
 
@@ -51,6 +66,10 @@ cp .env.example .env || true
 ```
 
 ### Danach: Coding Agent wählen
+
+Empfohlener Standard fuer den Workshop:
+- Aider + Google AI Studio (Free Tier)
+- Alternative Kombinationen sind erlaubt, wenn die Abnahmekriterien identisch bleiben.
 
 Du kannst danach frei wählen, mit welchem Agent du die Aufgaben ausführst.
 
@@ -187,19 +206,19 @@ docker compose logs --tail=120
 
 ---
 
-### Schritt 2: Hauptaufgabe prompten: Chat-with-the-Docs RAG (35 Min)
+### Schritt 2: Hauptaufgabe prompten: Full-Stack LLM Chat (35 Min)
 
-Nutze den folgenden Prompt als Startpunkt (copy/paste). Er ist absichtlich konkret, damit das Lab self-contained bleibt.
+Nutze den folgenden Prompt als Startpunkt (copy/paste). Er ist absichtlich konkret, damit der Kernpfad fuer alle reproduzierbar bleibt.
 Fuehre diesen Schritt im selben Arbeitsordner aus (`/tmp/lab1-rag-trial`).
 
 ```text
-Baue eine lauffähige "Chat-with-the-Docs" RAG Applikation als Docker-Compose-Projekt.
+Baue eine lauffaehige Full-Stack LLM-Chat-Applikation als Docker-Compose-Projekt.
 
 Zielbild:
-- User kann PDF-Dateien im Frontend hochladen
-- Backend verarbeitet PDFs in einer RAG Pipeline
-- User kann Fragen zu den hochgeladenen Dokumenten stellen
-- Antworten enthalten Quellenhinweise (Dateiname + Seitenzahl + Chunk-ID)
+- User kann im Frontend Fragen stellen
+- Backend verarbeitet Chat-Anfragen ueber einen austauschbaren Provider-Adapter
+- Antworten werden im Chatverlauf angezeigt
+- Die App laeuft komplett via docker compose
 
 Verbindliche technische Anforderungen:
 1) Architektur
@@ -209,36 +228,27 @@ Verbindliche technische Anforderungen:
 - Embeddings: sentence-transformers (all-MiniLM-L6-v2) lokal
 - LLM-Antworten: austauschbar über Provider-Adapter (OpenAI-kompatibel)
 
-2) RAG Pipeline im Backend
-- PDF Parser (z. B. pypdf)
-- Chunker mit Overlap (konfigurierbar)
-- Embedding-Generierung
-- Indexierung in Chroma
-- Retrieval (Top-k konfigurierbar)
-- Antwortgenerierung mit Kontext und Zitaten
+2) Chat Pipeline im Backend
+- Validierung der Eingabe
+- Provider-Adapter fuer OpenAI-kompatible APIs
+- Strukturierte Antwort mit optionalen Metadaten
 
 3) API-Endpunkte (mindestens)
-- POST /api/upload (eine oder mehrere PDFs)
 - POST /api/chat (question, optional conversation_id)
-- GET /api/documents
-- DELETE /api/documents/{id}
 - GET /api/health
 
 4) Frontend Features
-- Upload-Komponente mit Fortschrittsanzeige
-- Dokumentliste mit Löschfunktion
 - Chatfenster mit Rollen (user/assistant)
-- Anzeige von Quellen pro Antwort
-- Fehlerzustände (keine Dokumente, API down, leere Frage)
+- Eingabefeld mit Ladezustand
+- Fehlerzustaende (API down, leere Frage)
 
 5) Betrieb / DevEx
 - docker compose up --build startet alles
-- Persistente Volumes für Vektordaten
 - .env.example mit allen nötigen Variablen
 - README mit Quickstart, Architekturüberblick, bekannten Grenzen
 
 6) Qualität
-- Backend: mindestens Unit-Tests für Chunking und Retrieval-Logik
+- Backend: mindestens Unit-Tests fuer API-Validierung oder Chat-Service-Logik
 - Lint/Format sinnvoll eingerichtet
 - Klare Projektstruktur (backend/, frontend/, docker-compose.yml)
 
@@ -260,8 +270,18 @@ Bevor du Dateien schreibst, liefere zuerst:
 Implementiere danach milestone-basiert und warte nach jedem Milestone auf mein "weiter".
 ```
 
-Hinweis für das Modell:
-- Wenn kein externer LLM-Key verfügbar ist, soll ein lokaler Fallback-Modus eingebaut werden (z. B. regelbasierte Antwort mit Retrieved Context), damit die Demo technisch funktioniert.
+Hinweis fuer das Modell:
+- Wenn kein externer LLM-Key verfuegbar ist, soll ein lokaler Fallback-Modus eingebaut werden, damit die Demo technisch funktioniert.
+
+### Schritt 2b: Bonus-Challenge RAG mit PDF (optional, 20-30 Min)
+
+Nur wenn der Kernpfad stabil laeuft, erweitere die App um:
+
+- POST /api/upload fuer PDF-Dateien
+- Chunking + Embeddings + Retrieval
+- Quellenhinweise (Dateiname, Seite, Chunk-ID)
+
+Diese Erweiterung ist bewusst optional fuer schnelle und heterogene Gruppen.
 
 ### Erwartete Mindest-Artefakte nach Schritt 2
 

@@ -1,8 +1,12 @@
-# Half-Day Workshop Agenda (4 Stunden)
+# Workshop-Agenda (Standard 2.5 Stunden)
 
 > **Für:** Trainer/Facilitator  
-> **Mit:** Teilnehmer 5–50  
-> **Ergebnis:** Teilnehmer haben working agent + verstehen Architektur
+> **Mit:** Teilnehmer 5-50  
+> **Ergebnis:** Teilnehmende haben einen laufenden Agent-Workflow und verstehen die Kernarchitektur
+
+Siehe auch:
+- [Facilitation-Skript 2.5h](facilitation-script-2.5h.md)
+- [Worksheet Lab 1](../07-hands-on-labs/worksheet-lab-01-llm-chat.md)
 
 ---
 
@@ -10,18 +14,21 @@
 
 | Phase | Dauer | Aktivität | Ergebnis |
 |-------|-------|-----------|----------|
-| **1. Landschaft** | 60 min | Vortrag + Diskussion | Architektur verstanden |
-| **2. Live Demo** | 30 min | Trainer zeigt Agent at work | "Das ist möglich!" |
-| **3. Hands-On Lab** | 90 min | Teilnehmer machen Lab 1 | Erste erfolgreiche Agent-Aktion |
-| **4. Wrap-Up** | 30 min | QA, Reflexion, Next Steps | Clarity + Motivation |
+| **1. Grundlagen kompakt** | 35 min | Input + kurze Diskussion | Agent, Orchestrator und Framework sind getrennt |
+| **2. Setup und Guardrails** | 15 min | Fail-fast-Checks + Sicherheitsrahmen | Alle koennen reproduzierbar starten |
+| **3. Hands-On Kern** | 80 min | Lab 1 Kernpfad (LLM Chat) | Laufende Full-Stack-Chat-App |
+| **4. Wrap-Up** | 20 min | Checkpoint, Reflexion, naechste Schritte | Transfer in eigenen Kontext |
 
-**Insgesamt: 4 Stunden** (plus Pausen nach Bedarf)
+**Insgesamt: 150 Minuten (2.5 Stunden)**
+
+Optional:
+- Bonus-Block 20-30 Minuten fuer RAG-Erweiterung (PDF/EPUB)
 
 ---
 
-## Phase 1: Landschaft (60 Min)
+## Phase 1: Grundlagen kompakt (35 Min)
 
-### Modul 1A: Agentic Programming (20 Min)
+### Modul 1A: Agentic Programming (15 Min)
 
 **Trainer-Fokus:** "Warum das anders ist"
 
@@ -36,7 +43,7 @@
 **Diskussion Prompt:** "Welche Aufgabe in eurem Projekt würde ein Agent automatisieren können?"  
 (2 Min offene Discussionspause)
 
-### Modul 1B: Die Werkzeuge (20 Min)
+### Modul 1B: Die Werkzeuge (10 Min)
 
 **Trainer-Fokus:** "Es gibt verschiedene Wege"
 
@@ -49,58 +56,39 @@
 
 **Live Poll:** "Wer nutzt schon Cursor? CLI? GitHub Copilot?"
 
-### Modul 1C: MCP & Infrastruktur (20 Min)
+### Modul 1C: Terminologie und Guardrails (10 Min)
 
-**Trainer Fokus:** "Das ist das Fundament"
+**Trainer Fokus:** "Sichere und wiederholbare Agent-Nutzung"
 
-- Slide 1: MCP Überblick
-  - Agent + Tools = MCP verbindet
-- Slide 2: Praktisches Beispiel
-  - Agent liest GH Issue via MCP
-  - Agent schreibt zu Jira via MCP
-- Slide 3: LiteLLM
-  - Ein API, viele Models (Flexibility)
+- Slide 1: Rules, Skills, Memory, Tool Policy
+- Slide 2: Sicherheitsminimum vor jedem Agent-Run
+- Slide 3: MCP als naechster Lernschritt nach dem Einstieg
 
 ---
 
-## Phase 2: Live Demo (30 Min)
+## Phase 2: Setup und Guardrails (15 Min)
 
 ### Setup
 
-Trainer öffnet **Claude Code** (Web UI) oder **Pi CLI**.
+Trainer und Teilnehmende pruefen gemeinsam:
+1. Tooling-Checks (Docker, Compose, Node, Python)
+2. Provider-Setup (Default: Google AI Studio)
+3. Sicherheitsregeln fuer den Lab-Run
 
-**Demo-Task:** "Implementiere dunklen Modus für eine React App"
-
-Trainer: Zeigt Step-by-Step
-1. Claude Code öffnen
-2. Codebase mit Repo uploaden
-3. Issue/Anfrage eingeben
-4. Agent beobachten wie er:
-  - Codebase liest
-  - Plan macht
-  - Code schreibt
-  - Tests runned
-
-**Wichtig:** Nicht nur "schauen". **Intervenieren.**
-
-Trainer stoppt und fragt:
-- "Sieht ihr, wie der Agent hier dachte?"
-- "Das ist iteration. Nicht einfach nur Copy/Paste."
-
-**Ergebnis:** Teilnehmer sehen dass es möglich ist.
+**Ergebnis:** Alle starten unter denselben Rahmenbedingungen in das Hands-on.
 
 ---
 
-## Phase 3: Hands-On Lab 1 (90 Min)
+## Phase 3: Hands-On Lab 1 (80 Min)
 
-### Setup (10 Min)
+### Setup (5 Min)
 
 Alle Teilnehmer:
-1. API Key (Anthropic oder Ollama) vorbereitet
+1. API Key (Google AI Studio Standard oder Alternative) vorbereitet
 2. [Lab 1 Instructions](../07-hands-on-labs/lab-01-chat-with-docs-rag.md) öffnet
 3. Ein echtes GitHub Issue wählt (oder aus diesem Repo)
 
-### Execution (70 Min)
+### Execution (65 Min)
 
 **Trainer-Rolle:** Support & Debugging
 
@@ -126,9 +114,9 @@ Wenn nicht fertig: Kein Problem. Teilnehmer kann nach dem Workshop fortfahren.
 
 ---
 
-## Phase 4: Wrap-Up (30 Min)
+## Phase 4: Wrap-Up (20 Min)
 
-### Reflexion (15 Min)
+### Reflexion (10 Min)
 
 Trainer stellt Fragen:
 
@@ -139,7 +127,7 @@ Trainer stellt Fragen:
 - "Was wollt ihr als nächstes probieren?"
   - Multi-Agent? MCP? Automation?
 
-### Next Steps (10 Min)
+### Next Steps (7 Min)
 
 - "Wenn ihr tiefer gehen wollt:"
   - Lab 2: MCP Integration
@@ -153,7 +141,7 @@ Trainer stellt Fragen:
   - Discussions im Repo
   - FAQ: faq.md
 
-### Q&A (5 Min)
+### Q&A (3 Min)
 
 Offene Fragen.
 
@@ -221,9 +209,16 @@ Keine API Key:
 
 ---
 
+## Optional: Erweiterung um RAG (20-30 Min)
+
+Wenn die Gruppe schneller ist:
+
+- Bonus-Challenge aus Lab 1 aktivieren (PDF/EPUB-RAG)
+- Fokus auf Upload, Retrieval und Quellenhinweise
+
 ## Optional: Full-Day Workshop (8 Stunden)
 
-Einfach [08-workshop-facilitator/full-day-agenda.md](full-day-agenda.md) nutzen.
+Nutze die bestehende [Workshop-Agenda](half-day-agenda.md) als Basis und erweitere sie mit dem [Facilitation-Skript](facilitation-script-2.5h.md).
 
 ---
 

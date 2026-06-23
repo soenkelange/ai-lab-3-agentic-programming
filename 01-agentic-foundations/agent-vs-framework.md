@@ -243,4 +243,4 @@ Im Curriculum passt dieser Ausblick besonders zu:
 
 ---
 
-**Nächstes Modul:** [Die gesamte Architektur Stack verstehen](architecture-stack.md) (15 min)
+**Naechstes Modul:** [Model vs. Agent](model-vs-agent.md) (15 min)
