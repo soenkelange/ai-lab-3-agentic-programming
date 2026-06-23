@@ -7,7 +7,7 @@
 | **Ich will den Workshop-Standardpfad** | 2.5h | [Workshop Standard 2.5h](#pfad-1-workshop-standard-25-stunden) |
 | **Ich bin neu bei Agenten** | 2.5h | [Pfad 1: Workshop-Standard](#pfad-1-workshop-standard-25-stunden) |
 | **Ich verstehe Models, will Tools lernen** | 3h | [Pfad 2: Foundations](#pfad-2-intermediate) |
-| **Ich bin Architekt und will skalierbare Systeme** | 1 Tag | [Pfad 3: Full Workshop](../08-workshop-facilitator/half-day-agenda.md) |
+| **Ich bin Architekt und will skalierbare Systeme** | 1 Tag | [Pfad 3: Full Workshop](../08-workshop-facilitator/half-day-agenda.md#optional-full-day-workshop-8-stunden) |
 | **Ich habe nur 30 Minuten** | 30min | [Ultra-Schnell](#ultra-schnell) |
 
 ---
