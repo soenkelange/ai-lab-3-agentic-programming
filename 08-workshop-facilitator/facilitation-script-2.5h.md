@@ -2,7 +2,7 @@
 
 > Ziel: Eine heterogene Gruppe von Einsteiger:innen bis IT-Enthusiast:innen sicher durch Theorie + Hands-on fuehren.
 > 
-> Standard-Track: Aider + Google AI Studio (Free Tier)
+> Standard-Track: Siehe [prerequisites.md](../00-start-here/prerequisites.md) – empfohlen wird VS Code + Cline Extension + OpenRouter (kostenloses Nvidia-Modell)
 
 ## Rollenbild fuer Trainer:innen
 

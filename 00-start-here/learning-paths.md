@@ -27,7 +27,7 @@
 
 **Zielgruppe:** Einsteiger, Nicht-Programmierer mit Technikinteresse und IT-Enthusiast:innen.
 
-**Default-Setup:** Aider + Google AI Studio (Free Tier)
+**Default-Setup:** Siehe [prerequisites.md](prerequisites.md) – empfohlen wird VS Code + Cline Extension + OpenRouter (kostenloses Nvidia-Modell)
 
 **Didaktisches Ziel:** Theorie kompakt, dann ein konkretes Hands-on, in dem ein Coding Agent eine Full-Stack LLM-Chat-App plant und baut.
 
@@ -52,8 +52,8 @@ docker compose version
 node --version
 python3 --version
 
-# 2) Provider waehlen (Standard: Google AI Studio)
-# Siehe: ../_shared/_provider-options.md
+# 2) Provider waehlen – siehe prerequisites.md
+# Alle Optionen (OpenRouter, Google AI Studio, GitHub Models, Ollama) sind gleichberechtigt.
 ```
 
 ### Anschließend

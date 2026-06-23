@@ -72,7 +72,7 @@ Optional:
 
 Trainer und Teilnehmende pruefen gemeinsam:
 1. Tooling-Checks (Docker, Compose, Node, Python)
-2. Provider-Setup (Standard: Google AI Studio; Alternativen: GitHub Models, OpenRouter, Anthropic, Ollama — siehe [Provider-Optionen](../_shared/_provider-options.md))
+2. Provider-Setup (Alle Optionen gleichberechtigt — siehe [Voraussetzungen und Setup](../00-start-here/prerequisites.md); empfohlen: OpenRouter + kostenloses Nvidia-Modell)
 3. Sicherheitsregeln fuer den Lab-Run
 
 **Ergebnis:** Alle starten unter denselben Rahmenbedingungen in das Hands-on.
@@ -84,7 +84,7 @@ Trainer und Teilnehmende pruefen gemeinsam:
 ### Setup (5 Min)
 
 Alle Teilnehmer:
-1. API Key (Google AI Studio Standard oder Alternative) vorbereitet
+1. API Key (laut [prerequisites.md](../00-start-here/prerequisites.md)) vorbereitet
 2. [Lab 1 Instructions](../07-hands-on-labs/lab-01-chat-with-docs-rag.md) öffnet
 3. Ein echtes GitHub Issue wählt (oder aus diesem Repo)
 
