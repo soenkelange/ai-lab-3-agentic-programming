@@ -72,7 +72,7 @@ Optional:
 
 Trainer und Teilnehmende pruefen gemeinsam:
 1. Tooling-Checks (Docker, Compose, Node, Python)
-2. Provider-Setup (Default: Google AI Studio)
+2. Provider-Setup (Standard: Google AI Studio; Alternativen: GitHub Models, OpenRouter, Anthropic, Ollama — siehe [Provider-Optionen](../_shared/_provider-options.md))
 3. Sicherheitsregeln fuer den Lab-Run
 
 **Ergebnis:** Alle starten unter denselben Rahmenbedingungen in das Hands-on.
