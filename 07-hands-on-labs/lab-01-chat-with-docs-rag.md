@@ -36,9 +36,9 @@ Du wirst:
 
 ## Setup (15 Min)
 
-Vor dem Setup: Eine detaillierte Schritt-für-Schritt-Anleitung für Registrierung und API Keys findest du hier:
+Vor dem Setup: Eine detaillierte Schritt-für-Schritt-Anleitung für Registrierung, Docker und API Keys findest du hier:
 
-- [API Keys und Registrierung](api-keys-und-registrierung.md)
+- [Voraussetzungen und Setup](../00-start-here/prerequisites.md)
 
 ### Vor dem Start: Harte Voraussetzungen (2 Min Check)
 
@@ -68,46 +68,38 @@ cp .env.example .env || true
 ### Danach: Coding Agent wählen
 
 Empfohlener Standard fuer den Workshop:
-- Aider + Google AI Studio (Free Tier)
-- Alternative Kombinationen sind erlaubt, wenn die Abnahmekriterien identisch bleiben.
+- **VS Code + Cline Extension + OpenRouter + `nvidia/nemotron-3-ultra-550b-a55b:free`** (kostenlos)
+- Alle Details zu alternativen Kombinationen stehen in [Voraussetzungen und Setup](../00-start-here/prerequisites.md).
 
-Du kannst danach frei wählen, mit welchem Agent du die Aufgaben ausführst.
-
-#### Option 1: Aider CLI + OpenRouter
-
-Hinweis zu Kosten:
-
-- OpenRouter ist OpenAI-kompatibel und laeuft stabil mit bezahltem Guthaben.
-- Kosten entstehen abhaengig vom gewaehlten Modell und Verbrauch.
-- API-Key-Schritte stehen in [API Keys und Registrierung](api-keys-und-registrierung.md).
+#### Option 1: Cline (VS Code Extension) + OpenRouter
 
 ```bash
 # 1. API Key erstellen
 # https://openrouter.ai/keys
 
 # 2. .env pflegen (passt zu .env.example)
-# OPENROUTER_API_KEY setzen und OPENAI_MODEL=openrouter/qwen/qwen3-coder eintragen
+# OPENROUTER_API_KEY setzen und OPENROUTER_MODEL=nvidia/nemotron-3-ultra-550b-a55b:free eintragen
 # dann Variablen aus .env in die Shell laden
 set -a
 . ./.env
 set +a
 
-# 3. Aider starten
-# OPENAI_MODEL muss in .env gesetzt sein
-aider --model "$OPENAI_MODEL"
+# 3. Cline in VS Code installieren:
+#    - Extension Marketplace: "Cline" suchen, installieren
+#    - API-Provider: OpenRouter
+#    - Modell: nvidia/nemotron-3-ultra-550b-a55b:free
 ```
 
-#### Option 2: Freie Alternativen
+#### Option 2: CLI-Agents und Alternativen
+
+Alle Alternativen sind in [Voraussetzungen und Setup](../00-start-here/prerequisites.md) beschrieben:
 
 ```bash
-# Pi Agent (CLI)
-pi --help
-
-# OpenCode (CLI)
-opencode --help
-
-# Lokal ohne Cloud
-ollama pull qwen3:8b
+# Beispiele:
+# Aider (CLI): aider --model openrouter/nvidia/nemotron-3-ultra-550b-a55b:free
+# Pi Agent (CLI): pi --help
+# OpenCode (CLI): opencode --help
+# Lokal ohne Cloud: ollama pull qwen3:8b
 ```
 
 ---

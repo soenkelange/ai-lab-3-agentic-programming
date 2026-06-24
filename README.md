@@ -181,7 +181,7 @@ Die Grafik zeigt bewusst nur die acht Kernmodule. Die eigentliche Navigation ist
 - [Teilnehmer-Worksheet fuer Lab 1 (Kern + Bonus)](07-hands-on-labs/worksheet-lab-01-llm-chat.md)
 - [Checkpoint 1 für den praktischen Fortschritt](07-hands-on-labs/checkpoint-01.md)
 - [Checkpoint 2 für den praktischen Fortschritt](07-hands-on-labs/checkpoint-02.md)
-- [API-Keys und Registrierung für die Übungen](07-hands-on-labs/api-keys-und-registrierung.md)
+- [API-Keys und Registrierung (konsolidiert in Modul 00)](00-start-here/prerequisites.md)
 
 </details>
 
@@ -205,7 +205,7 @@ Die Grafik zeigt bewusst nur die acht Kernmodule. Die eigentliche Navigation ist
 - [Template für einen Security-Review-Skill](assets/templates/security-review-skill.md)
 - [Template für eine UI-Spezifikation](assets/templates/ui-specification.md)
 - [Zentrale Terminologie-Matrix](./_shared/_terminology-matrix.md)
-- [Zentrale Provider-Optionen](./_shared/_provider-options.md)
+- [Zentrale Provider-Optionen (konsolidiert in Modul 00)](00-start-here/prerequisites.md)
 
 </details>
 
@@ -251,26 +251,26 @@ Nach diesem Material kannst du:
 ## 🛠️ Empfohlener Tech Stack (Kostenlos oder Minimal)
 
 > **Philosophie:** Free-first, plattformunabhaengig und workshoptauglich in 2 Stunden.
+> Für eine detaillierte Zuordnung von vorhandenen Abonnements (z. B. Google, Cursor, GitHub, Claude) zu den jeweiligen IDEs und Agents siehe [Voraussetzungen und Setup](00-start-here/prerequisites.md).
 
-### Tier 1: Kostenlos + Schnell startklar
+### Tier 1: Kostenlos + Schnell startklar (Empfohlene Kombi)
 
 | Layer | Standard | Kosten | Warum |
 |-------|----------|--------|------|
-| **CLI Agent** | Aider | $0 (Open Source) | Stabil, git-nativ, schnell erklaerbar |
-| **VS Code Agent** | Continue | $0 (Open Source) | Agent-Modus in VS Code, MCP-faehig |
-| **Inference Provider** | Google AI Studio | $0 (Free Tier) | Hohe Limits, kein Kreditkartenzwang |
-| **Standard-Model** | Gemini 2.0 Flash | $0 im Free Tier | Sehr schnell fuer Hands-on-Uebungen |
+| **IDE + Agent** | VS Code + [Cline Extension](https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev) | $0 (Open Source) | BYOK-faehig, MCP-nativ, Modell-agnostisch |
+| **Inference Provider** | [OpenRouter](https://openrouter.ai/) | $0 (Free Models) | Ein Key fuer viele Modelle, Budget-Steuerung |
+| **Standard-Model** | `nvidia/nemotron-3-ultra-550b-a55b:free` | $0 (kostenlos) | Leistungsstarkes Coding-Modell, kein Guthaben noetig |
 | **Lokal Alternative** | Ollama + Qwen3 | $0 (100% lokal) | Offline-faehig, keine Cloud-Abhaengigkeit |
 
 ### Frei verfuegbare Alternativen (ebenfalls vorbereitet)
 
 | Kategorie | Tools |
 |-----------|------|
-| **CLI Agents** | Aider, Pi Agent, OpenCode |
-| **VS Code Agents** | Continue, Cline, Tabby, Codeium |
-| **Inference** | Google AI Studio, GitHub Models, OpenRouter, Ollama lokal |
+| **VS Code Agents** | Cline, Continue, GitHub Copilot |
+| **CLI Agents** | Aider, Claude Code (CLI), Pi Agent, OpenCode |
+| **Inference** | OpenRouter, Google AI Studio, GitHub Models, Ollama lokal |
 
-### Setup in 10 Minuten
+### Setup in 10 Minuten (VS Code + Cline + OpenRouter)
 
 ```bash
 # 1) Dev Container oeffnen (installiert alle Tools automatisch)
@@ -279,10 +279,15 @@ Nach diesem Material kannst du:
 # 2) Umgebungsdatei erstellen
 cp .env.example .env
 
-# 3) Aider mit Gemini starten
-export OPENAI_API_KEY="$GEMINI_API_KEY"
-export OPENAI_API_BASE="https://generativelanguage.googleapis.com/v1beta/openai"
-aider --model gemini/gemini-2.0-flash
+# 3) Cline in VS Code installieren und konfigurieren:
+#    - Extension Marketplace: "Cline" suchen, installieren
+#    - API-Provider: OpenRouter
+#    - Modell: nvidia/nemotron-3-ultra-550b-a55b:free
+#    - API-Key aus .env (OPENROUTER_API_KEY) eintragen
+
+# 4) .env mit eigenem OpenRouter-Key befuellen
+#    - Registrierung: https://openrouter.ai/keys
+#    - Key erstellen und in .env eintragen
 ```
 
 ---
@@ -357,9 +362,9 @@ Kompakte Theorie + konkretes Hands-on ergeben schnell belastbare Kompetenz.
 <details>
 <summary><strong>F: Ich habe kein Budget — geht das trotzdem?</strong></summary>
 
-→ **Ja!** Setup-Option B (Ollama + Qwen3.1 Coder): Völlig kostenlos, läuft lokal.
+→ **Ja!** Die empfohlene Kombi VS Code + Cline + OpenRouter + `nvidia/nemotron-3-ultra-550b-a55b:free` ist vollständig kostenlos.
 
-Oder Google AI Studio Free Tier als Standardpfad fuer die Labs.
+Alternativen: Ollama + Qwen3 (100% lokal) oder Google AI Studio (Free Tier).
 
 </details>
 

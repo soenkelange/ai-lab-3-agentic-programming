@@ -9,12 +9,12 @@ Der kanonische Hauptpfad fuer den Einstieg bleibt in [learning-paths](learning-p
 
 ## Primaerer Workshop-Agent
 
-Empfohlener Workshop-Agent: Aider oder OpenCode mit lokalem oder cloudbasiertem Modell.
+Empfohlener Workshop-Agent: Siehe [prerequisites.md](prerequisites.md) – empfohlen wird VS Code + Cline Extension + OpenRouter (kostenloses Nvidia-Modell).
 
 Warum Free-First:
 - Jede teilnehmende Person kann dasselbe Setup ohne bezahlte Lizenz nutzen.
 - Der Workflow bleibt in einer 2-Stunden-Session praktisch.
-- Dieselben Instruktionsinhalte lassen sich auf Cursor, Claude Code, Devin Desktop, Copilot, Aider und Pi abbilden.
+- Dieselben Instruktionsinhalte lassen sich auf Cursor, Claude Code, Devin Desktop, Copilot, Cline, Aider und Pi abbilden.
 
 ## 0:00-0:10 Setup
 
